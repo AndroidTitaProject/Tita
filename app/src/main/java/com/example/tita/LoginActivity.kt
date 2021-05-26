@@ -14,8 +14,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-        binding.SignUp.setOnClickListener {
-            startActivity(Intent(this, SignUp_termsActivity::class.java))
+        binding.signUpText.setOnClickListener {
+            startActivity(Intent(this, SignUptermsActivity::class.java))
         }
     }
 }
