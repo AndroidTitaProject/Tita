@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".SignUp_CertificatioActivity"></activity>
-        <activity android:name=".SignUp_termsActivity" />
+        <activity android:name=".SignUpCertificatioActivity"></activity>
+        <activity android:name=".SignUptermsActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

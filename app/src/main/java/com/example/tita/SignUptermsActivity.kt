@@ -11,7 +11,7 @@ import com.example.tita.databinding.ActivitySignUpBinding
 import com.example.tita.databinding.CustomDialogLayoutBinding
 
 
-class SignUp_termsActivity : AppCompatActivity() {
+class SignUptermsActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignUpBinding
     private lateinit var binding2: CustomDialogLayoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +84,7 @@ class SignUp_termsActivity : AppCompatActivity() {
 
             if(binding.CheckboxAgree1.isChecked && binding.CheckboxAgree2.isChecked && binding.CheckboxAgree3.isChecked){
 
-                startActivity(Intent(this, SignUp_CertificatioActivity::class.java))
+                startActivity(Intent(this, SignUpCertificatioActivity::class.java))
 
             }
             else
