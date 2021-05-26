@@ -11,7 +11,7 @@ import com.example.tita.databinding.ActivitySignUpBinding
 import com.example.tita.databinding.CustomDialogLayoutBinding
 
 
-class SignUp_termsActivity : AppCompatActivity() {
+class SignUptermsActivity : AppCompatActivity() {
     private lateinit var binding : ActivitySignUpBinding
     private lateinit var binding2: CustomDialogLayoutBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class SignUp_termsActivity : AppCompatActivity() {
 
         AllCheck()
 
-        binding.TermsOfServiceText.setOnClickListener {
+        binding.termsOfServiceText.setOnClickListener {
             //커스텀 다이얼로그를 만들어주고, 다이얼로그가 과거에 열렸는지 확인하고 열렸었으면 지워주는 코드 중복방지.
             //또한 맞는 Title과 Text를 넣어준다.
           val builder = AlertDialog.Builder(this)
@@ -62,7 +62,7 @@ class SignUp_termsActivity : AppCompatActivity() {
                     .show()
         }
 
-        binding.CommunityUsageRulesText.setOnClickListener {
+        binding.communityUsageRulesText.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogMainText = dialogView.findViewById<TextView>(R.id.main_text)
             val dialogText = dialogView.findViewById<TextView>(R.id.scrollView_Text)
@@ -82,9 +82,9 @@ class SignUp_termsActivity : AppCompatActivity() {
 
         binding.nextButton.setOnClickListener {
 
-            if(binding.CheckboxAgree1.isChecked && binding.CheckboxAgree2.isChecked && binding.CheckboxAgree3.isChecked){
+            if(binding.checkboxAgree1.isChecked && binding.checkboxAgree2.isChecked && binding.checkboxAgree3.isChecked){
 
-                startActivity(Intent(this, SignUp_CertificatioActivity::class.java))
+                startActivity(Intent(this, SignUpCertificatioActivity::class.java))
 
             }
             else
@@ -109,19 +109,19 @@ class SignUp_termsActivity : AppCompatActivity() {
     }
 
     private fun AllCheck() {
-        binding.CheckboxAllAgree.setOnClickListener {
-            if(binding.CheckboxAllAgree.isChecked)
+        binding.checkboxAllAgree.setOnClickListener {
+            if(binding.checkboxAllAgree.isChecked)
             {
-                binding.CheckboxAgree1.isChecked = true
-                binding.CheckboxAgree2.isChecked = true
-                binding.CheckboxAgree3.isChecked = true
+                binding.checkboxAgree1.isChecked = true
+                binding.checkboxAgree2.isChecked = true
+                binding.checkboxAgree3.isChecked = true
             }
 
             else
             {
-                binding.CheckboxAgree1.isChecked = false
-                binding.CheckboxAgree2.isChecked = false
-                binding.CheckboxAgree3.isChecked = false
+                binding.checkboxAgree1.isChecked = false
+                binding.checkboxAgree2.isChecked = false
+                binding.checkboxAgree3.isChecked = false
             }
         }
 
