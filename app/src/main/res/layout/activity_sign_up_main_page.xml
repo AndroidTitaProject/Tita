@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> [UPDATE] SignUpPage
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -8,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+<<<<<<< HEAD
         <androidx.core.widget.NestedScrollView
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
@@ -22,4 +26,31 @@
 
     </RelativeLayout>
 
+=======
+            <androidx.viewpager.widget.ViewPager
+                android:layout_above="@id/next_button"
+                android:id="@+id/sign_up_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+
+        <Button
+            android:layout_marginTop="10sp"
+            android:layout_marginBottom="25sp"
+            android:id="@+id/next_button"
+            android:paddingRight="40sp"
+            android:paddingLeft="40sp"
+            android:backgroundTint="#FFFBEB"
+            android:textStyle="bold"
+            android:text="다음"
+            android:textColor="@color/black"
+            android:background="@drawable/edit_text_background"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+>>>>>>> [UPDATE] SignUpPage
 </layout>
