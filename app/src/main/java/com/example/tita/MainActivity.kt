@@ -1,8 +1,7 @@
-package com.example.tita.ui.activity
+package com.example.tita
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tita.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
