@@ -12,6 +12,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+<<<<<<< HEAD
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/sign_Up_Viewpager"
                 android:layout_width="match_parent"
@@ -19,5 +20,20 @@
 
         </androidx.core.widget.NestedScrollView>
 
+=======
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sign_up_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </androidx.viewpager2.widget.ViewPager2>
+
+        </androidx.core.widget.NestedScrollView>
+>>>>>>> [UPDATE] ViewPager -> ViewPager2 , UI Update
     </RelativeLayout>
 </layout>
