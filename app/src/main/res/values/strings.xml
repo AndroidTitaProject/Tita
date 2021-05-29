@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Tita</string>
-    <string name="find_id_pw"><u>아이디 / 비밀번호를 잊으셨나요?</u></string>
+    <string name="find_id"><u>아이디를 잊으셨나요?</u></string>
+    <string name="find_password"><u>비밀번호가 기억이 안나시나요?</u></string>
     <string name="Member_Questions"><u>혹시 아직 회원이 아니신가요?</u></string>
     <string name="Zunmun">
 1. 동해물과 백두산이 마르고 닳도록
@@ -59,4 +60,6 @@
     밝은 달은 우리 가슴 일편단심일세
     무궁화 삼천리 화려 강산
     대한 사람 대한으로 길이 보전하세</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
