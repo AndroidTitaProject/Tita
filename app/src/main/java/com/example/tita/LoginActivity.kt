@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.example.tita.TunedCode.SignUpMainPage
 import com.example.tita.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -14,8 +15,8 @@ class LoginActivity : AppCompatActivity() {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
 
-        binding.SignUp.setOnClickListener {
-            startActivity(Intent(this, SignUp_termsActivity::class.java))
+        binding.signUpText.setOnClickListener {
+            startActivity(Intent(this, SignUpMainPage::class.java))
         }
     }
 }
