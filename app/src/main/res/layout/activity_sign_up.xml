@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -51,7 +52,7 @@
             </RelativeLayout>
 
             <TextView
-                android:layout_marginTop="5sp"
+                android:layout_marginTop="10sp"
                 android:id="@+id/agreement_text"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@id/icon_group"
@@ -88,16 +89,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-<<<<<<< HEAD
             <ScrollView
-=======
-            <androidx.core.widget.NestedScrollView
-                android:layout_marginTop="10sp"
->>>>>>> [UPDATE] ViewPager -> ViewPager2 , UI Update
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:id="@+id/terms_of_service"
-                android:elevation="10dp"
+                android:elevation="20dp"
                 android:padding="20sp"
                 android:layout_marginRight="70sp"
                 android:layout_marginLeft="70sp"
@@ -114,7 +110,7 @@
                     android:text="@string/Zunmun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </androidx.core.widget.NestedScrollView>
+            </ScrollView>
 
             <CheckBox
                 android:layout_marginTop="5sp"
@@ -130,15 +126,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-<<<<<<< HEAD
             <ScrollView
-=======
-            <androidx.core.widget.NestedScrollView
->>>>>>> [UPDATE] ViewPager -> ViewPager2 , UI Update
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:id="@+id/privacy_Terms"
-                android:elevation="10dp"
+                android:elevation="20dp"
                 android:padding="20sp"
                 android:layout_marginRight="70sp"
                 android:layout_marginLeft="70sp"
@@ -154,9 +146,9 @@
                     android:text="@string/Zunmun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </androidx.core.widget.NestedScrollView>
+            </ScrollView>
             <CheckBox
-                android:layout_marginTop="5sp"
+                android:layout_marginTop="10sp"
                 android:id="@+id/checkbox_Agree_3"
                 android:textSize="12sp"
                 android:layout_alignLeft="@id/terms_of_service"
@@ -169,8 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <androidx.core.widget.NestedScrollView
-                android:layout_marginBottom="20sp"
+            <ScrollView
                 android:id="@+id/community_usage_rules"
                 android:layout_width="match_parent"
                 android:layout_height="100sp"
@@ -178,7 +169,7 @@
                 android:layout_marginLeft="70sp"
                 android:layout_marginRight="70sp"
                 android:background="@drawable/edit_text_background"
-                android:elevation="10dp"
+                android:elevation="20dp"
                 android:padding="20sp"
                 android:textColor="@color/black"
                 android:textSize="15sp">
@@ -191,12 +182,11 @@
                     android:text="@string/Zunmun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-            </androidx.core.widget.NestedScrollView>
+            </ScrollView>
 
             <Button
-                android:layout_marginBottom="20sp"
-                android:layout_below="@id/community_usage_rules"
-                android:id="@+id/bext_btn"
+                android:layout_marginBottom="5sp"
+                android:id="@+id/next_button"
                 android:paddingRight="40sp"
                 android:paddingLeft="40sp"
                 android:backgroundTint="#FFFBEB"
@@ -205,6 +195,8 @@
                 android:textColor="@color/black"
                 android:background="@drawable/edit_text_background"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"
+                android:layout_below="@id/community_usage_rules"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
