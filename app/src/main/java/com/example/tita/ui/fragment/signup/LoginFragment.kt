@@ -14,14 +14,15 @@ import com.example.tita.databinding.FragmentLoginBinding
 import com.example.tita.ui.activity.NavigationMainActivity
 import com.example.tita.viewmodels.LoginViewModel
 
-class LoginFragment : Fragment() {
 
+class LoginFragment : Fragment(), View.OnClickListener {
+    lateinit var binding: FragmentLoginBinding
     private val loginViewModel: LoginViewModel by viewModels()
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View {
-        val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater,
+        binding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_login, container, false)
         binding.login = loginViewModel
         binding.fragment = this
@@ -32,8 +33,19 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    fun login(view: View) {
-        startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.loginButton.setOnClickListener(this)
+        binding.signUpText.setOnClickListener(this)
+    }
 
+
+    override fun onClick(v: View?) {
+        when (v) {
+            binding.loginButton ->
+                startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
+            binding.signUpText ->
+                findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
+        }
     }
 }
