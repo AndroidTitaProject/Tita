@@ -124,7 +124,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/find_id_pw_text"
+                android:id="@+id/find_id_pwd_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/sign_Up_text"
