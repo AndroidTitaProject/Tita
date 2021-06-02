@@ -36,7 +36,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginButton.setOnClickListener(this)
-        binding.signUpText.setOnClickListener(this)
+        binding.findIdPwdText.setOnClickListener(this)
     }
 
 
@@ -44,7 +44,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
         when (v) {
             binding.loginButton ->
                 startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
-            binding.signUpText ->
+            binding.findIdPwdText ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
         }
     }
