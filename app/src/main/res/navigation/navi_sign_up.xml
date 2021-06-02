@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_LoginFragment_to_signUpTermsFragment"
             app:destination="@id/signUpTermsFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_findFragment"
+            app:destination="@id/findFragment" />
     </fragment>
 
 
@@ -36,6 +39,11 @@
         tools:layout="@layout/fragment_certificatio">
 
     </fragment>
+
+    <fragment
+        android:id="@+id/findFragment"
+        android:name="com.example.tita.ui.fragment.signup.FindFragment"
+        tools:layout="@layout/fragment_find_id"/>
 
 
 </navigation>
