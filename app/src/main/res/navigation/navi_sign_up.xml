@@ -8,6 +8,7 @@
     <fragment
         android:id="@+id/LoginFragment"
         android:name="com.example.tita.ui.fragment.signup.LoginFragment"
+        android:label=""
         tools:layout="@layout/fragment_login">
 
 
@@ -43,7 +44,8 @@
     <fragment
         android:id="@+id/findFragment"
         android:name="com.example.tita.ui.fragment.signup.FindFragment"
-        tools:layout="@layout/fragment_find_id"/>
+        android:label=""
+        tools:layout="@layout/fragment_find_id" />
 
 
 </navigation>
