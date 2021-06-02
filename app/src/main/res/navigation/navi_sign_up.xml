@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_main"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.tita.ui.fragment.signup.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+
+        <action
+            android:id="@+id/action_LoginFragment_to_signUpTermsFragment"
+            app:destination="@id/signUpTermsFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signUpTermsFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpTermsFragment"
+        android:label="인증 목록"
+        tools:layout="@layout/fragment_sign_up_terms">
+
+
+        <action
+            android:id="@+id/action_signUpTermsFragment_to_signUpCertificatioFragment"
+            app:destination="@id/signUpCertificatioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpCertificatioFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment"
+        android:label="선택"
+        tools:layout="@layout/fragment_certificatio">
+
+    </fragment>
+
+
+</navigation>
