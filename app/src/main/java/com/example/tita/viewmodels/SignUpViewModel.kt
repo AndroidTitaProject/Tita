@@ -12,7 +12,6 @@ import android.widget.TextView
 import androidx.navigation.findNavController
 import com.example.tita.R
 import com.example.tita.base.BaseViewModel
-import com.example.tita.ui.fragment.SignUpCertificatioFragment
 
 class SignUpViewModel(layoutInflater: LayoutInflater, application: Application) :
     BaseViewModel(application = application) {
