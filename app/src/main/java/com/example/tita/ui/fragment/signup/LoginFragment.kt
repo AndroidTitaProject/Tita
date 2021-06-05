@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tita.databinding.FragmentLoginBinding
 import com.example.tita.ui.activity.NavigationMainActivity
+import com.example.tita.ui.activity.SignUpMainActivity
 import com.example.tita.viewmodels.LoginViewModel
 
 
@@ -27,7 +28,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
         binding.login = loginViewModel
         binding.fragment = this
 
-
+        //toolbar 없애기
+        (requireActivity() as SignUpMainActivity).supportActionBar!!.hide()
 
 
         return binding.root
@@ -46,6 +48,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
             binding.findIdPwdText ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
+            binding.signUpText->{
+                findNavController().navigate(R.id.action_LoginFragment_to_signUpTermsFragment)
+            }
         }
     }
 }
