@@ -9,8 +9,8 @@
     </data>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@color/main_color"
         tools:context=".ui.fragment.signup.SignUpCertificatioFragment">
 
@@ -95,7 +95,7 @@
                     android:background="@drawable/edit_text_background"
                     android:elevation="10dp"
                     android:hint="학교를 입력해주세요"
-                    android:padding="20sp"
+                    android:padding="15sp"
                     android:privateImeOptions="defaultInputmode=korean"
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
@@ -111,7 +111,7 @@
                     android:layout_toRightOf="@id/school_edit"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:padding="21sp"
+                    android:padding="15sp"
                     android:text="검색"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -147,7 +147,7 @@
                     android:elevation="10dp"
                     android:focusableInTouchMode="false"
                     android:hint="학생증사진을 첨부해주세요"
-                    android:padding="20sp"
+                    android:padding="15sp"
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
                     android:textSize="15sp" />
@@ -162,7 +162,7 @@
                     android:layout_toRightOf="@id/school_certification_edit"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:padding="21sp"
+                    android:padding="15sp"
                     android:text="첨부"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -198,7 +198,7 @@
                     android:background="@drawable/edit_text_background"
                     android:elevation="10dp"
                     android:hint="이메일을 입력해주세요"
-                    android:padding="20sp"
+                    android:padding="15sp"
 
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
@@ -216,7 +216,7 @@
                     android:layout_marginRight="50sp"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:padding="21sp"
+                    android:padding="15sp"
                     android:text="인증번호 보내기"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -250,7 +250,7 @@
                     android:background="@drawable/edit_text_background"
                     android:elevation="10dp"
                     android:hint="인증번호를 입력해주세요"
-                    android:padding="20sp"
+                    android:padding="15sp"
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
                     android:textSize="15sp" />
@@ -265,7 +265,7 @@
                     android:layout_toRightOf="@id/certification_Number_edit"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:padding="21sp"
+                    android:padding="15sp"
                     android:text="확인"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
@@ -283,7 +283,6 @@
                     android:paddingLeft="40sp"
                     android:paddingRight="40sp"
                     android:text="다음"
-                    android:onClick="@{fragment::dd}"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
