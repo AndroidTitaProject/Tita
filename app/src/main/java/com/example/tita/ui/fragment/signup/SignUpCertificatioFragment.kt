@@ -7,31 +7,33 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.tita.R
 import com.example.tita.databinding.FragmentCertificatioBinding
+import com.example.tita.databinding.FragmentSignUpMainBinding
 
 class SignUpCertificatioFragment : Fragment() {
-    private var _binding: FragmentCertificatioBinding? = null
-    private val binding get() = _binding!!
 
+    lateinit var binding: FragmentCertificatioBinding
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        _binding = FragmentCertificatioBinding.inflate(inflater, container, false)
 
 
-        binding.nextButton.setOnClickListener {
-
-            Log.d(TAG, "onCreateView: ")
-        }
+        binding = DataBindingUtil.inflate(inflater,
+                R.layout.fragment_certificatio, container, false)
+        binding.fragment = this
         return binding.root
+
+    }
+    fun dd(view:View){
+        findNavController().navigate(R.id.action_signUpCertificatioFragment_to_signUpMainFragment)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
+
 }
 
 
