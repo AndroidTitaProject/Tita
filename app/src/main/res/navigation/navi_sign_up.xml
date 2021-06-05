@@ -39,6 +39,9 @@
         android:label="선택"
         tools:layout="@layout/fragment_certificatio">
 
+        <action
+            android:id="@+id/action_signUpCertificatioFragment_to_signUpMainFragment"
+            app:destination="@id/signUpMainFragment" />
     </fragment>
 
     <fragment
@@ -46,6 +49,17 @@
         android:name="com.example.tita.ui.fragment.signup.FindFragment"
         android:label=""
         tools:layout="@layout/fragment_find_id" />
+    <fragment
+        android:id="@+id/signUpMainFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpMainFragment"
+        android:label=""
+        tools:layout="@layout/fragment_sign_up_main">
+
+
+        <action
+            android:id="@+id/action_signUpMainFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
 
 
 </navigation>
