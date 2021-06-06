@@ -64,7 +64,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'androidx.multidex:multidex:2.0.1'
 
-
+    //모션레이아웃
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
