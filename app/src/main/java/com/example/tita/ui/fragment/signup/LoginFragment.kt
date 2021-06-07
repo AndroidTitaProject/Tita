@@ -1,9 +1,12 @@
 package com.example.tita.ui.fragment.signup
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.tita.R
@@ -39,6 +42,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         binding.loginButton.setOnClickListener(this)
         binding.findIdPwdText.setOnClickListener(this)
+        binding.passwordEdit.setOnClickListener(this)
+        binding.signUpText.setOnClickListener(this)
+        binding.forgetIdBtn.setOnClickListener(this)
     }
 
 
@@ -46,11 +52,22 @@ class LoginFragment : Fragment(), View.OnClickListener {
         when (v) {
             binding.loginButton ->
                 startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
-            binding.findIdPwdText ->
+            binding.forgetIdBtn ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
-            binding.signUpText->{
+            binding.signUpText -> {
                 findNavController().navigate(R.id.action_LoginFragment_to_signUpTermsFragment)
             }
+            binding.findIdPwdText->{
+                findNavController().navigate(R.id.action_LoginFragment_to_passwordChangeFragment)
+            }
+
+            binding.passwordEdit -> {
+                Log.d(TAG, "onClick: password")
+                binding.forgetIdBtn.visibility = VISIBLE
+                binding.findIdPwdText.visibility = VISIBLE
+            }
+
         }
     }
+
 }
