@@ -284,7 +284,7 @@
                     android:paddingLeft="40sp"
                     android:paddingRight="40sp"
                     android:text="다음"
-                    android:onClick="@{fragment::onclick}"
+                    android:onClick="@{fragment::onclcik}"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
