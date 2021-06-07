@@ -1,9 +1,7 @@
 package com.example.tita.ui.fragment.signup
 
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
+import com.example.tita.VIewInterface
 import com.example.tita.databinding.FragmentCertificatioBinding
-import com.example.tita.databinding.FragmentSignUpMainBinding
 
-class SignUpCertificatioFragment : Fragment() {
+class SignUpCertificatioFragment : Fragment(),VIewInterface {
 
     lateinit var binding: FragmentCertificatioBinding
     override fun onCreateView(
@@ -29,8 +27,11 @@ class SignUpCertificatioFragment : Fragment() {
         return binding.root
 
     }
-    fun dd(view:View){
+
+
+    override fun onclcik(v: View) {
         findNavController().navigate(R.id.action_signUpCertificatioFragment_to_signUpMainFragment)
+
     }
 
 
