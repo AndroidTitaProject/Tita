@@ -8,9 +8,120 @@
             type="com.example.tita.ui.fragment.navigation.BoardWriteFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+
+        <LinearLayout
+            android:layout_margin="10sp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner_box"
+                    android:spinnerMode="dropdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <Spinner
+                    android:visibility="invisible"
+                    android:id="@+id/spinner_box_select"
+                    android:spinnerMode="dropdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <EditText
+                android:textStyle="bold"
+                android:background="@null"
+                android:textColor="#AFAFAF"
+                android:backgroundTint="#AFAFAF"
+                android:hint="제목을 입력해주세요"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"/>
+
+        <EditText
+            android:textSize="13dp"
+            android:textStyle="bold"
+            android:background="@null"
+            android:layout_margin="20dp"
+            android:textColor="#AFAFAF"
+            android:backgroundTint="#AFAFAF"
+            android:hint="내용을 입력하세요"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:id="@+id/emptied"
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <CheckBox
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:text="익명"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_marginRight="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:background="@drawable/buttom_state"
+                android:text="등록"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
 </layout>
