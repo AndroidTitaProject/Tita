@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Tita</string>
     <string name="find_id"><u>아이디를 잊으셨나요?</u></string>
+    <string name="Welcome">어서오세요, \n <b>TimeTable</b>입니다!</string>
     <string name="find_password"><u>비밀번호가 기억이 안나시나요?</u></string>
     <string name="Member_Questions"><u>혹시 아직 회원이 아니신가요?</u></string>
     <string name="Zunmun">
