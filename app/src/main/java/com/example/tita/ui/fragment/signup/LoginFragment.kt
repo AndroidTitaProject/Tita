@@ -3,11 +3,14 @@ package com.example.tita.ui.fragment.signup
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import com.example.tita.R
 import androidx.fragment.app.Fragment
@@ -22,6 +25,7 @@ import com.example.tita.viewmodels.LoginViewModel
 class LoginFragment : Fragment(), View.OnClickListener {
     lateinit var binding: FragmentLoginBinding
     private val loginViewModel: LoginViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
@@ -43,7 +47,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
         binding.loginButton.setOnClickListener(this)
         binding.findIdPwdText.setOnClickListener(this)
         binding.passwordEdit.setOnClickListener(this)
-        binding.signUpText.setOnClickListener(this)
+        //binding.signUpText.setOnClickListener(this)
         binding.forgetIdBtn.setOnClickListener(this)
     }
 
@@ -51,7 +55,15 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             binding.loginButton ->
-                startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
+            {
+                val animation = AnimationUtils.loadAnimation(requireContext(),R.anim.find_id_password_effect)
+                //startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
+                binding.forgetIdBtn.visibility = VISIBLE
+                binding.forgetIdBtn.startAnimation(animation)
+                binding.findIdPwdText.visibility = VISIBLE
+                binding.findIdPwdText.startAnimation(animation)
+
+            }
             binding.forgetIdBtn ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
             binding.signUpText -> {
