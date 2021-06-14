@@ -1,257 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-<variable
-    name="fragment"
-    type="com.example.tita.ui.fragment.signup.FindIdFragment" />
+
+        <variable
+            name="fragment"
+            type="com.example.tita.ui.fragment.signup.FindIdFragment" />
     </data>
 
-    <RelativeLayout
-        android:background="@color/main_color"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/main_color"
+        android:orientation="vertical"
         tools:context=".IdPasswordFind.FindIdActivity">
 
-        <RelativeLayout
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:layout_centerHorizontal="true"
-                android:id="@+id/icon_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="74dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
 
                 <ImageView
                     android:id="@+id/logoImage"
-                    android:scaleType="centerCrop"
-                    android:padding="2.5sp"
-                    android:background="@drawable/logostroke"
-                    android:layout_centerHorizontal="true"
-                    android:src="@drawable/logo"
                     android:layout_width="80sp"
-                    android:layout_height="80sp" />
+                    android:layout_height="80sp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/logostroke"
+                    android:padding="2.5sp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo" />
 
                 <TextView
-                    android:textSize="20sp"
                     android:id="@+id/ti_ta_text"
-                    android:textStyle="bold"
-                    android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/logoImage"
-                    android:textColor="@color/black"
-                    android:text="Ti-Ta"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/logoImage"
+                    android:layout_centerHorizontal="true"
+                    android:text="Ti-Ta"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/time_table_text"
-                    android:textSize="8sp"
-                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/ti_ta_text"
-                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
                     android:text="Time-Table"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textColor="@color/black"
+                    android:textSize="8sp" />
 
                 <TextView
-                    android:layout_below="@+id/time_table_text"
-                    android:layout_marginTop="10sp"
                     android:id="@+id/agreement_text"
-                    android:layout_centerHorizontal="true"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:text="ID찾기"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/time_table_text"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10sp"
+                    android:text="ID찾기"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-            <RelativeLayout
-                android:id="@+id/email_init"
-                android:layout_below="@+id/icon_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
                 <TextView
-                    android:layout_marginTop="15sp"
-                    android:layout_alignLeft="@id/email_edit"
-                    android:id="@+id/email_text"
-                    android:text="*이메일"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
+                    android:id="@+id/Certification_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginRight="50dp"
-                    android:layout_marginLeft="15sp"
-                    android:layout_below="@+id/email_text"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:id="@+id/email_edit"
-                    android:elevation="10dp"
-                    android:padding="15sp"
-                    android:textColorHint="#808080"
-                    android:hint="이메일을 입력해주세요"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="90dp"
                     android:layout_marginTop="10sp"
+                    android:text="이메일"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
-                    android:background="@drawable/edit_text_background"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/EditTextGreyStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
+                    android:layout_height="wrap_content"
+                    android:theme="@style/EditTextGreyStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/Certification_edit"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Certification_text"
+                        android:layout_gravity="center"
+
+                        android:background="@drawable/edit_text_background"
+                        android:elevation="5dp"
+                        android:hint="이메일"
+                        android:padding="15sp"
+                        android:textColor="@color/black"
+                        android:textColorHint="#808080"
+                        android:textSize="15sp" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:layout_marginBottom="10sp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginRight="50sp"
-                    android:layout_marginLeft="15sp"
-                    android:padding="15sp"
-                    android:layout_marginTop="12sp"
-                    android:layout_below="@id/email_edit"
-                    android:id="@+id/email_btn"
-                    android:layout_width="match_parent"
+                    android:id="@+id/ok_btn"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="3dp"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:text="인증하기"
+                    android:gravity="center"
+                    android:padding="15sp"
+                    android:text="확인"
+
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <RelativeLayout
-                android:layout_below="@id/email_init"
-                android:layout_centerHorizontal="true"
+
+            <LinearLayout
                 android:id="@+id/Certification_init"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
 
                 <TextView
-                    android:layout_marginLeft="23dp"
-                    android:id="@+id/know_text"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:text=""
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_marginTop="10sp"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/know_text"
-                    android:layout_alignLeft="@id/Certification_edit"
-                    android:id="@+id/Certification_text"
+                    android:layout_marginStart="90dp"
+                    android:layout_marginTop="10sp"
                     android:text="*인증번호 확인"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:layout_marginRight="20sp"
-                    android:layout_below="@+id/Certification_text"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:id="@+id/Certification_edit"
-                    android:elevation="5dp"
-                    android:padding="15sp"
-                    android:textColorHint="#808080"
-                    android:hint="인증번호"
-                    android:layout_marginTop="10sp"
-                    android:background="@drawable/edit_text_background"
-                    android:layout_width="240dp"
-                    android:layout_height="wrap_content" />
+                    android:textStyle="bold" />
 
 
-                <Button
-                    android:padding="15sp"
-                    android:layout_marginTop="12sp"
-                    android:layout_below="@id/Certification_text"
-                    android:layout_toRightOf="@id/Certification_edit"
-                    android:id="@+id/ok_btn"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/EditTextGreyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/EditTextGreyStyle">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="90sp"
+                            android:background="@drawable/edit_text_background"
+                            android:elevation="5dp"
+                            android:hint="인증번호"
+                            android:padding="15sp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#808080"
+                            android:textSize="15sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:backgroundTint="#FFFBEB"
+
+                        android:padding="15sp"
+                        android:text="확인"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/password_init"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/Certification_init">
+
+
+                <TextView
+                    android:id="@+id/password_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="90sp"
+                    android:layout_marginTop="10sp"
+                    android:text="*닉네임"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/password_edit"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10sp"
+                    android:background="@drawable/edit_text_background"
+                    android:elevation="5dp"
+                    android:hint="닉네임"
+                    android:layout_marginTop="5sp"
+                    android:padding="15sp"
+                    android:privateImeOptions="defaultInputm40ode=korean"
+                    android:textColor="@color/black"
+                    android:textColorHint="#808080"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/password_init"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="5sp"
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:text="확인"
+                    android:onClick="@{fragment::onclcik}"
+                    android:paddingLeft="40sp"
+                    android:paddingRight="40sp"
+                    android:text="찾기"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
 
-            </RelativeLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-            <RelativeLayout
-                android:layout_alignRight="@id/Certification_init"
-                android:layout_alignLeft="@id/Certification_init"
-                android:layout_below="@id/Certification_init"
-                android:id="@+id/password_init"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <TextView
-                    android:layout_marginLeft="23dp"
-                    android:id="@+id/know_text_2"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:text=""
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_marginTop="10sp"
-                    android:layout_below="@+id/know_text_2"
-                    android:layout_alignLeft="@id/password_edit"
-                    android:id="@+id/password_text"
-                    android:text="*닉네임"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <EditText
-                    android:layout_marginBottom="10sp"
-                    android:privateImeOptions="defaultInputm40ode=korean"
-                    android:layout_below="@+id/password_text"
-                    android:textColor="@color/black"
-                    android:textSize="15sp"
-                    android:id="@+id/password_edit"
-                    android:elevation="5dp"
-                    android:padding="15sp"
-                    android:textColorHint="#808080"
-                    android:hint="닉네임"
-                    android:layout_marginTop="10sp"
-                    android:background="@drawable/edit_text_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </RelativeLayout>
-
-            <Button
-                android:id="@+id/next_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/password_init"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="5sp"
-                android:background="@drawable/edit_text_background"
-                android:backgroundTint="#FFFBEB"
-                android:paddingLeft="40sp"
-                android:paddingRight="40sp"
-                android:text="찾기"
-                android:onClick="@{fragment::onclcik}"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-
-        </RelativeLayout>
-
-    </RelativeLayout>
 </layout>
