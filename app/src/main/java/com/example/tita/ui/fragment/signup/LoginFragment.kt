@@ -47,7 +47,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
         binding.loginButton.setOnClickListener(this)
         binding.findIdPwdText.setOnClickListener(this)
         binding.passwordEdit.setOnClickListener(this)
-        //binding.signUpText.setOnClickListener(this)
+        binding.signUpText.setOnClickListener(this)
         binding.forgetIdBtn.setOnClickListener(this)
     }
 
@@ -72,11 +72,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
             binding.findIdPwdText->{
                 findNavController().navigate(R.id.action_LoginFragment_to_passwordChangeFragment)
             }
-
-            binding.passwordEdit -> {
-                Log.d(TAG, "onClick: password")
-                binding.forgetIdBtn.visibility = VISIBLE
-                binding.findIdPwdText.visibility = VISIBLE
+            binding.signUpText->{
+                findNavController().navigate(R.id.action_LoginFragment_to_signUpTermsFragment)
             }
 
         }
