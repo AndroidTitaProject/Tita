@@ -34,10 +34,10 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/let_know_id"
+                        android:id="@+id/textView4"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
 
+                        android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="251dp"
                         android:text="    000님의 아이디는\n timetable0604입니다."
@@ -49,16 +49,14 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text="걱정하지 말랬죠? 이렇게 다 찾을수 있답니다."
                         android:textColor="@color/silver_chalice"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/let_know_id" />
-
+                        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
                     <Button
                         android:id="@+id/next_button"
@@ -76,7 +74,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView11"
                         app:layout_goneMarginTop="10dp" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
