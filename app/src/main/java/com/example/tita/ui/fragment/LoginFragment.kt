@@ -1,62 +1,40 @@
 package com.example.tita.ui.fragment
 
-import android.content.ContentValues.TAG
-import android.content.Intent
-import android.os.Bundle
-import android.transition.TransitionInflater
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.View.VISIBLE
-import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import androidx.databinding.DataBindingUtil
-import com.example.tita.R
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.tita.R
+import com.example.tita.VIewInterface
+import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentLoginBinding
-import com.example.tita.ui.activity.NavigationMainActivity
 import com.example.tita.ui.activity.SignUpMainActivity
 import com.example.tita.viewmodels.LoginViewModel
 
 
-class LoginFragment : Fragment(), View.OnClickListener {
-    lateinit var binding: FragmentLoginBinding
+class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fragment_login), VIewInterface {
+
     private val loginViewModel: LoginViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?
-    ): View {
-        binding = DataBindingUtil.inflate(inflater,
-                R.layout.fragment_login, container, false)
+    override fun FragmentLoginBinding.onCreateView() {
         binding.login = loginViewModel
-        binding.fragment = this
+        binding.fragment = this@LoginFragment
 
         //toolbar 없애기
         (requireActivity() as SignUpMainActivity).supportActionBar!!.hide()
-
-
-        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.loginButton.setOnClickListener(this)
-        binding.findPasswordText.setOnClickListener(this)
-        binding.forgetIdBtn.setOnClickListener(this)
-        binding.signUpText.setOnClickListener(this)
+    override fun FragmentLoginBinding.onViewCreated() {
+
     }
 
 
-    override fun onClick(v: View?) {
+
+    override fun onclcik(v: View) {
         when (v) {
-            binding.loginButton ->
-            {
-                val animation = AnimationUtils.loadAnimation(requireContext(),R.anim.find_id_password_effect)
-                //startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
+            binding.loginButton -> {
+                val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.find_id_password_effect)
                 binding.forgetIdBtn.visibility = VISIBLE
                 binding.forgetIdBtn.startAnimation(animation)
                 binding.findPasswordText.visibility = VISIBLE
@@ -76,5 +54,6 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
         }
     }
+
 
 }
