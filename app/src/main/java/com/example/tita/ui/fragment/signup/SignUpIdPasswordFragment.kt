@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.VIewInterface
-import com.example.tita.databinding.FragmentLoginBinding
 import com.example.tita.databinding.FragmentSignUpIdPasswordBinding
 import com.example.tita.viewmodels.LoginViewModel
 
@@ -31,6 +30,6 @@ class SignUpIdPasswordFragment : Fragment(),VIewInterface {
 
 
     override fun onclcik(v: View) {
-        findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_LoginFragment)
+        findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_signUpcertificatioSchoolFrgment2)
     }
 }
