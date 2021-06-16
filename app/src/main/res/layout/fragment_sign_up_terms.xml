@@ -99,26 +99,22 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/next_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_below="@id/Community_Terms_of_Use_checkbox"
+            android:textSize="20sp"
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            android:id="@+id/next_button"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50sp"
             android:layout_marginBottom="5sp"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:fontFamily="@font/spoqahansansneo_bold"
-            android:minWidth="0sp"
-            android:minHeight="0sp"
-            android:onClick="@{fragment::onclcik}"
-            android:paddingLeft="40sp"
-            android:paddingTop="10sp"
-            android:paddingRight="40sp"
-            android:paddingBottom="10sp"
             android:text="계속하기"
+            android:onClick="@{fragment::onclcik}"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
     </RelativeLayout>
 </layout>
