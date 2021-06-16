@@ -42,10 +42,6 @@ class SignUpViewModel(layoutInflater: LayoutInflater, application: Application) 
             }
             .show()
     }
-    fun intentSignUpTerms(view: View) {
-        Log.d(TAG, "intentSignUpTerms: ")
-        view.findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpCertificatioFragment)
 
-    }
 
 }

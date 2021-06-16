@@ -1,4 +1,4 @@
-package com.example.tita.ui.fragment.signup
+package com.example.tita.ui.fragment
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -45,10 +45,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginButton.setOnClickListener(this)
-        binding.findIdPwdText.setOnClickListener(this)
-        binding.passwordEdit.setOnClickListener(this)
-        binding.signUpText.setOnClickListener(this)
+        binding.findPasswordText.setOnClickListener(this)
         binding.forgetIdBtn.setOnClickListener(this)
+        binding.signUpText.setOnClickListener(this)
     }
 
 
@@ -60,8 +59,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 //startActivity(Intent(requireContext(), NavigationMainActivity::class.java))
                 binding.forgetIdBtn.visibility = VISIBLE
                 binding.forgetIdBtn.startAnimation(animation)
-                binding.findIdPwdText.visibility = VISIBLE
-                binding.findIdPwdText.startAnimation(animation)
+                binding.findPasswordText.visibility = VISIBLE
+                binding.findPasswordText.startAnimation(animation)
 
             }
             binding.forgetIdBtn ->
@@ -69,12 +68,11 @@ class LoginFragment : Fragment(), View.OnClickListener {
             binding.signUpText -> {
                 findNavController().navigate(R.id.action_LoginFragment_to_signUpTermsFragment)
             }
-            binding.findIdPwdText->{
-                findNavController().navigate(R.id.action_LoginFragment_to_passwordChangeFragment)
+
+            binding.findPasswordText -> {
+                findNavController().navigate(R.id.action_LoginFragment_to_findPasswordFragment)
             }
-            binding.signUpText->{
-                findNavController().navigate(R.id.action_LoginFragment_to_signUpTermsFragment)
-            }
+
 
         }
     }

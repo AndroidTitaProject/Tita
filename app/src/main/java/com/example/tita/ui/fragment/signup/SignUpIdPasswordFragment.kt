@@ -30,6 +30,6 @@ class SignUpIdPasswordFragment : Fragment(),VIewInterface {
 
 
     override fun onclcik(v: View) {
-        findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_signUpcertificatioSchoolFrgment2)
+        findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_LoginFragment)
     }
 }

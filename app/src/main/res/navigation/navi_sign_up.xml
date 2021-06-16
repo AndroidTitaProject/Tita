@@ -45,6 +45,9 @@
         <action
             android:id="@+id/action_signUpCertificatioFragment_to_signUpMainFragment"
             app:destination="@id/signUpIdPasswordFragment" />
+        <action
+            android:id="@+id/action_signUpCertificatioFragment_to_signUpIdPasswordFragment"
+            app:destination="@id/signUpIdPasswordFragment" />
     </fragment>
 
     <fragment
@@ -57,15 +60,16 @@
             android:id="@+id/action_findIdFragment_to_findIdNowFragment"
             app:destination="@id/findIdNowFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/signUpIdPasswordFragment"
         android:name="com.example.tita.ui.fragment.signup.SignUpIdPasswordFragment"
         android:label=""
         tools:layout="@layout/fragment_sign_up_id_password">
+
+
         <action
-            android:id="@+id/action_signUpIdPasswordFragment_to_signUpcertificatioSchoolFrgment2"
-            app:destination="@id/signUpcertificatioSchoolFrgment" />
+            android:id="@+id/action_signUpIdPasswordFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 
     <fragment
@@ -104,28 +108,6 @@
             app:destination="@id/LoginFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/signUpcertificatioSchoolFrgment"
-        android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioSchoolFragment"
-        tools:layout="@layout/fragment_sign_up_certificatio_school"
-        android:label=""
-        >
-        <action
-            android:id="@+id/action_signUpcertificatioSchoolFrgment_to_signUpsetnameFragment2"
-            app:destination="@id/signUpsetnameFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/signUpsetnameFragment"
-        android:name="com.example.tita.ui.fragment.signup.SignUpSetNameFragment"
-        tools:layout="@layout/fragment_sign_up_set_name"
-        android:label="">
-
-
-        <action
-            android:id="@+id/action_signUpsetnameFragment_to_LoginFragment"
-            app:destination="@id/LoginFragment" />
-    </fragment>
 
 
 </navigation>

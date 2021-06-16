@@ -1,4 +1,4 @@
-package com.example.tita.ui.fragment.signup
+package com.example.tita.ui.fragment.find.id
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,25 +9,19 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.VIewInterface
+import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindIdKnowBinding
 
-class FragmentIdKnowFragment : Fragment(), VIewInterface {
+class FindIdKnowFragment : UtilityBase.BaseFragment<FragmentFindIdKnowBinding>(R.layout.fragment_find_id_know), VIewInterface {
 
 
-    lateinit var binding: FragmentFindIdKnowBinding
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View {
+    override fun FragmentFindIdKnowBinding.onCreateView() {
 
-
-        binding = DataBindingUtil.inflate(inflater,
-                R.layout.fragment_find_id_know, container, false)
-        binding.fragment = this
-        return binding.root
-
+        binding.fragment = this@FindIdKnowFragment
     }
 
+    override fun FragmentFindIdKnowBinding.onViewCreated() {
+    }
 
     override fun onclcik(v: View) {
         findNavController().navigate(R.id.action_findIdNowFragment_to_LoginFragment)

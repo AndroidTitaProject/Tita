@@ -29,7 +29,7 @@ class SignUpTermsFragment : Fragment() {
     }
 
     fun onclick(v:View){
-        findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpCertificatioFragment)
+        findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpIdPasswordFragment)
     }
 
 

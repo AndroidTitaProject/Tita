@@ -8,7 +8,7 @@
 
         <variable
             name="fragment"
-            type="com.example.tita.ui.fragment.signup.LoginFragment" />
+            type="com.example.tita.ui.fragment.LoginFragment" />
 
         <variable
             name="login"
@@ -16,10 +16,10 @@
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
-        android:background="@drawable/login_background"
         android:id="@+id/login_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/login_background"
         app:layoutDescription="@xml/fragment_login_scene">
 
         <RelativeLayout
@@ -29,70 +29,68 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/d"
             app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="16sp">
+            tools:layout_editor_absoluteX="16dp">
 
 
             <ImageView
-                android:layout_marginTop="99sp"
-                android:padding="2.5sp"
-                android:elevation="20sp"
-                android:layout_marginLeft="70sp"
                 android:id="@+id/logoImage"
-                android:layout_width="70sp"
-                android:layout_height="73.55sp"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="150dp"
                 android:background="@drawable/logostroke"
+                android:elevation="20dp"
+                android:padding="2.5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/logo" />
 
             <TextView
-                android:textSize="24sp"
                 android:id="@+id/welcome"
-                android:layout_marginTop="30sp"
-                android:layout_alignLeft="@id/logoImage"
-                android:layout_below="@id/logoImage"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Welcome" />
+                android:layout_below="@id/logoImage"
+                android:layout_alignLeft="@id/logoImage"
+                android:layout_marginTop="30dp"
+                android:text="@string/Welcome"
+                android:textColor="@color/black"
+                android:textSize="24dp" />
 
             <EditText
                 android:id="@+id/id_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/welcome"
                 android:layout_marginLeft="70sp"
                 android:layout_marginTop="30sp"
                 android:layout_marginRight="70sp"
                 android:background="@drawable/edit_text_background"
-                android:elevation="20sp"
+                android:elevation="20dp"
                 android:hint="아이디"
-                android:layout_below="@id/welcome"
                 android:padding="20sp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
-                android:fontFamily="@font/spoqahansansneo_regular"
-                android:textSize="12sp"
-                android:textColor="@color/black"
-                android:layout_below="@+id/id_edit"
                 android:id="@+id/forget_id_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="79sp"
-                android:layout_marginTop="12sp"
+                android:layout_below="@+id/id_edit"
+                android:layout_marginLeft="79dp"
+                android:onClick="@{fragment::onClick}"
+                android:layout_marginTop="12dp"
                 android:text="아이디를 잊으셧나요?"
+                android:textStyle="bold"
                 android:visibility="gone" />
 
             <EditText
-                android:fontFamily="@font/spoqahansansneo_regular"
-                android:layout_below="@+id/forget_id_btn"
                 android:id="@+id/password_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/forget_id_btn"
                 android:layout_marginLeft="70sp"
-                android:layout_marginTop="19sp"
+                android:layout_marginTop="20sp"
                 android:layout_marginRight="70sp"
                 android:background="@drawable/edit_text_background"
                 android:elevation="20dp"
@@ -102,17 +100,16 @@
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
 
             <TextView
-                android:fontFamily="@font/spoqahansansneo_regular"
-                android:layout_below="@id/password_edit"
-                android:id="@+id/find_id_pwd_text"
+                android:id="@+id/find_password_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="79sp"
-                android:layout_marginTop="20sp"
+                android:layout_below="@id/password_edit"
+                android:layout_marginStart="79dp"
+                android:layout_marginTop="20dp"
                 android:onClick="@{fragment::onClick}"
                 android:text="비밀번호가 기억이 안나시나요?"
                 android:textColor="@color/black"
@@ -122,39 +119,33 @@
 
 
             <Button
-                android:fontFamily="@font/spoqahansansneo_bold"
-                android:textSize="18sp"
-                android:minHeight="0sp"
-                android:minWidth="0sp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/find_id_pwd_text"
-                android:elevation="30sp"
                 android:id="@+id/login_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/find_password_text"
+                android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
-                android:layout_marginTop="19sp"
+                android:layout_marginTop="40sp"
                 android:background="@drawable/edit_text_background"
                 android:backgroundTint="#FFFBEB"
+                android:elevation="30dp"
                 android:onClick="@{fragment::onClick}"
                 android:paddingLeft="40sp"
                 android:paddingRight="40sp"
-                android:text="입장하기"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp"
+                android:text="로그인"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
-                android:fontFamily="@font/spoqahansansneo_regular"
                 android:id="@+id/signUpText"
-                android:layout_marginBottom="40dp"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                android:textColor="@color/black"
-                android:text="@string/Member_Questions"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:text="@string/Member_Questions"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>

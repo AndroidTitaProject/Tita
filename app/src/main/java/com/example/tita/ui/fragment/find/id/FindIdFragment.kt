@@ -1,4 +1,4 @@
-package com.example.tita.ui.fragment.signup
+package com.example.tita.ui.fragment.find.id
 
 import android.os.Bundle
 import android.view.LayoutInflater
