@@ -56,6 +56,7 @@
                 android:textSize="24dp" />
 
             <EditText
+                android:layout_centerHorizontal="true"
                 android:id="@+id/id_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,11 +67,11 @@
                 android:background="@drawable/edit_text_background"
                 android:elevation="20dp"
                 android:hint="아이디"
-                android:padding="20sp"
+                android:paddingLeft="20sp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/forget_id_btn"
@@ -85,6 +86,7 @@
                 android:visibility="gone" />
 
             <EditText
+                android:layout_centerHorizontal="true"
                 android:id="@+id/password_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,11 +98,11 @@
                 android:elevation="20dp"
                 android:hint="비밀번호"
                 android:inputType="textPassword"
-                android:padding="20sp"
+                android:paddingLeft="20sp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
 
             <TextView
@@ -119,22 +121,23 @@
 
 
             <Button
-                android:id="@+id/login_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/find_password_text"
+                android:layout_below="@id/password_edit"
+                android:textSize="20sp"
+                android:fontFamily="@font/spoqahansansneo_bold"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:id="@+id/next_button"
+                android:layout_width="120sp"
+                android:layout_height="50sp"
                 android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginTop="40sp"
+                android:layout_marginTop="50sp"
+                android:layout_marginBottom="5sp"
                 android:background="@drawable/edit_text_background"
                 android:backgroundTint="#FFFBEB"
-                android:elevation="30dp"
+                android:text="입장하기"
                 android:onClick="@{fragment::onclcik}"
-                android:paddingLeft="40sp"
-                android:paddingRight="40sp"
-                android:text="로그인"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/signUpText"
