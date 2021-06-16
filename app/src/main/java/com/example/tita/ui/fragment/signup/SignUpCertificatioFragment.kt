@@ -30,7 +30,7 @@ class SignUpCertificatioFragment : Fragment(),VIewInterface {
 
 
     override fun onclcik(v: View) {
-        findNavController().navigate(R.id.action_signUpCertificatioFragment_to_signUpMainFragment)
+        findNavController().navigate(R.id.action_signUpCertificatioFragment_to_LoginFragment)
 
     }
 
