@@ -4,6 +4,10 @@
     <string name="Welcome">어서오세요, \n <b>TimeTable</b>입니다!</string>
     <string name="find_password"><u>비밀번호가 기억이 안나시나요?</u></string>
     <string name="Member_Questions"><u>혹시 아직 회원이 아니신가요?</u></string>
+    <string name="inside_community">우리만의 커뮤니티 속으로 \n들어가볼까요?</string>
+    <string name="make">인증에 성공했으니 \n본격적으로 계정을 만들어봐요!</string>
+    <string name="school">거의 다 왔어요! \n이제 학교를 인증해볼까요?</string>
+    <string name="show_my_name">마지막으로, \n나를 보여줄 이름을 정해요!</string>
     <string name="Zunmun">
 1. 동해물과 백두산이 마르고 닳도록
 하느님이 보우하사 우리나라 만세
