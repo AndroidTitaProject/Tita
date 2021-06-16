@@ -7,7 +7,7 @@
 
         <variable
             name="fragment"
-            type="com.example.tita.ui.fragment.signup.FindIdFragment" />
+            type="com.example.tita.ui.fragment.find.id.FindIdFragment" />
     </data>
 
     <LinearLayout
@@ -245,17 +245,15 @@
                     android:id="@+id/next_button"
                     android:layout_width="120dp"
                     android:layout_height="40dp"
-                    android:layout_below="@id/password_init"
-                    android:layout_centerHorizontal="true"
                     android:layout_gravity="center"
                     android:layout_marginTop="62dp"
                     android:layout_marginBottom="5sp"
 
                     android:background="@drawable/edit_text_background"
                     android:backgroundTint="#FFFBEB"
-                    android:onClick="@{fragment::onclcik}"
-                    android:minHeight="0sp"
                     android:minWidth="0sp"
+                    android:minHeight="0sp"
+                    android:onClick="@{fragment::onclcik}"
                     android:text="ID 찾기"
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
