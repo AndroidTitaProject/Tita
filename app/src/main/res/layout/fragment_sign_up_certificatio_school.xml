@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.tita.ui.fragment.signup.SignUpCertificatioSchoolFragment" />
+    </data>
+
+    <RelativeLayout
+        android:background="@drawable/singin_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginLeft="63sp"
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:textSize="22sp"
+            android:id="@+id/welcome_text"
+            android:layout_marginTop="118sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/school" />
+
+        <TextView
+            android:layout_below="@id/welcome_text"
+            android:id="@+id/school_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/welcome_text"
+            android:layout_marginTop="76sp"
+            android:text="*학교"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_alignLeft="@id/welcome_text"
+            android:id="@+id/school_edit"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_text"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/edit_text_background"
+            android:elevation="10dp"
+            android:hint=""
+            android:padding="15sp"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="12sp" />
+
+        <Button
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:minHeight="0sp"
+            android:minWidth="0sp"
+            android:id="@+id/school_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_text"
+            android:layout_marginTop="10sp"
+            android:layout_toRightOf="@id/school_edit"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FFFBEB"
+            android:paddingTop="12sp"
+            android:paddingBottom="12sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_marginLeft="10sp"
+            android:text="검색"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_below="@id/school_edit"
+            android:id="@+id/school_certificatio_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/welcome_text"
+            android:layout_marginTop="25sp"
+            android:text="*학교인증"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_alignLeft="@id/welcome_text"
+            android:id="@+id/school_certificatio_edit"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_certificatio_text"
+            android:layout_marginTop="10sp"
+            android:background="@drawable/edit_text_background"
+            android:elevation="10dp"
+            android:hint="학생증 사진을 첨부주세요"
+            android:padding="15sp"
+            android:textColor="@color/black"
+            android:textColorHint="#808080"
+            android:textSize="12sp" />
+
+        <Button
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:minHeight="0sp"
+            android:minWidth="0sp"
+            android:id="@+id/school_certificatio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/school_certificatio_text"
+            android:layout_marginTop="10sp"
+            android:layout_toRightOf="@id/school_certificatio_edit"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FFFBEB"
+            android:paddingTop="12sp"
+            android:paddingBottom="12sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_marginLeft="10sp"
+            android:text="검색"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:layout_below="@id/school_certificatio_edit"
+            android:textSize="20sp"
+            android:fontFamily="@font/spoqahansansneo_bold"
+            android:paddingTop="10sp"
+            android:paddingBottom="10sp"
+            android:minHeight="0sp"
+            android:minWidth="0sp"
+            android:id="@+id/next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130sp"
+            android:layout_marginBottom="5sp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FFFBEB"
+            android:paddingLeft="40sp"
+            android:paddingRight="40sp"
+            android:text="계속하기"
+            android:onClick="@{fragment::onclcik}"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</layout>
