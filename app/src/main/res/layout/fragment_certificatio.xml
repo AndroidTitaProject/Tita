@@ -16,7 +16,7 @@
         tools:context=".ui.fragment.signup.SignUpCertificatioFragment">
 
                 <TextView
-                    android:layout_marginLeft="63sp"
+                    android:layout_centerHorizontal="true"
                     android:fontFamily="@font/spoqahansansneo_bold"
                     android:textSize="22sp"
                     android:id="@+id/welcome_text"
