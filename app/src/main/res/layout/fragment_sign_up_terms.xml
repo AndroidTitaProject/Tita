@@ -99,7 +99,7 @@
 
             <Button
                 android:layout_below="@id/Community_Terms_of_Use_checkbox"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:fontFamily="@font/spoqahansansneo_bold"
                 android:paddingTop="10sp"
                 android:paddingBottom="10sp"
