@@ -98,23 +98,20 @@
             android:text="커뮤니티이용규칙 확인(필수)"
             android:textSize="20sp" />
 
-        <Button
-            android:layout_below="@id/Community_Terms_of_Use_checkbox"
-            android:textSize="20sp"
-            android:fontFamily="@font/spoqahansansneo_bold"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_button"
             android:layout_width="120sp"
-            android:layout_height="50sp"
+            android:layout_height="40dp"
+            android:layout_below="@id/Community_Terms_of_Use_checkbox"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50sp"
-            android:layout_marginBottom="5sp"
+            android:layout_marginTop="44.78dp"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:text="계속하기"
+            android:fontFamily="@font/spoqahansansneo_bold"
             android:onClick="@{fragment::onclcik}"
+            android:text="계속하기"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </layout>
