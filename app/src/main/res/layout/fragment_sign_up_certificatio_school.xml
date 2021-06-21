@@ -23,7 +23,7 @@
             android:fontFamily="@font/spoqahansansneo_bold"
             android:text="@string/school"
             android:textColor="@color/black"
-            android:textSize="22sp" />
+            android:textSize="26sp" />
 
         <TextView
             android:id="@+id/school_text"
@@ -39,7 +39,7 @@
 
         <EditText
             android:id="@+id/school_edit"
-            android:layout_width="200sp"
+            android:layout_width="220sp"
             android:layout_height="45sp"
             android:layout_below="@id/school_text"
             android:layout_alignLeft="@id/welcome_text"
@@ -47,10 +47,10 @@
             android:background="@drawable/edit_text_background"
             android:elevation="10dp"
             android:hint=""
-            android:padding="15sp"
+            android:padding="13sp"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/school_button"
@@ -81,7 +81,7 @@
 
         <EditText
             android:id="@+id/school_certificatio_edit"
-            android:layout_width="200sp"
+            android:layout_width="220sp"
             android:layout_height="45sp"
             android:layout_below="@id/school_certificatio_text"
             android:layout_alignLeft="@id/welcome_text"
@@ -89,10 +89,10 @@
             android:background="@drawable/edit_text_background"
             android:elevation="10dp"
             android:hint="학생증 사진을 첨부해주세요"
-            android:padding="15sp"
+            android:padding="13sp"
             android:textColor="@color/black"
             android:textColorHint="#808080"
-            android:textSize="12sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/school_certificatio_button"
@@ -114,7 +114,7 @@
             android:layout_marginBottom="77dp"
             android:id="@+id/next_btn"
             android:layout_width="120dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:background="@drawable/edit_text_background"
