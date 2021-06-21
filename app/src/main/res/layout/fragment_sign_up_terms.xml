@@ -42,7 +42,7 @@
             android:fontFamily="@font/spoqahansansneo_bold"
             android:text="안녕하세요, 여러분!"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <CheckBox
             android:id="@+id/all_check_checkbox"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/division"
             android:layout_alignLeft="@id/welcome_text"
-            android:layout_marginTop="32sp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/spoqahansansneo_regular"
             android:text="서비스 이용약관 동의(필수)"
             android:textSize="20sp" />
@@ -103,7 +103,7 @@
             android:layout_width="120sp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="77dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="44.78dp"
             android:background="@drawable/edit_text_background"

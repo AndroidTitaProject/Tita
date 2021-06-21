@@ -24,7 +24,7 @@
             android:fontFamily="@font/spoqahansansneo_bold"
             android:text="@string/show_my_name"
             android:textColor="@color/black"
-            android:textSize="22sp" />
+            android:textSize="26sp" />
 
         <TextView
             android:id="@+id/nickname_text"
@@ -35,12 +35,12 @@
             android:layout_marginTop="76sp"
             android:text="*닉네임"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/nickname_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="45sp"
             android:layout_below="@+id/nickname_text"
             android:layout_alignLeft="@id/nickname_text"
@@ -73,7 +73,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_button"
             android:layout_width="120dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="77dp"

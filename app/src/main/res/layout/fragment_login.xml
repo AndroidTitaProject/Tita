@@ -65,13 +65,13 @@
                 android:layout_marginTop="30sp"
                 android:layout_marginRight="70sp"
                 android:background="@drawable/edit_text_background"
-                android:elevation="20dp"
+                android:elevation="10dp"
                 android:hint="아이디"
                 android:paddingLeft="20sp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/forget_id_btn"
@@ -95,14 +95,14 @@
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="70sp"
                 android:background="@drawable/edit_text_background"
-                android:elevation="20dp"
+                android:elevation="10dp"
                 android:hint="비밀번호"
                 android:inputType="textPassword"
                 android:paddingLeft="20sp"
                 android:singleLine="true"
                 android:textColor="@color/black"
                 android:textColorHint="#808080"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
 
             <TextView
@@ -121,7 +121,7 @@
 
 
             <Button
-                android:layout_below="@id/password_edit"
+                android:layout_below="@id/find_password_text"
                 android:textSize="20sp"
                 android:fontFamily="@font/spoqahansansneo_bold"
                 android:paddingTop="10sp"
