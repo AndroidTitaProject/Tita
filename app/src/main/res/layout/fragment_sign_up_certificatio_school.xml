@@ -111,12 +111,12 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginBottom="50dp"
             android:id="@+id/next_btn"
             android:layout_width="120dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/school_certificatio_button"
+            android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="117dp"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
             android:onClick="@{fragment::onclcik}"
