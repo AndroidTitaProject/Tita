@@ -20,11 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="118sp"
+            android:layout_marginTop="160dp"
             android:fontFamily="@font/spoqahansansneo_bold"
             android:text="@string/inside_community"
             android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/inform_text"
@@ -32,11 +32,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome_text"
             android:layout_alignLeft="@id/welcome_text"
-            android:layout_marginTop="50sp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/spoqahansansneo_regular"
             android:text="먼저 계정이 필요해요!"
             android:textColor="#A6A6A6"
-            android:textSize="18sp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/certification_Number_text"
@@ -44,10 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/error_success_email_text"
             android:layout_alignLeft="@id/inform_text"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="15dp"
             android:text="*인증번호확인"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="14dp"
             android:textStyle="bold" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:layout_marginTop="15sp"
             android:text="*이메일"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="14dp"
             android:textStyle="bold" />
 
         <EditText
