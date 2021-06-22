@@ -21,8 +21,7 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
         binding.login = loginViewModel
         binding.fragment = this@LoginFragment
 
-        //toolbar 없애기
-        (requireActivity() as SignUpMainActivity).supportActionBar!!.hide()
+
     }
 
     override fun FragmentLoginBinding.onViewCreated() {
