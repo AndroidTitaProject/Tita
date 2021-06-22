@@ -22,9 +22,9 @@
 
         <ImageView
             android:id="@+id/logoImage"
-            android:layout_width="70sp"
-            android:layout_height="73.55sp"
-            android:layout_marginLeft="70sp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="50sp"
             android:layout_marginTop="99sp"
             android:background="@drawable/logostroke"
             android:elevation="20sp"
@@ -42,7 +42,7 @@
             android:fontFamily="@font/spoqahansansneo_bold"
             android:text="안녕하세요, 여러분!"
             android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textSize="28sp" />
 
         <CheckBox
             android:id="@+id/all_check_checkbox"
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/division"
             android:layout_alignLeft="@id/welcome_text"
-            android:layout_marginTop="32sp"
+            android:layout_marginTop="40dp"
             android:fontFamily="@font/spoqahansansneo_regular"
             android:text="서비스 이용약관 동의(필수)"
             android:textSize="20sp" />
@@ -96,25 +96,35 @@
             android:layout_marginTop="13sp"
             android:fontFamily="@font/spoqahansansneo_regular"
             android:text="커뮤니티이용규칙 확인(필수)"
-            android:textSize="20sp" />
+            android:textSize="20dp" />
 
-        <Button
-            android:layout_below="@id/Community_Terms_of_Use_checkbox"
-            android:textSize="20sp"
-            android:fontFamily="@font/spoqahansansneo_bold"
-            android:paddingTop="10sp"
-            android:paddingBottom="10sp"
+        <TextView
+            android:id="@+id/error_text"
+            android:visibility="invisible"
+            android:layout_marginTop="15dp"
+            android:layout_alignLeft="@id/welcome_text"
+            android:layout_below="@+id/Community_Terms_of_Use_checkbox"
+            android:textSize="15dp"
+            android:fontFamily="@font/spoqahansansneo_regular"
+            android:textColor="@color/red_btn_bg_color"
+            android:text="필수 항목이 동의되지 않았습니다."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_button"
             android:layout_width="120sp"
-            android:layout_height="50sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:layout_height="45dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50sp"
-            android:layout_marginBottom="5sp"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:text="계속하기"
+            android:fontFamily="@font/spoqahansansneo_bold"
             android:onClick="@{fragment::onclcik}"
+            android:text="계속하기"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 </layout>

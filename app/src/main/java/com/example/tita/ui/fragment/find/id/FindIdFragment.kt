@@ -1,34 +1,53 @@
 package com.example.tita.ui.fragment.find.id
 
-import android.os.Bundle
-import android.view.LayoutInflater
+import android.content.ContentValues.TAG
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import android.view.animation.AnimationUtils
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.VIewInterface
+import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindIdBinding
-import com.example.tita.databinding.FragmentLoginBinding
+import com.example.tita.viewmodels.SignUpViewModel
 
-class FindIdFragment : Fragment(),VIewInterface {
+class FindIdFragment : UtilityBase.BaseFragment<FragmentFindIdBinding>(R.layout.fragment_find_id),
+    VIewInterface {
 
-    lateinit var binding: FragmentFindIdBinding
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?
-    ): View {
-        val binding: FragmentFindIdBinding = DataBindingUtil.inflate(inflater,
-                R.layout.fragment_find_id, container, false)
+    private val signUpViewModel: SignUpViewModel by viewModels()
 
 
-        binding.fragment = this
+    override fun FragmentFindIdBinding.onCreateView() {
+        successToAnimEmail()
+    }
+
+    override fun FragmentFindIdBinding.onViewCreated() {
+        binding.fragment = this@FindIdFragment
+        binding.viewModel = signUpViewModel
+        binding.lifecycleOwner = this@FindIdFragment
+    }
 
 
+    // 계정이 없을 때 뜬다.
+    private fun successToAnimEmail() {
 
+        signUpViewModel.checkErrorIdText.observe(
+            viewLifecycleOwner, Observer {
+                if (it == true) {
+                    Log.d(TAG, "successToAnimEmail: ")
+                    binding.errorFindIdText.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireContext(),
+                            R.anim.authentication_success_bunce
 
-        return binding.root
+                        )
+                    )
+                }
+            }
+        )
+
     }
 
     override fun onclcik(v: View) {

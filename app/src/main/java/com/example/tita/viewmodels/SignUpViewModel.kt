@@ -1,47 +1,22 @@
 package com.example.tita.viewmodels
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.app.Application
-import android.content.ContentValues.TAG
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.navigation.findNavController
-import com.example.tita.R
-import com.example.tita.base.BaseViewModel
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
 
-class SignUpViewModel(layoutInflater: LayoutInflater, application: Application) :
-    BaseViewModel(application = application) {
+class SignUpViewModel(application: Application) : AndroidViewModel(application) {
 
-    @SuppressLint("StaticFieldLeak")
-    private val context = Application().applicationContext
+    // 뮤터블은 값을 수정, 삭제, 추가 가능
+        private val _checkErrorIdText = MutableLiveData<Boolean>()
+    val checkErrorIdText: MutableLiveData<Boolean> get() = _checkErrorIdText
 
-    @SuppressLint("StaticFieldLeak")
-
-    val dialogView = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
-
-    fun naverLogin(view: View) {
+    // private 을 get() 으로 초기화 한 이유
+    // 객체지향의 캡슐화를 지키기 위해서다.
 
 
-        val builder = AlertDialog.Builder(context)
-        val dialogMainText = dialogView.findViewById<TextView>(R.id.main_text)
-        val dialogText = dialogView.findViewById<TextView>(R.id.scrollView_Text)
-        dialogMainText.text = "서비스 이용약관"
-        dialogText.setText(R.string.Zunmun)
 
-        if (dialogView.parent != null)
-            (dialogView.parent as ViewGroup)
-                .removeView(dialogView)
-            builder.setView(dialogView)
-            .setNegativeButton("확인") { dialogInterface, i ->
-                dialogMainText.text = "서비스 이용약관"
-                dialogText.setText(R.string.Zunmun)
-            }
-            .show()
+    fun checkId() {
+        checkErrorIdText.value = true
+
     }
-
-
 }
