@@ -41,7 +41,7 @@
         android:id="@+id/signUpCertificatioFragment"
         android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment"
         android:label="선택"
-        tools:layout="@layout/fragment_certificatio">
+        tools:layout="@layout/fragment_sign_up_certificatio">
 
         <action
             android:id="@+id/action_signUpCertificatioFragment_to_signUpMainFragment"
