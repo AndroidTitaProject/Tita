@@ -80,7 +80,7 @@
 
 
         <Button
-            android:onClick="@{fragment::CertificatioemailOnclick}"
+            android:onClick="@{fragment::certificatioemailOnclick}"
             android:id="@+id/email_btn"
             android:layout_width="wrap_content"
             android:layout_height="45sp"
@@ -140,7 +140,7 @@
 
 
         <Button
-            android:onClick="@{fragment::CertificatioNumberOnclick}"
+            android:onClick="@{fragment::certificatioNumberOnclick}"
             android:id="@+id/certification_Number_button"
             android:layout_width="70sp"
             android:layout_height="45sp"
