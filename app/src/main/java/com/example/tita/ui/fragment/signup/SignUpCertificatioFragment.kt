@@ -36,7 +36,7 @@ class SignUpCertificatioFragment : UtilityBase.BaseFragment<FragmentCertificatio
 
     }
 
-    fun CertificatioemailOnclick(v: View){
+    fun certificatioemailOnclick(v: View){
 
         //임시, 누룰때마다 글씨 변경
         num++
@@ -45,7 +45,7 @@ class SignUpCertificatioFragment : UtilityBase.BaseFragment<FragmentCertificatio
 
     }
 
-    fun CertificatioNumberOnclick(v: View){
+    fun certificatioNumberOnclick(v: View){
 
         //임시, 누룰때마다 글씨 변경
         num1++
