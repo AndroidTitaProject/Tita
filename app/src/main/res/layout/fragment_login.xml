@@ -37,7 +37,7 @@
                 android:layout_width="80sp"
                 android:layout_height="80sp"
                 android:layout_marginLeft="70dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="90dp"
                 android:background="@drawable/logostroke"
                 android:elevation="20dp"
                 android:padding="2.5dp"
@@ -53,7 +53,7 @@
                 android:layout_marginTop="30dp"
                 android:text="@string/Welcome"
                 android:textColor="@color/black"
-                android:textSize="24dp" />
+                android:textSize="25dp" />
 
             <EditText
                 android:layout_centerHorizontal="true"
@@ -74,6 +74,9 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:fontFamily="@font/spoqahansansneo_regular"
+                android:textColor="@color/black"
+                android:textSize="14dp"
                 android:id="@+id/forget_id_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -81,8 +84,7 @@
                 android:layout_marginLeft="79dp"
                 android:onClick="@{fragment::onclcik}"
                 android:layout_marginTop="12dp"
-                android:text="아이디를 잊으셧나요?"
-                android:textStyle="bold"
+                android:text="@string/find_id"
                 android:visibility="gone" />
 
             <EditText
@@ -106,6 +108,7 @@
 
 
             <TextView
+                android:fontFamily="@font/spoqahansansneo_regular"
                 android:id="@+id/find_password_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -113,10 +116,9 @@
                 android:layout_marginStart="79dp"
                 android:layout_marginTop="20dp"
                 android:onClick="@{fragment::onclcik}"
-                android:text="비밀번호가 기억이 안나시나요?"
+                android:text="@string/find_password"
                 android:textColor="@color/black"
-                android:textSize="12sp"
-                android:textStyle="normal"
+                android:textSize="14sp"
                 android:visibility="gone" />
 
 
@@ -130,16 +132,18 @@
                 android:layout_width="120sp"
                 android:layout_height="50sp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30sp"
+                android:layout_marginTop="20sp"
                 android:layout_marginBottom="5sp"
                 android:background="@drawable/edit_text_background"
                 android:backgroundTint="#FFFBEB"
                 android:text="입장하기"
                 android:onClick="@{fragment::onclcik}"
-                android:textColor="@color/black"
+                android:textColor="#000000"
                 android:textStyle="bold"/>
 
             <TextView
+                android:gravity="bottom"
+                android:layout_below="@id/next_button"
                 android:id="@+id/signUpText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
