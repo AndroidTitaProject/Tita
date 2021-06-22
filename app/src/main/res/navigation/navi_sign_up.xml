@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/signUpTermsFragment"
         android:name="com.example.tita.ui.fragment.signup.SignUpTermsFragment"
-        android:label="인증 목록"
+        android:label=""
         tools:layout="@layout/fragment_sign_up_terms">
 
 
@@ -40,7 +40,7 @@
     <fragment
         android:id="@+id/signUpCertificatioFragment"
         android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment"
-        android:label="선택"
+        android:label=""
         tools:layout="@layout/fragment_certificatio">
 
         <action
