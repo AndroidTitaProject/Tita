@@ -31,7 +31,7 @@ class SignUpIdPasswordFragment : UtilityBase.BaseFragment<FragmentSignUpIdPasswo
         findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_signUpCertificatioSchoolFragment)
     }
 
-    fun onclickSuccessid(v: View){
+    fun onclickSuccessId(v: View){
         num1++
         if(num1%2==0) successToAnimEmail()
         else failToAnimEmail()
