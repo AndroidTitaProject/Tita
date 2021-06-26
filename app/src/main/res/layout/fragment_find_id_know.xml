@@ -67,15 +67,6 @@
                             android:textSize="22dp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignBottom="@id/find_id_text"
-                            android:layout_toRightOf="@id/find_id_text"
-                            android:fontFamily="@font/spoqahansansneo_bold"
-                            android:text="입니다!"
-                            android:textColor="@color/black"
-                            android:textSize="22dp" />
 
                         <TextView
                             android:id="@+id/textView11"
