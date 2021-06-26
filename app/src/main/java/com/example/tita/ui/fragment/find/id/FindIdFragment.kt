@@ -20,6 +20,7 @@ class FindIdFragment : UtilityBase.BaseFragment<FragmentFindIdBinding>(R.layout.
 
 
     override fun FragmentFindIdBinding.onCreateView() {
+        successToAnimCertification()
         successToAnimEmail()
     }
 
@@ -49,6 +50,24 @@ class FindIdFragment : UtilityBase.BaseFragment<FragmentFindIdBinding>(R.layout.
         )
 
     }
+
+    private fun successToAnimCertification(){
+        signUpViewModel.checkErrorEdit.observe(
+            viewLifecycleOwner, Observer {
+                if (it == true) {
+                    binding.checkErrorEdit.startAnimation(
+                        AnimationUtils.loadAnimation(
+                            requireContext(),
+                            R.anim.authentication_success_bunce
+
+                        )
+                    )
+                }
+            }
+        )
+
+    }
+
 
     override fun onclcik(v: View) {
         findNavController().navigate(R.id.action_findIdFragment_to_findIdNowFragment)

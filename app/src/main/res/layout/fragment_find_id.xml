@@ -111,7 +111,6 @@
                     android:layout_height="wrap_content"
                     android:text="가입된 계정이 없습니다."
 
-                    android:textColor="@color/error_text"
                     android:visibility="@{viewModel.checkErrorIdText ? View.VISIBLE : View.GONE, default = gone}" />
 
             </LinearLayout>
@@ -159,6 +158,15 @@
                         android:textSize="15sp"
                         android:translationY="3dp"
                         app:hintEnabled="false" />
+                    
+                    <TextView
+                        android:id="@+id/check_error_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="잘못된 인증번호입니다."
+                        android:visibility="@{viewModel.checkErrorEdit ? View.VISIBLE : View.GONE, default = gone}"
+                        android:textColor="@color/error_text"
+                        android:layout_below="@id/check_edit"/>
 
 
                     <Button
@@ -167,6 +175,7 @@
                         android:layout_height="38dp"
                         android:layout_alignParentRight="true"
                         android:layout_gravity="center"
+                        android:onClick="@{() -> viewModel.checkCertification()}"
                         android:layout_marginStart="6dp"
                         android:layout_marginTop="5dp"
                         android:background="@drawable/edit_text_background"
@@ -198,6 +207,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="*닉네임"
+
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -207,6 +217,7 @@
                         android:id="@+id/check_nickname"
                         android:layout_width="@dimen/find_edit"
                         android:layout_height="38sp"
+
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/edit_text_background"
                         android:elevation="5dp"
@@ -216,6 +227,14 @@
                         android:textSize="15sp"
                         android:translationY="3dp"
                         app:hintEnabled="false" />
+
+                    <TextView
+                        android:id="@+id/error_nickname_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{viewModel.checkErrorNickName ? View.VISIBLE : View.GONE, default = gone}"
+                        android:text="존재하지 않은 닉네임입니다."
+                        android:textColor="@color/error_text"/>
                 </LinearLayout>
 
             </RelativeLayout>
