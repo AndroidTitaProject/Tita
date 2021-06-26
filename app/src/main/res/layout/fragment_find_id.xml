@@ -232,7 +232,7 @@
                         android:id="@+id/error_nickname_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:visibility="@{viewModel.checkErrorNickName ? View.VISIBLE : View.GONE, default = gone}"
+                        android:visibility="gone"
                         android:text="존재하지 않은 닉네임입니다."
                         android:textColor="@color/error_text"/>
                 </LinearLayout>
