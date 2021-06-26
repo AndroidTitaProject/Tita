@@ -27,25 +27,32 @@ class SignUpViewModel(application: Application) : AndroidViewModel(application) 
     private val _checkErrorNickName = MutableLiveData<Boolean>()
     val checkErrorNickName: MutableLiveData<Boolean> get() = _checkErrorNickName
 
+    private val _checkErrorCer = MutableLiveData<Boolean>()
+    val checkErrorCer: MutableLiveData<Boolean> get() = _checkErrorCer
+
     private val _checkErrorEmail = MutableLiveData<Boolean>()
     val checkErrorEmail: MutableLiveData<Boolean> get() = _checkErrorEmail
 
 
 
     fun checkEmail() {
-        checkErrorEmail.value = true
+        _checkErrorEmail.value = true
     }
 
 
     fun checkId() {
-        checkErrorIdText.value = true
+        _checkFindErrorIdText.value = true
     }
 
     fun checkCertification() {
-        checkErrorEdit.value = true
+        _checkErrorEdit.value = true
     }
 
     fun checkNickName() {
         checkErrorNickName.value = true
+    }
+
+    fun checkPasswordCer() {
+        _checkErrorCer.value = true
     }
 }
