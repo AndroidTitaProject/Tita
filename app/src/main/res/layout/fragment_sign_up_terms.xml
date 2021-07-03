@@ -39,7 +39,8 @@
             android:layout_below="@id/logoImage"
             android:layout_alignLeft="@id/logoImage"
             android:layout_marginTop="30sp"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="안녕하세요, 여러분!"
             android:textColor="@color/black"
             android:textSize="28sp" />
@@ -51,7 +52,8 @@
             android:layout_below="@id/welcome_text"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_marginTop="61sp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="약관 동의 전체"
             android:textSize="20sp" />
 
@@ -72,7 +74,8 @@
             android:layout_below="@id/division"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_marginTop="40dp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="서비스 이용약관 동의(필수)"
             android:textSize="20sp" />
 
@@ -83,7 +86,8 @@
             android:layout_below="@id/service_checkbox"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_marginTop="13sp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="개인정보처리방침 동의(필수)"
             android:textSize="20sp" />
 
@@ -94,7 +98,8 @@
             android:layout_below="@id/information_processing_checkbox"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_marginTop="13sp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="커뮤니티이용규칙 확인(필수)"
             android:textSize="20dp" />
 
@@ -105,7 +110,8 @@
             android:layout_alignLeft="@id/welcome_text"
             android:layout_below="@+id/Community_Terms_of_Use_checkbox"
             android:textSize="15dp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:textColor="@color/red_btn_bg_color"
             android:text="필수 항목이 동의되지 않았습니다."
             android:layout_width="wrap_content"
@@ -120,7 +126,8 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:onClick="@{fragment::onclcik}"
             android:text="계속하기"
             android:textColor="@color/black"

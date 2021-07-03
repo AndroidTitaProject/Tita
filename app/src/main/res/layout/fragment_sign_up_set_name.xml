@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="160sp"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="@string/show_my_name"
             android:textColor="@color/black"
             android:textSize="25sp" />
@@ -65,7 +66,8 @@
             android:layout_toRightOf="@id/nickname_edit"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:text="확인"
             android:textColor="@color/black" />
 
@@ -79,7 +81,8 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="#FFFBEB"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
             android:onClick="@{fragment::onclcik}"
             android:text="입장하기"
             android:textColor="@color/black"
