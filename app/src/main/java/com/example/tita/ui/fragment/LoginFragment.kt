@@ -1,5 +1,6 @@
 package com.example.tita.ui.fragment
 
+import android.content.Intent
 import android.view.View
 import android.view.View.VISIBLE
 import android.view.animation.AnimationUtils
@@ -9,6 +10,7 @@ import com.example.tita.R
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentLoginBinding
+import com.example.tita.ui.activity.NavigationMainActivity
 import com.example.tita.ui.activity.SignUpMainActivity
 import com.example.tita.viewmodels.LoginViewModel
 
@@ -39,6 +41,7 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
                 binding.findPasswordText.visibility = VISIBLE
                 binding.findPasswordText.startAnimation(animation)
 
+                startActivity(Intent(requireContext(),NavigationMainActivity::class.java))
             }
             binding.forgetIdBtn ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
