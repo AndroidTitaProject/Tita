@@ -24,7 +24,7 @@ class NavigationMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         navi = binding.bottomNavigationView
-
+        setSupportActionBar(binding.naviToolbar)
         navController = findNavController(R.id.navHostFragment)
         //앱 바 구성성
         val appBarConfiguration = AppBarConfiguration(
