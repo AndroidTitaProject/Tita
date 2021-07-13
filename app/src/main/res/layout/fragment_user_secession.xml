@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/main_color"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"/>
+
+    <TextView
+        android:id="@+id/password_ok_text"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="현재 비밀번호"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:id="@+id/password_ok_edit"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="21dp"
+        android:layout_below="@id/password_ok_text"
+        android:background="@drawable/board_ra"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:layout_alignTop="@id/password_ok_edit"
+        android:id="@+id/check_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/password_ok_edit"
+        android:layout_gravity="center"
+        android:background="@drawable/edit_text_background"
+        android:backgroundTint="#FFFBEB"
+        android:text="확인"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/forget_password_text"
+        android:layout_alignLeft="@id/password_ok_edit"
+        android:layout_marginTop="13dp"
+        android:layout_below="@id/password_ok_edit"
+        android:textSize="16dp"
+        android:textColor="#7F9BFF"
+        android:text="@string/forget_passowerd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <FrameLayout
+        android:layout_marginTop="15dp"
+        android:background="@color/main_color"
+        android:layout_below="@id/forget_password_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:id="@+id/next_btn"
+            android:layout_width="140dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="#FFFBEB"
+            android:onClick="@{fragment::onclcik}"
+            android:text="다음"
+            android:textColor="@color/black"
+            android:fontFamily="@font/notosanskr_bold"
+            android:includeFontPadding="false"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:textSize="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="bottom||center_horizontal"
+            android:textColor="#6F6F6F"
+            android:text="Copyright 2021. Tempus All rights reserved."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </FrameLayout>
+
+</RelativeLayout>
