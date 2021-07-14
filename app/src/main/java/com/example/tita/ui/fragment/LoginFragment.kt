@@ -42,6 +42,7 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
                 binding.findPasswordText.startAnimation(animation)
 
                 startActivity(Intent(requireContext(),NavigationMainActivity::class.java))
+
             }
             binding.forgetIdBtn ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
