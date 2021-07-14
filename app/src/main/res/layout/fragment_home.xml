@@ -16,6 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <HorizontalScrollView
+            android:scrollbars="none"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp">
@@ -27,7 +28,8 @@
 
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:elevation="10dp"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/food_item"
@@ -78,7 +80,8 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:elevation="10dp"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/food_item"
@@ -128,7 +131,9 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:elevation="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:background="@drawable/food_item"
@@ -158,7 +163,7 @@
                             android:layout_marginTop="15dp"
                             android:fontFamily="@font/notosanskr_bold"
                             android:includeFontPadding="false"
-                            android:text="오늘의 저녘"
+                            android:text="오늘의 저녁"
                             android:textColor="@color/black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -183,6 +188,7 @@
 
 
         <LinearLayout
+            android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -193,9 +199,9 @@
 
 
             <TextView
+                android:background="@drawable/maintextback"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="13dp"
-
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanskr_black"
                 android:includeFontPadding="false"
@@ -226,6 +232,7 @@
                 android:text="체육대회 공지사항" />
 
             <TextView
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
@@ -235,6 +242,7 @@
                 android:text="체육대회 당일 오후 우천으로 인한 일정 변동이 있습니다. 모든 학생들은 확인해주시기 바랍니다. 또한, 첨부한 사진에 오타가 있습니다. 농구 경기의 경우 60분이니 확인 부탁드립니다." />
 
             <TextView
+                android:layout_marginStart="@dimen/home_marginStart"
                 android:layout_width="wrap_content"
                 android:textSize="8sp"
                 android:textColor="#989898"
@@ -243,6 +251,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:elevation="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -255,7 +264,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_marginTop="13dp"
-
+                android:background="@drawable/mainbacky"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanskr_black"
                 android:includeFontPadding="false"
@@ -286,6 +295,7 @@
                 android:text="체육대회 공지사항" />
 
             <TextView
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
@@ -295,6 +305,7 @@
                 android:text="체육대회 당일 오후 우천으로 인한 일정 변동이 있습니다. 모든 학생들은 확인해주시기 바랍니다. 또한, 첨부한 사진에 오타가 있습니다. 농구 경기의 경우 60분이니 확인 부탁드립니다." />
 
             <TextView
+                android:layout_marginStart="@dimen/home_marginStart"
                 android:layout_width="wrap_content"
                 android:textSize="8sp"
                 android:textColor="#989898"
