@@ -19,7 +19,7 @@
             android:layout_height="3dp"/>
 
         <LinearLayout
-            android:layout_margin="10sp"
+            android:layout_margin="15dp"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -61,6 +61,7 @@
             android:layout_height="3dp"/>
 
         <EditText
+            android:gravity="top"
             android:textSize="13dp"
             android:textStyle="bold"
             android:background="@null"
@@ -69,7 +70,7 @@
             android:backgroundTint="#AFAFAF"
             android:hint="내용을 입력하세요"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="300dp"/>
 
         <LinearLayout
             android:layout_weight="1"
@@ -110,6 +111,9 @@
                 android:layout_weight="1" />
 
             <Button
+                android:padding="15dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
                 android:layout_marginRight="20dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
