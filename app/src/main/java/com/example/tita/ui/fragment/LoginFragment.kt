@@ -35,14 +35,11 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
     override fun onclcik(v: View) {
         when (v) {
             binding.nextButton -> {
-                val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.find_id_password_effect)
-                binding.forgetIdBtn.visibility = VISIBLE
-                binding.forgetIdBtn.startAnimation(animation)
-                binding.findPasswordText.visibility = VISIBLE
-                binding.findPasswordText.startAnimation(animation)
-
-                startActivity(Intent(requireContext(),NavigationMainActivity::class.java))
-
+//                val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.find_id_password_effect)
+//                binding.forgetIdBtn.visibility = VISIBLE
+//                binding.forgetIdBtn.startAnimation(animation)
+//                binding.findPasswordText.visibility = VISIBLE
+//                binding.findPasswordText.startAnimation(animation)
             }
             binding.forgetIdBtn ->
                 findNavController().navigate(R.id.action_LoginFragment_to_findFragment)
