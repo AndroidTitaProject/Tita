@@ -8,11 +8,11 @@
 
         <variable
             name="fragment"
-            type="com.example.tita.ui.fragment.LoginFragment" />
+            type="com.example.tita.ui.fragment.signup.LoginFragment" />
 
         <variable
             name="login"
-            type="com.example.tita.viewmodels.LoginViewModel" />
+            type="com.example.tita.ui.fragment.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.motion.widget.MotionLayout
