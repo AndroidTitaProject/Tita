@@ -1,4 +1,4 @@
-package com.example.tita.ui.fragment
+package com.example.tita.ui.fragment.signup
 
 import android.content.Intent
 import android.view.View
@@ -11,8 +11,7 @@ import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentLoginBinding
 import com.example.tita.ui.activity.NavigationMainActivity
-import com.example.tita.ui.activity.SignUpMainActivity
-import com.example.tita.viewmodels.LoginViewModel
+import com.example.tita.ui.fragment.login.LoginViewModel
 
 
 class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fragment_login), VIewInterface {
@@ -40,7 +39,6 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
 //                binding.forgetIdBtn.startAnimation(animation)
 //                binding.findPasswordText.visibility = VISIBLE
 //                binding.findPasswordText.startAnimation(animation)
-=======
                 val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.find_id_password_effect)
                 binding.forgetIdBtn.visibility = VISIBLE
                 binding.forgetIdBtn.startAnimation(animation)
