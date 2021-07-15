@@ -1,4 +1,4 @@
-package com.example.tita.viewmodels
+package com.example.tita.ui.fragment.signup.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
