@@ -85,7 +85,7 @@
             <TextView
                 android:textSize="10dp"
                 android:layout_marginBottom="20dp"
-                android:layout_gravity="bottom||center_horizontal"
+                android:layout_gravity="bottom|center_horizontal"
                 android:textColor="#6F6F6F"
                 android:text="Copyright 2021. Tempus All rights reserved."
                 android:layout_width="wrap_content"
