@@ -40,6 +40,7 @@ class LoginFragment : UtilityBase.BaseFragment<FragmentLoginBinding>(R.layout.fr
 //                binding.forgetIdBtn.startAnimation(animation)
 //                binding.findPasswordText.visibility = VISIBLE
 //                binding.findPasswordText.startAnimation(animation)
+=======
                 val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.find_id_password_effect)
                 binding.forgetIdBtn.visibility = VISIBLE
                 binding.forgetIdBtn.startAnimation(animation)
