@@ -17,7 +17,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "BASE_URL", BASE_URL
+        buildConfigField "String", "BASE_URL", ""
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -64,7 +64,6 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'androidx.multidex:multidex:2.0.1'
 
     //dagger hilt
     implementation "com.google.dagger:hilt-android:2.33-beta"
