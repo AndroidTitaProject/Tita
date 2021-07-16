@@ -3,6 +3,7 @@ package com.example.tita.data.di
 import android.content.ContentValues
 import android.util.Log
 import com.example.tita.BuildConfig
+import com.example.tita.data.network.BoardApiInterface
 import com.example.tita.data.network.LoginApiInterface
 import dagger.Module
 import dagger.Provides
@@ -14,6 +15,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -47,7 +49,7 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl("")
             .client(okHttpClient)
-            .baseUrl(BuildConfig.BASE_URL)
+            //.baseUrl(BuildConfig.BASE_URL)
             //json 변화기 Factory
             .client(provideHttpClient())
             .addConverterFactory(gsonConverterFactory)
@@ -62,11 +64,20 @@ object NetworkModule {
     }
 
 
+    // 싱글톤으로 로그인 api 생성
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): LoginApiInterface {
+    fun loginProvideApiService(retrofit: Retrofit): LoginApiInterface {
         Log.d(ContentValues.TAG, "provideApiService: ")
         return retrofit.create(LoginApiInterface::class.java)
+    }
+
+    // 싱글톤으로 게시판 api 생성
+    @Provides
+    @Singleton
+    fun boardProvideApiService(retrofit: Retrofit): BoardApiInterface {
+        Log.d(ContentValues.TAG, "provideApiService: ")
+        return retrofit.create(BoardApiInterface::class.java)
     }
 
     // 서버로 부터 받아온 데이터 log 찍기
