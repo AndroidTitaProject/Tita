@@ -2,7 +2,6 @@ package com.example.tita.data.repository
 
 import com.example.tita.data.model.BoardData
 import com.example.tita.data.network.BoardApiInterface
-import com.example.tita.data.network.LoginApiInterface
 import retrofit2.Response
 import javax.inject.Inject
 

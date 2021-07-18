@@ -45,6 +45,7 @@
             </LinearLayout>
 
             <EditText
+                android:id="@+id/title_edit"
                 android:textStyle="bold"
                 android:background="@null"
                 android:textColor="#AFAFAF"
@@ -61,6 +62,7 @@
             android:layout_height="3dp"/>
 
         <EditText
+            android:id="@+id/board_edit"
             android:gravity="top"
             android:textSize="13dp"
             android:textStyle="bold"
@@ -96,6 +98,7 @@
 
 
             <CheckBox
+                android:id="@+id/check_checkbox"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_marginTop="20dp"
@@ -111,6 +114,8 @@
                 android:layout_weight="1" />
 
             <Button
+                android:onClick="@{() -> fragment.apisend}"
+                android:id="@+id/input_btn"
                 android:padding="15dp"
                 android:minWidth="0dp"
                 android:minHeight="0dp"

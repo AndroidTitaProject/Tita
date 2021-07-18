@@ -42,7 +42,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofitInstance(
+        fun provideRetrofitInstance(
         okHttpClient: OkHttpClient,
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
