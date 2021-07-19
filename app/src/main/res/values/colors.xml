@@ -12,5 +12,6 @@
     <color name="error_text">#DB4040</color>
     <color name="blue">#7087FF</color>
     <color name="profile_text">#CACACA</color>
+    <color name="checkbox_color">#AFAFAF</color>
 
 </resources>

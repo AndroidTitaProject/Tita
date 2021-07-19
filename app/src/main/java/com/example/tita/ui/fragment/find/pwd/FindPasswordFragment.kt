@@ -9,7 +9,7 @@ import com.example.tita.R
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindPasswordBinding
-import com.example.tita.viewmodels.SignUpViewModel
+import com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel
 import androidx.fragment.app.viewModels
 
 class FindPasswordFragment :
