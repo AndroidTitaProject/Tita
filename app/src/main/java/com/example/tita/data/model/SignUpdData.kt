@@ -1,6 +1,6 @@
 package com.example.tita.data.model
 
-data class Signupdata(
+data class SignUpdData(
     val username: String,
     val password: String,
     val name: String,
