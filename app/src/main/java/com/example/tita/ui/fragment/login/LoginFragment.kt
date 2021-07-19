@@ -1,4 +1,4 @@
-package com.example.tita.ui.fragment.signup
+package com.example.tita.ui.fragment.login
 
 
 import android.content.Intent
@@ -16,7 +16,6 @@ import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentLoginBinding
 import com.example.tita.ui.activity.NavigationMainActivity
-import com.example.tita.ui.fragment.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
