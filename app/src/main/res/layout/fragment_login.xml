@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="android.view.View" />
 
         <variable
             name="fragment"
@@ -56,11 +57,11 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:layout_centerHorizontal="true"
                 android:id="@+id/id_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/welcome"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="70sp"
                 android:layout_marginTop="30sp"
                 android:layout_marginRight="70sp"
@@ -74,25 +75,25 @@
                 android:textSize="15sp" />
 
             <TextView
-                android:fontFamily="@font/notosanskr_bold"
-                android:textColor="@color/black"
-                android:textSize="14dp"
                 android:id="@+id/forget_id_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/id_edit"
                 android:layout_marginLeft="79dp"
-                android:onClick="@{fragment::onclcik}"
                 android:layout_marginTop="12dp"
+                android:fontFamily="@font/notosanskr_bold"
+                android:onClick="@{fragment::onclcik}"
                 android:text="@string/find_id"
-                android:visibility="gone" />
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:visibility="@{login.errorLogin ? View.VISIBLE : View.GONE, default = gone}" />
 
             <EditText
-                android:layout_centerHorizontal="true"
                 android:id="@+id/password_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/forget_id_btn"
+                android:layout_centerHorizontal="true"
                 android:layout_marginLeft="70sp"
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="70sp"
@@ -108,50 +109,51 @@
 
 
             <TextView
-                android:fontFamily="@font/notosanskr_bold"
                 android:id="@+id/find_password_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/password_edit"
                 android:layout_marginStart="79dp"
                 android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosanskr_bold"
                 android:onClick="@{fragment::onclcik}"
                 android:text="@string/find_password"
+
                 android:textColor="@color/black"
                 android:textSize="14sp"
-                android:visibility="gone" />
+                android:visibility="@{login.errorLogin ? View.VISIBLE : View.GONE, default = gone}"/>
 
 
             <Button
-                android:layout_below="@id/find_password_text"
-                android:textSize="20sp"
-                android:fontFamily="@font/notosanskr_bold"
-                android:includeFontPadding="false"
-                android:paddingTop="10sp"
-                android:paddingBottom="10sp"
                 android:id="@+id/next_button"
                 android:layout_width="120sp"
                 android:layout_height="50sp"
+                android:layout_below="@id/find_password_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="5sp"
                 android:background="@drawable/edit_text_background"
                 android:backgroundTint="#FFFBEB"
-                android:text="입장하기"
+                android:fontFamily="@font/notosanskr_bold"
+                android:includeFontPadding="false"
                 android:onClick="@{fragment::onclcik}"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:text="입장하기"
                 android:textColor="#000000"
-                android:textStyle="bold"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:gravity="bottom"
-                android:layout_below="@id/next_button"
                 android:id="@+id/signUpText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/next_button"
                 android:layout_alignParentBottom="true"
-                android:onClick="@{fragment::onclcik}"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="40dp"
+                android:gravity="bottom"
+                android:onClick="@{fragment::onclcik}"
                 android:text="@string/Member_Questions"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
