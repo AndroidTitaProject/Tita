@@ -45,7 +45,6 @@ object NetworkModule {
         gsonConverterFactory: GsonConverterFactory
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("")
             .client(okHttpClient)
             .baseUrl(BuildConfig.BASE_URL)
             //json 변화기 Factory
