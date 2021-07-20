@@ -1,26 +1,37 @@
 package com.example.tita.ui.fragment.signup
 
 
-import android.graphics.Color
+import android.content.Intent
+import android.text.TextUtils.isEmpty
+import android.util.Log
 import android.view.View
-import android.view.animation.AnimationUtils
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
+import com.example.tita.Resource
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentCertificatioBinding
-import org.koin.android.ext.android.bind
+import com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel
+import com.example.tita.util.textAnimation
+import dagger.hilt.android.AndroidEntryPoint
 
-class SignUpCertificatioFragment : UtilityBase.BaseFragment<FragmentCertificatioBinding>(R.layout.fragment_certificatio),VIewInterface {
+@AndroidEntryPoint
+class SignUpCertificatioFragment :
+    UtilityBase.BaseFragment<FragmentCertificatioBinding>(R.layout.fragment_certificatio),
+    VIewInterface {
 
-    var num : Int = 1
-    var num1 : Int = 1
+    private val viewModel: SignUpViewModel by viewModels()
 
     override fun FragmentCertificatioBinding.onCreateView() {
-        binding.fragment=this@SignUpCertificatioFragment
+        textSuccess()
+        nullCheckCertificatio()
+
     }
 
     override fun FragmentCertificatioBinding.onViewCreated() {
+        binding.fragment = this@SignUpCertificatioFragment
     }
 
     override fun onclcik(v: View) {
@@ -29,65 +40,83 @@ class SignUpCertificatioFragment : UtilityBase.BaseFragment<FragmentCertificatio
         // 인증번호 보내기를 아무것도 안쓰고 눌렀을때 예외처리
         // 이메일을 바꿀경우 다시 이멜을 잘못쳤을때 예외처리
 
-        //        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.shake_error_text)
-        //        binding.errorText.visibility = View.VISIBLE
-        //        binding.errorText.startAnimation(animation)
         findNavController().navigate(R.id.action_signUpCertificatioFragment_to_signUpMainFragment)
-
     }
 
-    fun certificatioemailOnclick(v: View){
 
-        //임시, 누룰때마다 글씨 변경
-        num++
-        if(num%2==0) successToAnimEmail()
-        else failToAnimEmail()
+    private fun textSuccess(){
+        viewModel.mailText.observe(viewLifecycleOwner, Observer { mail ->
+            viewModel.checkMail.observe(viewLifecycleOwner, Observer {
+                if (it == true) {
+                    when (mail) {
 
+                        "인증번호가 전송되었습니다" -> {
+                            binding.errorSuccessEmailText.text = mail
+                            textAnimation(
+                                binding.errorSuccessEmailText,
+                                requireContext(),
+                                R.anim.success_bow_roate
+                            )
+                        }
+                        "이메일 형식이 잘못되었습니다." -> {
+                            binding.errorSuccessEmailText.text = mail
+                            textAnimation(
+                                binding.errorSuccessEmailText,
+                                requireContext(),
+                                R.anim.shake_error_text
+                            )
+
+
+                        }
+                    }
+
+                }
+            })
+
+        })
     }
+     fun nullCheckCertificatio() {
 
-    fun certificatioNumberOnclick(v: View){
 
-        //임시, 누룰때마다 글씨 변경
-        num1++
-        if(num1%2==0) successToAnimNumber()
-        else failToAnimNumber()
 
-    }
+            // 메일을 보내 값이 성공하면 성공된 값을 리턴, 그러면 숫자가 나옫겠지? 그 숫자랑 인증번호랑 비교해서 같으면 성공 틀리면 다시 하라고 Toast
+            viewModel.mailSend(binding.emailEdit.text.toString())
+            viewModel.postMail.observe(viewLifecycleOwner, Observer { response ->
+                when (response) {
+                    is Resource.Success -> {
+                        binding.certificationNumberButton.setOnClickListener {
+                            response.data?.mail.let {
+                                if (it == binding.certificationNumberEdit.text.toString()) {
+                                    binding.errorSuccessNumberText.text="인증되었습니다."
+                                    textAnimation(
+                                        binding.errorSuccessNumberText,
+                                        requireContext(),
+                                        R.anim.success_bow_roate
+                                    )
 
-    fun successToAnimEmail(){
-        binding.errorSuccessEmailText.text = "인증번호가 전송되었습니다."
-        binding.errorSuccessEmailText.setTextColor(Color.parseColor("#000000"))
-        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.authentication_success_bunce)
-        binding.errorSuccessEmailText.visibility = View.VISIBLE
-        binding.errorSuccessEmailText.startAnimation(animation)
-    }
+                                }else{
+                                    binding.errorSuccessNumberText.text="잘못된 인증번호입니다."
+                                    textAnimation(
+                                        binding.errorSuccessNumberText,
+                                        requireContext(),
+                                        R.anim.shake_error_text
+                                    )
+                                }
+                            }
+                        }
+                    }
+                    else -> Log.d("signup", "nullCheckCertificatio: ")
+                }
+            })
 
-    fun failToAnimEmail(){
-        binding.errorSuccessEmailText.text = "이메일 형식이 잘못되었습니다."
-        binding.errorSuccessEmailText.setTextColor(Color.parseColor("#DB4040"))
-        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.shake_error_text)
-        binding.errorSuccessEmailText.visibility = View.VISIBLE
-        binding.errorSuccessEmailText.startAnimation(animation)
-    }
-
-    fun failToAnimNumber(){
-        binding.errorSuccessNumberText.text = "잘못된 인증번호입니다."
-        binding.errorSuccessNumberText.setTextColor(Color.parseColor("#DB4040"))
-        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.shake_error_text)
-        binding.errorSuccessNumberText.visibility = View.VISIBLE
-        binding.errorSuccessNumberText.startAnimation(animation)
-    }
-
-    fun successToAnimNumber(){
-        binding.errorSuccessNumberText.text = "인증되었습니다."
-        binding.errorSuccessNumberText.setTextColor(Color.parseColor("#000000"))
-        val animation = AnimationUtils.loadAnimation(requireContext(), R.anim.authentication_success_bunce)
-        binding.errorSuccessNumberText.visibility = View.VISIBLE
-        binding.errorSuccessNumberText.startAnimation(animation)
-    }
+        }
 
 
 }
+
+
+
+
 
 
 
