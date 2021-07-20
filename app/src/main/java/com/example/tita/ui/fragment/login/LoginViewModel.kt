@@ -1,13 +1,12 @@
 package com.example.tita.ui.fragment.login
 
-import android.app.Application
 import android.util.Log
 import androidx.lifecycle.*
 import com.example.tita.Resource
-import com.example.tita.data.model.LoginData
+import com.example.tita.data.network.dto.LoginData
 import com.example.tita.data.repository.LoginRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,14 +15,15 @@ class LoginViewModel @Inject constructor(
     private val loginRepository: LoginRepository
 ) : ViewModel() {
 
-    private  var _postLogin=  MutableLiveData<Resource<LoginData>>()
+    private var _postLogin = MutableLiveData<Resource<LoginData>>()
     val postLogin: LiveData<Resource<LoginData>> get() = _postLogin
 
-    private  var _errorLogin= MutableLiveData<Boolean>(false)
+    private var _errorLogin = MutableLiveData<Boolean>(false)
     val errorLogin: LiveData<Boolean> get() = _errorLogin
 
 
-    suspend fun checkLogin(id: String, pwd: String) = viewModelScope.launch(Dispatchers.IO) {
+    // 로그인을 할때 성공이면 패스 false 면 이유뜨게
+    suspend fun checkLogin(id: String, pwd: String) = viewModelScope.launch(IO) {
         _postLogin.postValue(Resource.Loading())
         try {
             loginRepository.postLogin(id, pwd).let { response ->
