@@ -8,9 +8,7 @@
             name="fragment"
             type="com.example.tita.ui.fragment.signup.SignUpTermsFragment" />
 
-        <variable
-            name="viewmodel"
-            type="com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel" />
+
     </data>
 
     <RelativeLayout
