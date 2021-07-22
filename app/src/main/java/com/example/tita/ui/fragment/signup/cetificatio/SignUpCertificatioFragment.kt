@@ -1,8 +1,6 @@
-package com.example.tita.ui.fragment.signup
+package com.example.tita.ui.fragment.signup.cetificatio
 
 
-import android.content.Intent
-import android.text.TextUtils.isEmpty
 import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
@@ -13,7 +11,6 @@ import com.example.tita.Resource
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentCertificatioBinding
-import com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel
 import com.example.tita.util.textAnimation
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,8 +22,6 @@ class SignUpCertificatioFragment :
     private val viewModel: SignUpViewModel by viewModels()
 
     override fun FragmentCertificatioBinding.onCreateView() {
-        textSuccess()
-        nullCheckCertificatio()
 
     }
 
@@ -44,12 +39,11 @@ class SignUpCertificatioFragment :
     }
 
 
-    private fun textSuccess(){
+     fun textSuccess(){
         viewModel.mailText.observe(viewLifecycleOwner, Observer { mail ->
             viewModel.checkMail.observe(viewLifecycleOwner, Observer {
                 if (it == true) {
                     when (mail) {
-
                         "인증번호가 전송되었습니다" -> {
                             binding.errorSuccessEmailText.text = mail
                             textAnimation(
@@ -87,6 +81,7 @@ class SignUpCertificatioFragment :
                         binding.certificationNumberButton.setOnClickListener {
                             response.data?.mail.let {
                                 if (it == binding.certificationNumberEdit.text.toString()) {
+
                                     binding.errorSuccessNumberText.text="인증되었습니다."
                                     textAnimation(
                                         binding.errorSuccessNumberText,
