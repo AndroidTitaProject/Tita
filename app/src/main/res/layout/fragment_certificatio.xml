@@ -8,18 +8,18 @@
 
         <variable
             name="viewModel"
-            type="com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel" />
+            type="com.example.tita.ui.fragment.signup.cetificatio.SignUpViewModel" />
 
         <variable
             name="fragment"
-            type="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment" />
+            type="com.example.tita.ui.fragment.signup.cetificatio.SignUpCertificatioFragment" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/singin_background"
-        tools:context=".ui.fragment.signup.SignUpCertificatioFragment">
+        tools:context=".ui.fragment.signup.cetificatio.SignUpCertificatioFragment">
 
         <TextView
             android:id="@+id/welcome_text"
@@ -87,13 +87,14 @@
 
 
         <Button
-            android:onClick="@{()->fragment.nullCheckCertificatio()}"
             android:id="@+id/email_btn"
             android:layout_width="wrap_content"
             android:layout_height="45sp"
             android:layout_below="@id/email_edit"
             android:layout_alignLeft="@id/inform_text"
             android:layout_alignRight="@id/email_edit"
+            android:onClick="@{()->fragment.textSuccess()}"
+
             android:layout_marginTop="10sp"
             android:layout_marginBottom="10sp"
             android:background="@drawable/edit_text_background"
@@ -161,6 +162,8 @@
             android:backgroundTint="#FFFBEB"
             android:fontFamily="@font/notosanskr_bold"
             android:text="확인"
+            android:onClick="@{()->fragment.nullCheckCertificatio()}"
+
             android:textColor="@color/black"
             android:textSize="16sp" />
 
