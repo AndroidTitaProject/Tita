@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.util.Log
 import com.example.tita.BuildConfig
 import com.example.tita.data.network.LoginApiInterface
+import com.example.tita.data.network.SignUpInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -61,11 +62,20 @@ object NetworkModule {
     }
 
 
+    // LoginInterface
     @Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): LoginApiInterface {
         Log.d(ContentValues.TAG, "provideApiService: ")
         return retrofit.create(LoginApiInterface::class.java)
+    }
+
+    // SignUpInterface
+    @Provides
+    @Singleton
+    fun provideSignUpeApiService(retrofit: Retrofit): SignUpInterface {
+        Log.d(ContentValues.TAG, "provideApiService: ")
+        return retrofit.create(SignUpInterface::class.java)
     }
 
     // 서버로 부터 받아온 데이터 log 찍기
