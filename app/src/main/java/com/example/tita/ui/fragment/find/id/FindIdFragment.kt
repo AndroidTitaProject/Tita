@@ -11,7 +11,7 @@ import com.example.tita.R
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindIdBinding
-import com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel
+import com.example.tita.ui.fragment.signup.cetificatio.SignUpViewModel
 
 class FindIdFragment : UtilityBase.BaseFragment<FragmentFindIdBinding>(R.layout.fragment_find_id),
     VIewInterface {
@@ -20,53 +20,19 @@ class FindIdFragment : UtilityBase.BaseFragment<FragmentFindIdBinding>(R.layout.
 
 
     override fun FragmentFindIdBinding.onCreateView() {
-        successToAnimCertification()
-        successToAnimEmail()
+
     }
 
     override fun FragmentFindIdBinding.onViewCreated() {
         binding.fragment = this@FindIdFragment
-        binding.viewModel = signUpViewModel
         binding.lifecycleOwner = this@FindIdFragment
     }
 
 
-    // 계정이 없을 때 뜬다.
-    private fun successToAnimEmail() {
 
-        signUpViewModel.checkErrorIdText.observe(
-            viewLifecycleOwner, Observer {
-                if (it == true) {
-                    Log.d(TAG, "successToAnimEmail: ")
-                    binding.errorFindIdText.startAnimation(
-                        AnimationUtils.loadAnimation(
-                            requireContext(),
-                            R.anim.authentication_success_bunce
 
-                        )
-                    )
-                }
-            }
-        )
 
-    }
 
-    private fun successToAnimCertification(){
-        signUpViewModel.checkErrorEdit.observe(
-            viewLifecycleOwner, Observer {
-                if (it == true) {
-                    binding.checkErrorEdit.startAnimation(
-                        AnimationUtils.loadAnimation(
-                            requireContext(),
-                            R.anim.authentication_success_bunce
-
-                        )
-                    )
-                }
-            }
-        )
-
-    }
 
 
     override fun onclcik(v: View) {

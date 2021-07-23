@@ -9,7 +9,7 @@ import com.example.tita.R
 import com.example.tita.VIewInterface
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindPasswordBinding
-import com.example.tita.ui.fragment.signup.viewmodel.SignUpViewModel
+import com.example.tita.ui.fragment.signup.cetificatio.SignUpViewModel
 import androidx.fragment.app.viewModels
 
 class FindPasswordFragment :
@@ -20,7 +20,7 @@ class FindPasswordFragment :
     override fun FragmentFindPasswordBinding.onCreateView() {
         binding.fragment = this@FindPasswordFragment
         binding.viewModel = signUpViewModel
-        successToAnimEmail()
+        binding.lifecycleOwner = this@FindPasswordFragment
 
     }
 
@@ -28,37 +28,9 @@ class FindPasswordFragment :
     }
 
     override fun onclcik(v: View) {
-        signUpViewModel.checkPasswordErrorIdText.observe(viewLifecycleOwner, {
 
 
-        })
-        findNavController().navigate(R.id.action_findPasswordFragment_to_passwordChangeFragment)
     }
 
-    private fun successToAnimEmail() {
-        signUpViewModel.checkErrorEmail.observe(viewLifecycleOwner, {
-            Log.d(TAG, "checkError: $it")
-            if (it == true){
-                binding.errorEmailText.startAnimation(
-                    AnimationUtils.loadAnimation(
-                        requireContext(),
-                        R.anim.authentication_success_bunce
 
-                    )
-                )}
-
-        })
-
-        signUpViewModel.checkErrorCer.observe(viewLifecycleOwner, {
-            Log.d(TAG, "checkError: $it")
-            if(it==true)
-            binding.errorCerPasswordText.startAnimation(
-                AnimationUtils.loadAnimation(
-                    requireContext(),
-                    R.anim.authentication_success_bunce
-
-                )
-            )
-        })
-    }
 }

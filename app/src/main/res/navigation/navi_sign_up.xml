@@ -39,7 +39,7 @@
 
     <fragment
         android:id="@+id/signUpCertificatioFragment"
-        android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment"
+        android:name="com.example.tita.ui.fragment.signup.cetificatio.SignUpCertificatioFragment"
         android:label=""
         tools:layout="@layout/fragment_certificatio">
 
@@ -61,7 +61,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpIdPasswordFragment"
-        android:name="com.example.tita.ui.fragment.signup.SignUpIdPasswordFragment"
+        android:name="com.example.tita.ui.fragment.signup.idPassword.SignUpIdPasswordFragment"
         android:label=""
         tools:layout="@layout/fragment_sign_up_id_password">
 

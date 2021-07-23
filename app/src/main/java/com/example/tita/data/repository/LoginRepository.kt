@@ -1,8 +1,8 @@
 package com.example.tita.data.repository
 
-import com.example.tita.data.model.LoginData
+import com.example.tita.data.network.dto.LoginData
 import com.example.tita.data.network.LoginApiInterface
-import dagger.hilt.android.scopes.ActivityRetainedScoped
+import com.example.tita.data.network.dto.MailData
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -11,5 +11,9 @@ class LoginRepository @Inject constructor(
 ) {
     suspend fun postLogin(id: String, pwd: String): Response<LoginData> {
         return loginApiInterface.postLogin(id, pwd)
+    }
+
+    suspend fun postMail(mail: String): Response<MailData> {
+        return loginApiInterface.postMail(mail)
     }
 }
