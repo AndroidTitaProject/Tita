@@ -4,6 +4,8 @@ import androidx.lifecycle.*
 import com.example.tita.Resource
 import com.example.tita.data.network.dto.MailData
 import com.example.tita.data.repository.LoginRepository
+import com.example.tita.data.repository.SignUpRepository
+import com.example.tita.data.repository.SignUpRepository_Factory
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.NullPointerException
@@ -11,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
-    private val loginRepository: LoginRepository
+    private val signUpRepository: SignUpRepository
 ) : ViewModel() {
 
     // 뮤터블은 값을 수정, 삭제, 추가 가능
@@ -32,7 +34,7 @@ class SignUpViewModel @Inject constructor(
     fun mailSend(mail: String) = viewModelScope.launch {
         _postMail.postValue(Resource.Loading())
         try {
-            loginRepository.postMail(mail).let { response ->
+            signUpRepository.postMail(mail).let { response ->
                 if (response.isSuccessful) {
                     response.body()?.let { _postMail.postValue(Resource.Success(it)) }
                     _mailText.postValue("인증번호가 전송되었습니다.")
