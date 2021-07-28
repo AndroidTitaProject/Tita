@@ -13,7 +13,5 @@ class LoginRepository @Inject constructor(
         return loginApiInterface.postLogin(id, pwd)
     }
 
-    suspend fun postMail(mail: String): Response<MailData> {
-        return loginApiInterface.postMail(mail)
-    }
+
 }
