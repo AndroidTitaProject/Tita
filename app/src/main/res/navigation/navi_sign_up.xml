@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_main"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.tita.ui.fragment.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login">
+
+
+        <action
+            android:id="@+id/action_LoginFragment_to_signUpTermsFragment"
+            app:destination="@id/signUpTermsFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_findFragment"
+            app:destination="@id/findIdFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_findPasswordFragment"
+            app:destination="@id/findPasswordFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signUpTermsFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpTermsFragment"
+        android:label="인증 목록"
+        tools:layout="@layout/fragment_sign_up_terms">
+
+
+        <action
+            android:id="@+id/action_signUpTermsFragment_to_signUpCertificatioFragment"
+            app:destination="@id/signUpCertificatioFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpCertificatioFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioFragment"
+        android:label="선택"
+        tools:layout="@layout/fragment_certificatio">
+
+        <action
+            android:id="@+id/action_signUpCertificatioFragment_to_signUpMainFragment"
+            app:destination="@id/signUpIdPasswordFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/findIdFragment"
+        android:name="com.example.tita.ui.fragment.find.id.FindIdFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_id" >
+
+        <action
+            android:id="@+id/action_findIdFragment_to_findIdNowFragment"
+            app:destination="@id/findIdNowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpIdPasswordFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpIdPasswordFragment"
+        android:label=""
+        tools:layout="@layout/fragment_sign_up_id_password">
+
+
+        <action
+            android:id="@+id/action_signUpIdPasswordFragment_to_signUpCertificatioSchoolFragment"
+            app:destination="@id/signUpCertificatioSchoolFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findIdNowFragment"
+        android:name="com.example.tita.ui.fragment.find.id.FindIdKnowFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_id_know">
+
+
+        <action
+            android:id="@+id/action_findIdNowFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:name="com.example.tita.ui.fragment.find.pwd.FindPasswordChangeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_password_change">
+
+
+        <action
+            android:id="@+id/action_passwordChangeFragment_to_passwordChangeFinishFragment"
+            app:destination="@id/passwordChangeFinishFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordChangeFinishFragment"
+        android:name="com.example.tita.ui.fragment.find.pwd.FindPasswordChangeFinishFragment"
+        tools:layout="@layout/fragment_find_password_change_finish"
+        android:label="">
+
+
+        <action
+            android:id="@+id/action_passwordChangeFinishFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findPasswordFragment"
+        android:name="com.example.tita.ui.fragment.find.pwd.FindPasswordFragment"
+        tools:layout="@layout/fragment_find_password"
+        android:label=""
+        >
+        <action
+            android:id="@+id/action_findPasswordFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signUpCertificatioSchoolFragment"
+        android:label=""
+        tools:layout="@layout/fragment_sign_up_certificatio_school"
+        android:name="com.example.tita.ui.fragment.signup.SignUpCertificatioSchoolFragment">
+        <action
+            android:id="@+id/action_signUpCertificatioSchoolFragment_to_signUpSetNameFragment"
+            app:destination="@id/signUpSetNameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpSetNameFragment"
+        android:name="com.example.tita.ui.fragment.signup.SignUpSetNameFragment"
+        tools:layout="@layout/fragment_sign_up_set_name"
+        android:label="">
+
+
+        <action
+            android:id="@+id/action_signUpSetNameFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+</navigation>
