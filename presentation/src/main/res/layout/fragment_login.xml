@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/login_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background"
+        app:layoutDescription="@xml/fragment_login_scene">
+
+        <RelativeLayout
+            android:id="@+id/t"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/d"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="16dp">
+
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="80sp"
+                android:layout_height="80sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="120dp"
+                android:background="@drawable/logostroke"
+                android:elevation="20dp"
+                android:padding="2.5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logoImage"
+                android:layout_alignLeft="@id/logoImage"
+                android:layout_marginTop="30dp"
+                android:text="@string/Welcome"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+            <EditText
+                android:layout_centerHorizontal="true"
+                android:id="@+id/id_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/welcome"
+                android:layout_marginLeft="70sp"
+                android:layout_marginTop="30sp"
+                android:layout_marginRight="70sp"
+                android:background="@drawable/edit_text_background"
+                android:elevation="10dp"
+                android:hint="아이디"
+                android:paddingLeft="20sp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
+                android:textSize="15sp" />
+
+            <TextView
+                android:fontFamily="@font/notosanskrbold"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:id="@+id/forget_id_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/id_edit"
+                android:layout_marginLeft="79dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/find_id"
+                android:visibility="gone" />
+
+            <EditText
+                android:layout_centerHorizontal="true"
+                android:id="@+id/password_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/forget_id_btn"
+                android:layout_marginLeft="70sp"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="70sp"
+                android:background="@drawable/edit_text_background"
+                android:elevation="10dp"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:paddingLeft="20sp"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:fontFamily="@font/notosanskrbold"
+                android:id="@+id/find_password_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/password_edit"
+                android:layout_marginStart="79dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/find_password"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+
+            <Button
+                android:layout_below="@id/find_password_text"
+                android:textSize="20sp"
+                android:fontFamily="@font/notosanskrbold"
+                android:includeFontPadding="false"
+                android:paddingTop="10sp"
+                android:paddingBottom="10sp"
+                android:id="@+id/next_button"
+                android:layout_width="120sp"
+                android:layout_height="50sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="5sp"
+                android:background="@drawable/edit_text_background"
+                android:backgroundTint="#FFFBEB"
+                android:text="입장하기"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:gravity="bottom"
+                android:layout_below="@id/next_button"
+                android:id="@+id/signUpText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="40dp"
+                android:text="@string/Member_Questions"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>
