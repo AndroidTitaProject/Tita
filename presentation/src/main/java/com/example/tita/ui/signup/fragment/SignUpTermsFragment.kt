@@ -35,18 +35,30 @@ class SignUpTermsFragment :
 
     private fun checkBoxSelect() {
 
-        if (allCheckBox.isChecked) {
-            serviceCheckBox.isChecked
-            processCheckBox.isChecked
-            communityCheckbox.isChecked
+        allCheckBox.setOnClickListener {
+            serviceCheckBox.isChecked=true
+            processCheckBox.isChecked=true
+            communityCheckbox.isChecked=true
+
+            if(!allCheckBox.isChecked){
+                serviceCheckBox.isChecked=false
+                processCheckBox.isChecked=false
+                communityCheckbox.isChecked=false
+            }
         }
+
+
+
     }
 
     private fun checkBoxSuccess() {
-        if (serviceCheckBox.isChecked && !processCheckBox.isChecked && communityCheckbox.isChecked)
-            findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpCertificatioFragment)
-        else
-            binding.errorText.errorAnimationShow(requireContext(), "필수 항목이 동의되지 않았습니다.")
+
+        binding.nextButton.setOnClickListener {
+            if (serviceCheckBox.isChecked && processCheckBox.isChecked && communityCheckbox.isChecked)
+                findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpCertificatioFragment)
+            else
+                binding.errorText.errorAnimationShow(requireContext(), "필수 항목이 동의되지 않았습니다.")
+        }
     }
 
 }
