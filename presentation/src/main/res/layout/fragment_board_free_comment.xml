@@ -77,10 +77,10 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/red_heard" />
+                    android:src="@drawable/heart" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -96,8 +96,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
                         android:layout_gravity="center"
                         android:src="@drawable/moment" />
 

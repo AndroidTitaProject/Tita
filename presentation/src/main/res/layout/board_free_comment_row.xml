@@ -60,27 +60,31 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/moment"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        app:tint="@color/black" />
+
+                    <ImageView
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="8dp"
                         android:src="@drawable/heart"
                         app:tint="@color/black" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="13dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_height="13dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="15dp"
-                        android:src="@drawable/set" />
+                        android:src="@drawable/set"
+                        app:tint="@color/black" />
 
-                    <ImageView
-                        android:layout_marginRight="4dp"
-                        android:layout_marginLeft="15dp"
-                        android:src="@drawable/moment"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -102,10 +106,10 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_gravity="center"
-                android:src="@drawable/red_heard" />
+                android:src="@drawable/heart" />
 
             <TextView
                 android:layout_width="wrap_content"

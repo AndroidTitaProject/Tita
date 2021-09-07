@@ -8,10 +8,7 @@
     <string name="make">인증에 성공했으니 \n본격적으로 계정을 만들어봐요!</string>
     <string name="school">거의 다 왔어요! \n이제 학교를 인증해볼까요?</string>
     <string name="show_my_name">마지막으로, \n나를 보여줄 이름을 정해요!</string>
-<<<<<<< HEAD
     <string name="forget_passowerd"><u>비밀번호를 잊으셨나요?</u></string>
-=======
->>>>>>> b7c711dc6fe9c9d9fb3f4c1280b9fa7e4c5164aa
     <string name="Zunmun">
 1. 동해물과 백두산이 마르고 닳도록
 하느님이 보우하사 우리나라 만세
@@ -73,11 +70,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ti_ta">Ti-Ta</string>
     <string name="time_table">Time-Table</string>
-<<<<<<< HEAD
     <string name="find_id_text"><u>timetable0604</u>입니다!</string>
-=======
-    <string name="find_id_text"><u>123456789012345</u></string>
->>>>>>> b7c711dc6fe9c9d9fb3f4c1280b9fa7e4c5164aa
 
 
 </resources>

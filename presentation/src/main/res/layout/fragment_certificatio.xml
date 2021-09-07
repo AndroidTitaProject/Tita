@@ -71,6 +71,7 @@
             android:elevation="5dp"
             android:hint="이메일"
             android:padding="12sp"
+            android:background="@drawable/edit_text_background"
             android:textColor="@color/black"
             android:textColorHint="#808080"
             android:textSize="15sp" />
@@ -109,6 +110,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:background="@drawable/edit_text_background"
             android:id="@+id/certification_Number_edit"
             android:layout_width="210dp"
             android:layout_height="45dp"
