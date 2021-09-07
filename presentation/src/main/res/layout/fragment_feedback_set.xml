@@ -46,8 +46,8 @@
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:src="@drawable/camera"
                 android:layout_marginStart="10dp"
                 android:layout_gravity="center_vertical"/>
@@ -118,7 +118,7 @@
             android:layout_marginTop="6dp"
             android:text="개인정보처리방법 동의(필수)"
             android:textColor="@color/black"
-            app:buttonTint="@color/checkbox_color"
+            app:buttonTint="#AFAFAF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
@@ -127,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/feedback_infor"
+            android:background="@drawable/feedback_content"
             app:layout_constraintTop_toBottomOf="@+id/materialCheckBox" />
 
         <androidx.appcompat.widget.AppCompatButton

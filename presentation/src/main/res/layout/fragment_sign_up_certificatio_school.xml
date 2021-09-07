@@ -36,6 +36,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:background="@drawable/edit_text_background"
             android:id="@+id/school_edit"
             android:layout_width="220sp"
             android:layout_height="45sp"
@@ -76,6 +77,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:background="@drawable/edit_text_background"
             android:id="@+id/school_certificatio_edit"
             android:layout_width="220sp"
             android:layout_height="45sp"

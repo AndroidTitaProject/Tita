@@ -12,5 +12,9 @@
     <color name="error_text">#DB4040</color>
     <color name="blue">#7087FF</color>
     <color name="profile_text">#CACACA</color>
+    <color name="red">#FFDD6B55</color>
+    <color name="main_disabled_stroke_color">#707070</color>
+    <color name="main_disabled_color">#838383</color>
+    <color name="blue_btn_bg_color">#AEDEF4</color>
 
 </resources>
