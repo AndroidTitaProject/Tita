@@ -93,13 +93,13 @@
 
         <TextView
             android:id="@+id/error_text"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:layout_marginTop="15dp"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_below="@+id/community_Terms_of_Use_checkbox"
             android:textSize="15dp"
+            android:textColor="@color/error_text"
             android:fontFamily="@font/spoqahansansneo_regular"
-            android:textColor="@color/red_btn_bg_color"
             android:text="필수 항목이 동의되지 않았습니다."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
