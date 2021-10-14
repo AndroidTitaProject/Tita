@@ -1,7 +1,7 @@
 package com.example.domain.usecase
 
 import com.example.domain.base.ParamsUseCase
-import com.example.domain.entity.response.GetMailEntity
+import com.example.domain.entity.GetMailEntity
 import com.example.domain.repository.AuthRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject

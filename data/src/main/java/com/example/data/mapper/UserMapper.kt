@@ -1,19 +1,13 @@
 package com.example.data.mapper
 
-import com.example.data.entity.GetMailDto
-import com.example.data.entity.SignUpDto
-import com.example.domain.entity.response.GetMailEntity
-import com.example.domain.entity.response.SignUpEntity
+import com.example.data.base.BaseResponse
+import com.example.data.entity.GetMailResponse
+import com.example.domain.entity.GetMailEntity
+import com.example.domain.entity.SignUpEntity
 
-fun SignUpEntity.toData(): SignUpDto {
-    return SignUpDto(
-        this.success,
-        this.code,
-        this.msg
-    )
-}
 
-fun SignUpDto.toEntity():SignUpEntity {
+
+fun BaseResponse.toDomain() : SignUpEntity{
     return SignUpEntity(
         this.success,
         this.code,
@@ -21,7 +15,9 @@ fun SignUpDto.toEntity():SignUpEntity {
     )
 }
 
-fun GetMailDto.toEntity() : GetMailEntity{
+
+
+fun GetMailResponse.toDomain() : GetMailEntity {
     return GetMailEntity(
         this.success,
         this.code,
