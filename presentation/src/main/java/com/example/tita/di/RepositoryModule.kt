@@ -1,7 +1,7 @@
 package com.example.tita.di
 
-import com.example.data.datasource.RemoteSignUpDataSource
-import com.example.data.repository.AuthRepositoryImpl
+import com.example.data.repository.signup.remote.SignUpDataSourceImpl
+import com.example.data.repository.signup.SignUpRepositoryImpl
 import com.example.domain.repository.AuthRepository
 import dagger.Module
 import dagger.Provides
@@ -15,8 +15,8 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideAuthRepository(authDataSource: RemoteSignUpDataSource): AuthRepository {
-        return AuthRepositoryImpl(authDataSource)
+    fun provideAuthRepository(authDataSourceImpl: SignUpDataSourceImpl): AuthRepository {
+        return SignUpRepositoryImpl(authDataSourceImpl)
     }
 
 }
