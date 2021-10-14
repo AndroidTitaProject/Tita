@@ -25,6 +25,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/textView22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -38,18 +39,26 @@
             android:id="@+id/yearpicker_datepicker"
             android:layout_width="63dp"
             android:layout_height="124dp"
+            android:theme="@style/AppTheme.NumberPicker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/monthpicker_datepicker"
+            app:layout_constraintHorizontal_bias="0.59"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:theme="@style/AppTheme.NumberPicker" />
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            app:layout_constraintVertical_bias="0.258" />
 
         <NumberPicker
             android:id="@+id/monthpicker_datepicker"
             android:layout_width="63dp"
             android:layout_height="124dp"
             android:layout_marginStart="50dp"
-            app:layout_constraintStart_toEndOf="@+id/yearpicker_datepicker"
-            app:layout_constraintTop_toTopOf="parent"
-            android:theme="@style/AppTheme.NumberPicker" />
+            android:theme="@style/AppTheme.NumberPicker"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.639"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            app:layout_constraintVertical_bias="0.258" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
