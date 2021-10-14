@@ -3,15 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi_main"
-    app:startDestination="@id/signUpTermsFragment">
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login">
 
 
+        <action
+            android:id="@+id/action_LoginFragment_to_signUpTermsFragment"
+            app:destination="@id/signUpTermsFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_findFragment"
+            app:destination="@id/findIdFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_findPasswordFragment"
+            app:destination="@id/findPasswordFragment" />
+
+    </fragment>
 
 
     <fragment
         android:id="@+id/signUpTermsFragment"
-        android:name="com.example.tita.ui.signup.fragment.SignUpTermsFragment"
-        android:label="인증 목록"
+        android:label=""
         tools:layout="@layout/fragment_sign_up_terms">
 
 
@@ -22,8 +37,7 @@
 
     <fragment
         android:id="@+id/signUpCertificatioFragment"
-        android:name="com.example.tita.ui.signup.fragment.SignUpCertificatioFragment"
-        android:label="선택"
+        android:label=""
         tools:layout="@layout/fragment_certificatio">
 
         <action
@@ -32,10 +46,17 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/findIdFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_id" >
 
+        <action
+            android:id="@+id/action_findIdFragment_to_findIdNowFragment"
+            app:destination="@id/findIdNowFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpIdPasswordFragment"
-        android:name="com.example.tita.ui.signup.fragment.SignUpIdPasswordFragment"
         android:label=""
         tools:layout="@layout/fragment_sign_up_id_password">
 
@@ -45,18 +66,54 @@
             app:destination="@id/signUpCertificatioSchoolFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/findIdNowFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_id_know">
 
 
+        <action
+            android:id="@+id/action_findIdNowFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/passwordChangeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_find_password_change">
 
 
+        <action
+            android:id="@+id/action_passwordChangeFragment_to_passwordChangeFinishFragment"
+            app:destination="@id/passwordChangeFinishFragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/passwordChangeFinishFragment"
+        tools:layout="@layout/fragment_find_password_change_finish"
+        android:label="">
+
+
+        <action
+            android:id="@+id/action_passwordChangeFinishFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/findPasswordFragment"
+        tools:layout="@layout/fragment_find_password"
+        android:label=""
+        >
+        <action
+            android:id="@+id/action_findPasswordFragment_to_passwordChangeFragment"
+            app:destination="@id/passwordChangeFragment" />
+    </fragment>
 
 
     <fragment
         android:id="@+id/signUpCertificatioSchoolFragment"
         android:label=""
-        tools:layout="@layout/fragment_sign_up_certificatio_school"
-        android:name="com.example.tita.ui.signup.fragment.SignUpCertificatioSchoolFragment">
+        tools:layout="@layout/fragment_sign_up_certificatio_school">
         <action
             android:id="@+id/action_signUpCertificatioSchoolFragment_to_signUpSetNameFragment"
             app:destination="@id/signUpSetNameFragment" />
@@ -64,12 +121,13 @@
 
     <fragment
         android:id="@+id/signUpSetNameFragment"
-        android:name="com.example.tita.ui.signup.fragment.SignUpSetNameFragment"
         tools:layout="@layout/fragment_sign_up_set_name"
         android:label="">
 
 
-
+        <action
+            android:id="@+id/action_signUpSetNameFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 
 </navigation>
