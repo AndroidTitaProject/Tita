@@ -1,8 +1,7 @@
 package com.example.tita.di
 
 
-import com.example.data.network.remote.AuthRemote
-import com.example.data.network.service.UserApi
+import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -63,8 +62,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): AuthRemote {
-        return AuthRemote(retrofit.create(UserApi::class.java))
+    fun provideApiService(retrofit: Retrofit): SignUpService {
+        return (retrofit.create(SignUpService::class.java))
     }
 
 
