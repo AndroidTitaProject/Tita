@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_find_passowrd"
+    app:startDestination="@id/find_password">
+
+    <fragment
+        android:id="@+id/find_password"
+        android:name="com.example.tita.ui.findidpassword.fragment.FindPasswordFragment"
+        tools:layout="@layout/fragment_find_password">
+        <action
+            android:id="@+id/action_find_password_to_change_password"
+            app:destination="@id/change_password" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finish_password"
+        android:name="com.example.tita.ui.findidpassword.fragment.FindPasswordFinishFragment"
+        tools:layout="@layout/fragment_find_password_change_finish"/>
+
+    <fragment
+        android:id="@+id/change_password"
+        android:name="com.example.tita.ui.findidpassword.fragment.FindPasswordChangeFragment"
+        tools:layout="@layout/fragment_find_password_change">
+        <action
+            android:id="@+id/action_change_password_to_finish_password"
+            app:destination="@id/finish_password" />
+    </fragment>
+</navigation>
