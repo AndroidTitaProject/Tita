@@ -1,8 +1,10 @@
 package com.example.tita.ui.signup.fragment
 
 
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentCertificatioBinding
@@ -17,21 +19,30 @@ import kotlinx.coroutines.launch
 class SignUpCertificatioFragment :
     UtilityBase.BaseFragment<FragmentCertificatioBinding>(R.layout.fragment_certificatio) {
 
-    private val viewModel by viewModels<SignUpViewModel>()
+    private val viewModel by activityViewModels<SignUpViewModel>()
     override fun FragmentCertificatioBinding.onCreateView() {
 
-        observeSuccess()
-        observeFail()
-        observeGetMail()
+
     }
 
     override fun FragmentCertificatioBinding.onViewCreated() {
+        observeSuccess()
+        observeFail()
+        observeGetMail()
+        nextBtnOnClick()
     }
 
     private fun observeGetMail() {
 
-        lifecycleScope.launch {
-            viewModel.getMail(binding.emailEdit.text.toString())
+        binding.emailBtn.setOnClickListener {
+            lifecycleScope.launch {
+                if (binding.emailEdit.text.toString().replace(" ", "").isNotEmpty()) {
+                    viewModel.getMail(binding.emailEdit.text.toString())
+                    viewModel.getEmail(binding.emailEdit.text.toString())
+                }else{
+                    binding.errorSuccessEmailText.errorAnimationShow(requireContext(), "빈칸없이 적어주세요.")
+                }
+            }
         }
     }
 
@@ -39,7 +50,7 @@ class SignUpCertificatioFragment :
         lifecycleScope.launch {
             viewModel.isFailure.observe(viewLifecycleOwner, EventObserver {
 
-                binding.errorSuccessEmailText.successAnimationShow(requireContext(), it)
+                binding.errorSuccessEmailText.errorAnimationShow(requireContext(), it)
 
             })
         }
@@ -50,8 +61,14 @@ class SignUpCertificatioFragment :
         lifecycleScope.launch {
 
             viewModel.isSuccess.observe(viewLifecycleOwner, EventObserver {
-                binding.errorSuccessEmailText.errorAnimationShow(requireContext(), it)
+                binding.errorSuccessEmailText.successAnimationShow(requireContext(), it)
             })
+        }
+    }
+
+    private fun nextBtnOnClick() {
+        binding.nextButton.setOnClickListener {
+            findNavController().navigate(R.id.action_signUpCertificatioFragment_to_signUpMainFragment)
         }
     }
 
