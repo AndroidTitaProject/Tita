@@ -1,14 +1,12 @@
 package com.example.data.mapper
 
 import com.example.data.base.BaseResponse
-import com.example.data.entity.GetMailResponse
-import com.example.domain.entity.GetMailEntity
-import com.example.domain.entity.SignUpEntity
+import com.example.domain.entity.PostPasswordMailEntity
 
 
 
-fun BaseResponse.toDomain() : SignUpEntity{
-    return SignUpEntity(
+fun BaseResponse.toDomain() : PostPasswordMailEntity{
+    return PostPasswordMailEntity(
         this.success,
         this.code,
         this.msg
@@ -17,10 +15,10 @@ fun BaseResponse.toDomain() : SignUpEntity{
 
 
 
-fun GetMailResponse.toDomain() : GetMailEntity {
-    return GetMailEntity(
-        this.success,
-        this.code,
-        this.msg
-    )
-}
+//fun GetMailResponse.toDomain() : GetMailEntity {
+//    return GetMailEntity(
+//        this.success,
+//        this.code,
+//        this.msg
+//    )
+//}

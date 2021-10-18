@@ -1,7 +1,7 @@
 package com.example.tita.di
 
 
-import com.example.data.network.service.SignUpService
+import com.example.data.network.service.FindIdPasswordService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -62,8 +62,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): SignUpService {
-        return (retrofit.create(SignUpService::class.java))
+    fun provideApiService(retrofit: Retrofit): FindIdPasswordService {
+        return (retrofit.create(FindIdPasswordService::class.java))
     }
 
 
