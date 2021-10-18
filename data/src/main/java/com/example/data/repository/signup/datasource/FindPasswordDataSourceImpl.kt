@@ -20,9 +20,10 @@ class FindPasswordDataSourceImpl @Inject constructor(
 //    override suspend fun getMail(mail: String): Single<GetMailResponse> =
 //        service.getMail(mail)
 
-    override suspend fun postPassword(request: PasswordMailRequest): Single<BaseResponse> = service.postMailAndUserName(request)
+    override suspend fun postPassword(request: PasswordMailRequest): Single<BaseResponse>
+            = service.postMailAndUserName(request)
 
     override suspend fun getCode(mail: String): Single<PasswordMailResponse> {
-        TODO("Not yet implemented")
+        TODO()
     }
-}   
+}

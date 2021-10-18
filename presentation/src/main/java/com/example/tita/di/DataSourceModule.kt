@@ -2,6 +2,7 @@ package com.example.tita.di
 
 import com.example.data.network.service.FindIdPasswordService
 import com.example.data.repository.signup.datasource.FindPasswordDataSource
+import com.example.data.repository.signup.datasource.FindPasswordDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,8 +15,8 @@ object DataSourceModule {
 
     @Provides
     @Singleton
-    fun provideUserDataSource(authRemote: FindIdPasswordService): FindPasswordDataSource {
-        return FindPasswordDataSource(authRemote)
+    fun provideUserDataSource(authRemote: FindIdPasswordService): FindPasswordDataSourceImpl {
+        return FindPasswordDataSourceImpl(authRemote)
     }
 
 
