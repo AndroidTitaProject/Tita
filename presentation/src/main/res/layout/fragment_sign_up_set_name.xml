@@ -37,6 +37,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:background="@drawable/edit_text_background"
             android:id="@+id/nickname_edit"
             android:layout_width="210dp"
             android:layout_height="45sp"
