@@ -14,9 +14,23 @@ object DataSourceModule {
 
     @Provides
     @Singleton
-    fun provideUserDataSource(authRemote: SignUpService): SignUpDataSourceImpl {
+    fun provideSignUpDataSource(authRemote: SignUpService): SignUpDataSourceImpl {
         return SignUpDataSourceImpl(authRemote)
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
