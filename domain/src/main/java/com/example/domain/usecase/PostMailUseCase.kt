@@ -6,8 +6,8 @@ import com.example.domain.repository.AuthRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class GetMailUseCase @Inject constructor(private val repository: AuthRepository):
-    ParamsUseCase<GetMailUseCase.Params, Single<GetMailEntity>>() {
+class PostMailUseCase @Inject constructor(private val repository: AuthRepository):
+    ParamsUseCase<PostMailUseCase.Params, Single<GetMailEntity>>() {
 
 
     override suspend fun buildUseCaseObservable(params: Params): Single<GetMailEntity> {
