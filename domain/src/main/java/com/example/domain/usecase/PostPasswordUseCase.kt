@@ -1,5 +1,6 @@
 package com.example.domain.usecase
 
+import android.util.Log
 import com.example.domain.base.ParamsUseCase
 import com.example.domain.entity.PostPasswordMailEntity
 import com.example.domain.repository.AuthRepository
