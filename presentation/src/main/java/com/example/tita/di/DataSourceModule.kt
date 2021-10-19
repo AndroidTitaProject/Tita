@@ -1,8 +1,7 @@
 package com.example.tita.di
 
 import com.example.data.network.service.FindIdPasswordService
-import com.example.data.repository.signup.datasource.FindPasswordDataSource
-import com.example.data.repository.signup.datasource.FindPasswordDataSourceImpl
+import com.example.data.repository.findidpassword.datasource.FindPasswordDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

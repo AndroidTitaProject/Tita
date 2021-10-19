@@ -1,8 +1,9 @@
-package com.example.data.repository.signup.repository
+package com.example.data.repository.findidpassword.repository
 
+import android.util.Log
 import com.example.data.entity.findpassword.request.PasswordMailRequest
 import com.example.data.mapper.toDomain
-import com.example.data.repository.signup.datasource.FindPasswordDataSource
+import com.example.data.repository.findidpassword.datasource.FindPasswordDataSource
 import com.example.domain.entity.GetPasswordCodeEntity
 import com.example.domain.entity.PostPasswordMailEntity
 import com.example.domain.repository.AuthRepository
@@ -15,20 +16,7 @@ class FindPasswordRepositoryImpl @Inject constructor(
 
 ) : AuthRepository {
 
-//    override suspend fun postSignUp(
-//        username: String,
-//        password: String,
-//        name: String,
-//        school: String,
-//        email: String
-//    ): Single<SignUpEntity> {
-//        return dataSourceImpl.postSignUp(SignUpRequest(username, password, name, school, email))
-//            .map { it.toDomain() }
-//    }
-////
-//    override suspend fun getMail(mail: String): Single<GetMailEntity> {
-//        return dataSourceImpl.getMail(mail).map { it.toDomain() }
-//    }
+    //원래 다른 계층을 참조 못해 저런식으로 매핑해주는것!
 
     override suspend fun postPasswordEmail(
         email: String,
@@ -38,7 +26,7 @@ class FindPasswordRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getPasswordCode(code: String): Single<GetPasswordCodeEntity> {
-        TODO("Not yet implemented")
+        return dataSourceImpl.getCode(code).map { it.toDomain() }
     }
 
 

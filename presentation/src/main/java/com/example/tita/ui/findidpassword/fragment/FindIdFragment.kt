@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tita.R
+import dagger.hilt.android.AndroidEntryPoint
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
+@AndroidEntryPoint
 class FindIdFragment : Fragment() {
 
     override fun onCreateView(

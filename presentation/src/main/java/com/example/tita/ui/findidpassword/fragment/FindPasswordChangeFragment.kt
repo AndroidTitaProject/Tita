@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.tita.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FindPasswordChangeFragment : Fragment() {
 
     override fun onCreateView(
