@@ -27,7 +27,10 @@ class FindIdPasswordViewModel @Inject constructor(
     val email : LiveData<String> get() = _email
 
     private val _isSuccess = MutableLiveData<Event<String>>()
-    val isSuccess: LiveData<Event<String>> = _isSuccess
+    val isSuccess : LiveData<Event<String>> = _isSuccess
+
+    private val _isNextTrue = MutableLiveData<Boolean>()
+    val isNextTrue : LiveData<Boolean> = _isNextTrue
 
     private val _id = MutableLiveData<String>()
     val id : LiveData<String> get() = _id
@@ -54,6 +57,8 @@ class FindIdPasswordViewModel @Inject constructor(
 
                         _isSuccess.value = Event(inside.msg)
 
+                        _isNextTrue.value = true
+
                     } , {
                         _isFailure.value = Event("존재하지않는 회원이거나 아이디 및 이메일을 잘못 입력하셨습니다.")
                     })
@@ -77,6 +82,7 @@ class FindIdPasswordViewModel @Inject constructor(
                         Log.d("TAG", "password change Logic: ${it.msg}")
 
                         _isSuccess.value = Event(it.msg)
+
 
                     }, {
                         _isFailure.value = Event(it.message ?: "")

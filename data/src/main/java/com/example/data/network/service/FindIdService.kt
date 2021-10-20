@@ -18,6 +18,6 @@ interface FindIdPasswordService {
 
     @GET("tita/password/key")
      fun getMailCode(
-        @Path("code") code : String
+        @Path("code") code : GetMailCodeRequest
     ) : Single<PasswordMailCodeResponse>
 }

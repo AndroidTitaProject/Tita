@@ -1,6 +1,7 @@
 package com.example.data.repository.findidpassword.repository
 
 import android.util.Log
+import com.example.data.entity.findpassword.request.GetMailCodeRequest
 import com.example.data.entity.findpassword.request.PasswordMailRequest
 import com.example.data.mapper.toDomain
 import com.example.data.repository.findidpassword.datasource.FindPasswordDataSource
@@ -26,7 +27,7 @@ class FindPasswordRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getPasswordCode(code: String): Single<GetPasswordCodeEntity> {
-        return dataSourceImpl.getCode(code).map { it.toDomain() }
+        return dataSourceImpl.getCode(GetMailCodeRequest(code)).map { it.toDomain() }
     }
 
 

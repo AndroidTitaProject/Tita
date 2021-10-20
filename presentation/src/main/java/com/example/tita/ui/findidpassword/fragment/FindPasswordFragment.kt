@@ -3,6 +3,7 @@ package com.example.tita.ui.findidpassword.fragment
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,6 +32,8 @@ class FindPasswordFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_find_password,container,false)
 
+        binding.fragemnt = this
+
         with(viewModel){
 
             binding.okBtn.setOnClickListener {
@@ -53,10 +56,15 @@ class FindPasswordFragment : Fragment() {
 
     suspend fun passwordChangeAuthoritySend(){
         if(TextUtils.isEmpty(binding.CertificationEdit.text) || TextUtils.isEmpty(binding.checkPasswordId.text)){
-            binding.errorCerPasswordText.errorAnimationShow(
+            binding.errorEmailText.errorAnimationShow(
                 requireContext(),
                 "빈칸없이 적어주세요.(아이디, 이메일)")
         }
+
+        else if (!Patterns.EMAIL_ADDRESS.matcher(binding.CertificationEdit.text).matches()){
+            binding.errorEmailText.errorAnimationShow(requireContext(),"올바른 이메일형식을 입력해주세요!")
+        }
+
         else{
             viewModel.passwordChangeAuthoritySend(binding.CertificationEdit.text.toString(),binding.checkPasswordId.text.toString())
         }
@@ -68,6 +76,7 @@ class FindPasswordFragment : Fragment() {
                 Log.d("TAG", "onViewCreated: success $it")
                 binding.errorEmailText.successAnimationShow(requireContext(),it)
 
+//                viewModel.getPasswordChangeCode()
             })
         }
     }
@@ -82,9 +91,9 @@ class FindPasswordFragment : Fragment() {
         }
     }
 
-    private fun nextBtnOnClick() {
-        binding.nextBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_find_password_to_change_password)
-        }
+    fun nextBtnOnClick() {
+            Log.d("daf","asdfdsf")
+            if(viewModel.isNextTrue.value == true) findNavController().navigate(R.id.action_find_password_to_change_password)
+            else binding.errorAllEditNotin.errorAnimationShow(requireContext(),"모든 입력칸을 입력해주세요!")
     }
 }
