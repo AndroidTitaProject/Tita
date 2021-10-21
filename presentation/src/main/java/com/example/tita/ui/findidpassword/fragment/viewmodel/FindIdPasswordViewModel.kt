@@ -26,6 +26,12 @@ class FindIdPasswordViewModel @Inject constructor(
     private val _email = MutableLiveData<String>()
     val email : LiveData<String> get() = _email
 
+    private val _password = MutableLiveData<String>()
+    val password : LiveData<String> get() = _password
+
+    private val _username = MutableLiveData<String>()
+    val username : LiveData<String> get() = _username
+
     private val _isSuccess = MutableLiveData<Event<String>>()
     val isSuccess : LiveData<Event<String>> = _isSuccess
 
@@ -57,8 +63,6 @@ class FindIdPasswordViewModel @Inject constructor(
 
                         _isSuccess.value = Event(inside.msg)
 
-                        _isNextTrue.value = true
-
                     } , {
                         _isFailure.value = Event("존재하지않는 회원이거나 아이디 및 이메일을 잘못 입력하셨습니다.")
                     })
@@ -70,8 +74,35 @@ class FindIdPasswordViewModel @Inject constructor(
         }
     }
 
+    suspend fun putPasswordChange(username : String, password : String){
+
+        _username.value = username
+        _password.value = password
+
+        try {
+            addDisposable(
+                postPasswordUseCase.buildUseCaseObservable(PostPasswordUseCase.Params(_username.value!!,_password.value!!))
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe({ inside ->
+                        Log.d("TAG", "password change Logic: ${inside.msg}")
+
+                        _isSuccess.value = Event(inside.msg)
+
+                    } , {
+                        _isFailure.value = Event(it.message!!)
+                    })
+            )
+        }
+        catch (e : Exception){
+            Log.d("dsaf",e.toString())
+            _isFailure.value = Event(e.toString())
+        }
+    }
+
     suspend fun getPasswordChangeCode(code : String){
-        _code.value = code
+
+       _code.value = code
 
         try {
             addDisposable(
@@ -83,6 +114,7 @@ class FindIdPasswordViewModel @Inject constructor(
 
                         _isSuccess.value = Event(it.msg)
 
+                        _isNextTrue.value = true
 
                     }, {
                         _isFailure.value = Event(it.message ?: "")

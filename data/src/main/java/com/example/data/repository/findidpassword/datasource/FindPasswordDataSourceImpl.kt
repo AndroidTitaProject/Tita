@@ -1,10 +1,10 @@
 package com.example.data.repository.findidpassword.datasource
 
-import android.util.Log
 import com.example.data.base.BaseDataSource
 import com.example.data.base.BaseResponse
-import com.example.data.entity.findpassword.request.GetMailCodeRequest
+import com.example.data.entity.findpassword.request.PasswordChangeRequest
 import com.example.data.entity.findpassword.request.PasswordMailRequest
+import com.example.data.entity.findpassword.response.PasswordChangeResponse
 import com.example.data.entity.findpassword.response.PasswordMailCodeResponse
 import com.example.data.network.service.FindIdPasswordService
 import io.reactivex.rxjava3.core.Single
@@ -22,6 +22,9 @@ class FindPasswordDataSourceImpl @Inject constructor(
     }
 
 
-    override suspend fun getCode(code : GetMailCodeRequest): Single<PasswordMailCodeResponse>
+    override suspend fun getCode(code : String): Single<PasswordMailCodeResponse>
             = service.getMailCode(code)
+
+    override suspend fun putChangePassword(request: PasswordChangeRequest): Single<PasswordChangeResponse>
+            = service.putPasswordChange(request)
 }
