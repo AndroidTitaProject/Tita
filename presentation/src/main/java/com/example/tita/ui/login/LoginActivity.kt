@@ -1,4 +1,4 @@
-package com.example.tita.ui.login.fragment
+package com.example.tita.ui.login
 
 import com.example.tita.R
 import com.example.tita.base.UtilityBase
