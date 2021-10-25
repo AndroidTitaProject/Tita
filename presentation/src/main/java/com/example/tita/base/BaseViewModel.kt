@@ -16,5 +16,4 @@ open class BaseViewModel : ViewModel() {
         compositeDisposable.clear()
         super.onCleared()
     }
-}
 

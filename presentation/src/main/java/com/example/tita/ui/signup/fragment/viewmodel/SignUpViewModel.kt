@@ -99,7 +99,7 @@ class SignUpViewModel @Inject constructor(
 
 
     // 비밀번호 받아오기
-     fun getPassword(password:String){
+    fun getPassword(password:String){
         _password.value=password
     }
 
@@ -157,5 +157,4 @@ class SignUpViewModel @Inject constructor(
 
     }
 }
-
 

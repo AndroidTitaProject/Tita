@@ -93,28 +93,27 @@
 
         <TextView
             android:id="@+id/error_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/community_Terms_of_Use_checkbox"
-            android:layout_alignLeft="@id/welcome_text"
+            android:visibility="gone"
             android:layout_marginTop="15dp"
+            android:layout_alignLeft="@id/welcome_text"
+            android:layout_below="@+id/community_Terms_of_Use_checkbox"
+            android:textSize="15dp"
+            android:textColor="@color/error_text"
             android:fontFamily="@font/spoqahansansneo_regular"
             android:text="필수 항목이 동의되지 않았습니다."
-            android:textColor="@color/error_text"
-            android:textSize="15dp"
-            android:visibility="gone" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_button"
             android:layout_width="120sp"
-            android:layout_height="45dp"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginBottom="40dp"
-            android:backgroundTint="#EFEFEF"
-            android:clickable="false"
-            android:fontFamily="@font/spoqahansansneo_bold"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="#FFFBEB"
             android:text="게속하기"
+            android:fontFamily="@font/spoqahansansneo_bold"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
