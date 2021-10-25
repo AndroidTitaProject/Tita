@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="find_edit">266dp</dimen>
-    <dimen name="find_password">38dp</dimen>
-    <dimen name="home_marginStart">20dp</dimen>
-</resources>
