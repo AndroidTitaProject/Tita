@@ -1,8 +1,7 @@
 package com.example.tita.di
 
 
-import com.example.data.network.remote.AuthRemote
-import com.example.data.network.service.UserApi
+import com.example.data.network.service.FindIdPasswordService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -11,6 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 import java.util.concurrent.TimeUnit
@@ -48,6 +48,7 @@ object NetworkModule {
         return Retrofit.Builder()
             .baseUrl(BASE_USER_URL)
             .client(okHttpClient)
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             //json 변화기 Factory
             .client(provideHttpClient())
             .addConverterFactory(gsonConverterFactory)
@@ -63,8 +64,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): AuthRemote {
-        return AuthRemote(retrofit.create(UserApi::class.java))
+    fun provideApiService(retrofit: Retrofit): FindIdPasswordService {
+        return (retrofit.create(FindIdPasswordService::class.java))
     }
 
 

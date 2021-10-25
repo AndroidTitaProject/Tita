@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navi_find_id"
+    app:startDestination="@id/fragment_find_id">
+
+
+    <fragment
+        android:id="@+id/fragment_find_id"
+        android:name="com.example.tita.ui.findidpassword.fragment.FindIdFragment"
+        android:label="fragment_find_id2"
+        tools:layout="@layout/fragment_find_id" >
+        <action
+            android:id="@+id/action_fragment_find_id_to_fragment_find_id_know"
+            app:destination="@id/fragment_find_id_know" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_find_id_know"
+        android:name="com.example.tita.ui.findidpassword.fragment.FindIdNowFragment"
+        android:label="fragment_find_id_know"
+        tools:layout="@layout/fragment_find_id_know" />
+</navigation>

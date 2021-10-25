@@ -1,7 +1,7 @@
 package com.example.tita.di
 
-import com.example.data.datasource.RemoteSignUpDataSource
-import com.example.data.network.remote.AuthRemote
+import com.example.data.network.service.FindIdPasswordService
+import com.example.data.repository.findidpassword.datasource.FindPasswordDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,12 +10,12 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class DataSourceModule {
+object DataSourceModule {
 
     @Provides
     @Singleton
-    fun provideUserDataSource(authRemote: AuthRemote): RemoteSignUpDataSource {
-        return RemoteSignUpDataSource(authRemote)
+    fun provideUserDataSource(authRemote: FindIdPasswordService): FindPasswordDataSourceImpl {
+        return FindPasswordDataSourceImpl(authRemote)
     }
 
 
