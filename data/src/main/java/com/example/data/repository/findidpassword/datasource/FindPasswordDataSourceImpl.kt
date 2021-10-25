@@ -1,7 +1,7 @@
 package com.example.data.repository.findidpassword.datasource
 
 import com.example.data.base.BaseDataSource
-import com.example.data.base.BaseResponse
+import com.example.data.base.SignUpBaseResponse
 import com.example.data.entity.findpassword.request.PasswordChangeRequest
 import com.example.data.entity.findpassword.request.PasswordMailRequest
 import com.example.data.entity.findpassword.response.PasswordChangeResponse
@@ -16,7 +16,7 @@ class FindPasswordDataSourceImpl @Inject constructor(
 ) : BaseDataSource<FindIdPasswordService>(),
     FindPasswordDataSource{
 
-    override suspend fun postPassword(request: PasswordMailRequest): Single<BaseResponse>
+    override suspend fun postPassword(request: PasswordMailRequest): Single<SignUpBaseResponse>
     {
         return service.postMailAndUserName(request)
     }

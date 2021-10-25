@@ -1,13 +1,15 @@
 package com.example.data.mapper
 
-import com.example.data.base.BaseResponse
-import com.example.data.entity.GetMailResponse
-import com.example.domain.entity.GetMailEntity
-import com.example.domain.entity.SignUpEntity
+import com.example.data.base.FindIdPasswordBaseResponse
+import com.example.data.base.SignUpBaseResponse
+import com.example.data.entity.findpassword.response.PasswordChangeResponse
+import com.example.data.entity.findpassword.response.PasswordMailCodeResponse
+import com.example.data.entity.signup.response.GetMailResponse
+import com.example.data.entity.signup.response.IdCheckResponse
+import com.example.data.entity.signup.response.NickNameOverlapResponse
+import com.example.domain.entity.*
 
-
-
-fun BaseResponse.toDomain() : SignUpEntity{
+fun SignUpBaseResponse.toDomain() : SignUpEntity{
     return SignUpEntity(
         this.success,
         this.code,
@@ -15,6 +17,13 @@ fun BaseResponse.toDomain() : SignUpEntity{
     )
 }
 
+fun FindIdPasswordBaseResponse.toDomain() : PostPasswordMailEntity{
+    return PostPasswordMailEntity(
+        this.success,
+        this.code,
+        this.msg
+    )
+}
 
 
 fun GetMailResponse.toDomain() : GetMailEntity {
@@ -23,6 +32,7 @@ fun GetMailResponse.toDomain() : GetMailEntity {
         this.code,
         this.msg
     )
+}
 
 fun IdCheckResponse.toDomain(): IdCheckEntity {
         return IdCheckEntity(
@@ -34,24 +44,27 @@ fun IdCheckResponse.toDomain(): IdCheckEntity {
     }
 
 fun NickNameOverlapResponse.toDomain(): NickNameEntity {
-        return NickNameEntity(
-            this.success,
-            this.code,
-            this.msg,
-            this.data,
-        )
+    return NickNameEntity(
+        this.success,
+        this.code,
+        this.msg,
+        this.data,
+    )
+}
 
-fun PasswordChangeResponse.toDomain() : PutChangePasswordEntity{
-        return PutChangePasswordEntity(
-            this.success,
-            this.code,
-            this.msg
-        )
 
-fun PasswordMailCodeResponse.toDomain() : GetPasswordCodeEntity {
+fun PasswordChangeResponse.toDomain() : PutChangePasswordEntity {
+    return PutChangePasswordEntity(
+        this.success,
+        this.code,
+        this.msg
+    )
+}
+
+    fun PasswordMailCodeResponse.toDomain(): GetPasswordCodeEntity {
         return GetPasswordCodeEntity(
             this.success,
             this.code,
             this.msg
         )
-}
+    }
