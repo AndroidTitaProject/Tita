@@ -35,13 +35,13 @@ fun GetMailResponse.toDomain() : GetMailEntity {
 }
 
 fun IdCheckResponse.toDomain(): IdCheckEntity {
-        return IdCheckEntity(
-            this.success,
-            this.code,
-            this.msg,
-            this.data,
-        )
-    }
+    return IdCheckEntity(
+        this.success,
+        this.code,
+        this.msg,
+        this.data,
+    )
+}
 
 fun NickNameOverlapResponse.toDomain(): NickNameEntity {
     return NickNameEntity(
@@ -61,10 +61,10 @@ fun PasswordChangeResponse.toDomain() : PutChangePasswordEntity {
     )
 }
 
-    fun PasswordMailCodeResponse.toDomain(): GetPasswordCodeEntity {
-        return GetPasswordCodeEntity(
-            this.success,
-            this.code,
-            this.msg
-        )
-    }
+fun PasswordMailCodeResponse.toDomain(): GetPasswordCodeEntity {
+    return GetPasswordCodeEntity(
+        this.success,
+        this.code,
+        this.msg
+    )
+}

@@ -13,7 +13,6 @@ interface AuthRepository {
     ): Single<SignUpEntity>
 
     suspend fun getMail(mail: String): Single<GetMailEntity>
-
     suspend fun getIdCheck(userName : String) : Single<IdCheckEntity>
     suspend fun getNickName(name : String) : Single<NickNameEntity>
 }

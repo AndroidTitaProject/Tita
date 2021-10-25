@@ -11,6 +11,12 @@ import retrofit2.http.*
 
 interface SignUpService {
 
+
+    @GET("verify/key")
+    suspend fun getMail(
+        @Query("mail") mail: String
+    ): Single<GetMailResponse>
+
     @POST("tita/signup")
     fun postSignUp(
         @Body request: SignUpRequest
