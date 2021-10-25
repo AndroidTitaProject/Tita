@@ -1,7 +1,6 @@
 package com.example.domain.repository
 
-import com.example.domain.entity.GetMailEntity
-import com.example.domain.entity.SignUpEntity
+import com.example.domain.entity.*
 import io.reactivex.rxjava3.core.Single
 
 interface AuthRepository {
@@ -20,4 +19,6 @@ interface AuthRepository {
     suspend fun putChangePassword(username : String,password : String): Single<PutChangePasswordEntity>
 
     suspend fun getMail(mail: String): Single<GetMailEntity>
+    suspend fun getIdCheck(userName : String) : Single<IdCheckEntity>
+    suspend fun getNickName(name : String) : Single<NickNameEntity>
 }

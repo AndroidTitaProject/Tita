@@ -1,20 +1,15 @@
 package com.example.data.network.service
 
 import com.example.data.base.BaseResponse
-import com.example.data.entity.GetMailResponse
+import com.example.data.entity.signup.request.GetMailRequest
 import com.example.data.entity.signup.request.SignUpRequest
+import com.example.data.entity.signup.response.GetMailResponse
+import com.example.data.entity.signup.response.IdCheckResponse
+import com.example.data.entity.signup.response.NickNameOverlapResponse
 import io.reactivex.rxjava3.core.Single
-import retrofit2.http.Body
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface SignUpService {
-    @FormUrlEncoded
-    @GET("signup")
-    suspend fun postSignUp(
-        @Body request: SignUpRequest
-    ): Single<BaseResponse>
 
 
     @GET("verify/key")
@@ -41,5 +36,5 @@ interface SignUpService {
     @GET("tita/username/{name}/exists")
     fun getNameOverlap(
         @Path("name") name: String
-    ) : Single<NickNameOverlapResponse>
+    ): Single<NickNameOverlapResponse>
 }

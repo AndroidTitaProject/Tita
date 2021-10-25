@@ -37,7 +37,6 @@
             android:textStyle="bold" />
 
         <EditText
-            android:background="@drawable/edit_text_background"
             android:id="@+id/nickname_edit"
             android:layout_width="210dp"
             android:layout_height="45sp"
@@ -45,6 +44,7 @@
             android:layout_alignLeft="@id/nickname_text"
             android:layout_marginTop="10sp"
             android:layout_marginBottom="10sp"
+            android:background="@color/white"
             android:elevation="5dp"
             android:hint="닉네임"
             android:padding="13sp"
@@ -54,7 +54,7 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/school_btn"
+            android:id="@+id/nick_name_btn"
             android:layout_width="70sp"
             android:layout_height="45sp"
             android:layout_below="@id/nickname_text"
@@ -66,6 +66,18 @@
             android:text="확인"
             android:textColor="@color/black" />
 
+        <TextView
+            android:id="@+id/return_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nick_name_btn"
+            android:layout_alignLeft="@id/welcome_text"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/spoqahansansneo_regular"
+            android:text="success or fail"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/next_button"
