@@ -4,10 +4,11 @@ import android.util.Log
 import com.example.domain.base.ParamsUseCase
 import com.example.domain.entity.PostPasswordMailEntity
 import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.FindIdAndPasswordRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class PostPasswordUseCase @Inject constructor(private val repository: AuthRepository) :
+class PostPasswordUseCase @Inject constructor(private val repository: FindIdAndPasswordRepository) :
     ParamsUseCase<PostPasswordUseCase.Params, Single<PostPasswordMailEntity>>() {
 
     override suspend fun buildUseCaseObservable(params: Params): Single<PostPasswordMailEntity> {

@@ -4,10 +4,11 @@ import com.example.domain.base.ParamsUseCase
 import com.example.domain.entity.PostPasswordMailEntity
 import com.example.domain.entity.PutChangePasswordEntity
 import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.FindIdAndPasswordRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class PutChangePasswordUseCase @Inject constructor(private val repository: AuthRepository) :
+class PutChangePasswordUseCase @Inject constructor(private val repository: FindIdAndPasswordRepository) :
     ParamsUseCase<PutChangePasswordUseCase.Params, Single<PutChangePasswordEntity>>() {
 
     data class Params(
