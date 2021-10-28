@@ -1,5 +1,6 @@
 package com.example.data.network.service
 
+import com.example.data.base.FindIdPasswordBaseResponse
 import com.example.data.base.SignUpBaseResponse
 import com.example.data.entity.findpassword.request.PasswordChangeRequest
 import com.example.data.entity.findpassword.request.PasswordMailRequest
@@ -15,7 +16,7 @@ interface FindIdPasswordService {
     @POST("tita/password")
      fun postMailAndUserName(
         @Body request : PasswordMailRequest
-    ): Single<SignUpBaseResponse>
+    ): Single<FindIdPasswordBaseResponse>
 
     @GET("tita/password/key")
      fun getMailCode(
