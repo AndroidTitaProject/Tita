@@ -83,12 +83,6 @@ class FindPasswordFinishFragment : Fragment() {
                 Log.d("TAG", "onViewCreated: success $it")
                 binding.passwordCheckErrorText.successAnimationShow(requireContext(),it)
 
-                with(viewModel){
-
-                    lifecycleScope.launch {
-                        viewModel.getPasswordChangeCode(binding.checkEdit.text.toString())
-                    }
-                }
 
             })
         }

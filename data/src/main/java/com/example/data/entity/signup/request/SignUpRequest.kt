@@ -6,8 +6,4 @@ data class SignUpRequest(
     val name: String,
     val school: String,
     val email: String
-<<<<<<< HEAD
 )
-=======
-)
->>>>>>> origin/develop

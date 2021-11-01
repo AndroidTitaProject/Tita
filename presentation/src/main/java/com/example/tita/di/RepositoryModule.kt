@@ -6,6 +6,7 @@ import com.example.data.repository.findidpassword.datasource.FindPasswordDataSou
 import com.example.domain.repository.AuthRepository
 import com.example.data.repository.login.datasource.LoginDataSourceImpl
 import com.example.data.repository.login.repository.LoginRepositoryImpl
+import com.example.domain.repository.FindIdAndPasswordRepository
 import com.example.domain.repository.LoginRepository
 import dagger.Module
 import dagger.Provides
@@ -19,8 +20,8 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideAuthRepository(authDataSourceImpl: FindPasswordDataSourceImpl): AuthRepository {
-        return FindPasswordRepositoryImpl(authDataSourceImpl)
+    fun provideFindIdPasswordRepository(FindPasswordDataSourceImpl: FindPasswordDataSourceImpl): FindIdAndPasswordRepository {
+        return FindPasswordRepositoryImpl(FindPasswordDataSourceImpl)
     }
     @Provides
     @Singleton
