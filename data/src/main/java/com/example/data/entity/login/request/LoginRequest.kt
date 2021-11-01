@@ -1,3 +1,5 @@
 package com.example.data.entity.login.request
 
-data class LoginRequest(val id : String, val password: String)
+import com.google.gson.annotations.SerializedName
+
+data class LoginRequest(@SerializedName("username") val id : String, val password: String)
