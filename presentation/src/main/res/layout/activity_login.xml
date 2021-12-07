@@ -19,7 +19,6 @@
         tools:context=".ui.login.LoginActivity">
 
         <Button
-            android:onClick="@{() -> activity.findPassword()}"
             android:text="find password"
             android:id="@+id/find_password_button"
             android:layout_width="wrap_content"
@@ -31,7 +30,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:onClick="@{() -> activity.findId()}"
             android:text="find ID"
             android:id="@+id/find_id_button"
             android:layout_width="wrap_content"

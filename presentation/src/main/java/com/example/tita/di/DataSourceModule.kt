@@ -29,12 +29,12 @@ object DataSourceModule {
         return LoginDataSourceImpl(service)
     }
 
+    @Provides
+    @Singleton
+    fun provideUserFindIdPasswordDataSource(authRemote: FindIdPasswordService): FindPasswordDataSourceImpl {
+        return FindPasswordDataSourceImpl(authRemote)
+    }
 }
 
-@Provides
-@Singleton
-fun provideUserFindIdPasswordDataSource(authRemote: FindIdPasswordService): FindPasswordDataSourceImpl {
-    return FindPasswordDataSourceImpl(authRemote)
-}
 
 

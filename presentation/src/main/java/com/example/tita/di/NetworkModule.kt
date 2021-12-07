@@ -3,6 +3,7 @@ package com.example.tita.di
 
 import com.example.data.network.service.LoginService
 import com.example.data.network.service.FindIdPasswordService
+import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -73,6 +74,11 @@ object NetworkModule {
     @Singleton
     fun provideLoginService(retrofit: Retrofit): LoginService {
         return (retrofit.create(LoginService::class.java))
+    }
+    @Provides
+    @Singleton
+    fun provideAuthService(retrofit: Retrofit):SignUpService {
+        return (retrofit.create(SignUpService::class.java))
     }
 
     // 서버로 부터 받아온 데이터 log 찍기
