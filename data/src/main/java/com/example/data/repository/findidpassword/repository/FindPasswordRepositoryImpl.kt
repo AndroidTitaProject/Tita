@@ -4,11 +4,9 @@ import com.example.data.entity.findpassword.request.PasswordChangeRequest
 import com.example.data.entity.findpassword.request.PasswordMailRequest
 import com.example.data.mapper.toDomain
 import com.example.data.repository.findidpassword.datasource.FindPasswordDataSource
-import com.example.domain.entity.GetMailEntity
 import com.example.domain.entity.GetPasswordCodeEntity
 import com.example.domain.entity.PostPasswordMailEntity
 import com.example.domain.entity.PutChangePasswordEntity
-import com.example.domain.repository.AuthRepository
 import com.example.domain.repository.FindIdAndPasswordRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
@@ -23,9 +21,9 @@ class FindPasswordRepositoryImpl @Inject constructor(
 
     override suspend fun postPasswordEmail(
         email: String,
-        nickname: String
+        username: String
     ): Single<PostPasswordMailEntity> {
-        return dataSourceImpl.postPassword(PasswordMailRequest(email,nickname)).map { it.toDomain() }
+        return dataSourceImpl.postPassword(PasswordMailRequest(email,username)).map { it.toDomain() }
     }
 
     override suspend fun getPasswordCode(code: String): Single<GetPasswordCodeEntity> {
