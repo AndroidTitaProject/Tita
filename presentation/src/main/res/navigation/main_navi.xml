@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navi"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        tools:layout="@layout/fragment_home"
+        android:name="com.example.tita.ui.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/boardFragment"
+        tools:layout="@layout/fragment_board"
+        android:name="com.example.tita.ui.board.BoardFragment"
+        android:label="BoardFragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.tita.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.tita.ui.NotificationFragment"
+        android:label="NotificationFragment" />
+
+
+</navigation>
