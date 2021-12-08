@@ -1,5 +1,29 @@
 <resources>
     <string name="app_name">Tita</string>
+    <string name="find_id"><u>아이디를 잊으셨나요?</u></string>
+    <string name="Welcome">어서오세요, \n <b>TimeTable</b>입니다!</string>
+    <string name="find_password"><u>비밀번호가 기억이 안나시나요?</u></string>
+    <string name="Member_Questions"><u>혹시 아직 회원이 아니신가요?</u></string>
+    <string name="inside_community">우리만의 커뮤니티 속으로 \n들어가볼까요?</string>
+    <string name="make">인증에 성공했으니 \n본격적으로 계정을 만들어봐요!</string>
+    <string name="school">거의 다 왔어요! \n이제 학교를 인증해볼까요?</string>
+    <string name="show_my_name">마지막으로, \n나를 보여줄 이름을 정해요!</string>
+    <string name="forget_passowerd"><u>비밀번호를 잊으셨나요?</u></string>
+    <string name="none_user_find_profile">OOO님의 정보가\n 보이지않아요...</string>
+    <string name="none_user_find_profile_gide">아직가입하지않으셨다면, 가입부터 해보실래요?</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ti_ta">Ti-Ta</string>
+    <string name="time_table">Time-Table</string>
+    <string name="find_id_text"><u>timetable0604</u>입니다!</string>
+    <string name="title_activity_find_password">FindPasswordActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
 </resources>

@@ -1,6 +1,9 @@
 package com.example.tita.di
 
 
+import com.example.data.network.service.LoginService
+import com.example.data.network.service.FindIdPasswordService
+import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -11,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -60,6 +64,22 @@ object NetworkModule {
         return GsonConverterFactory.create()
     }
 
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): FindIdPasswordService {
+        return (retrofit.create(FindIdPasswordService::class.java))
+    }
+
+    @Provides
+    @Singleton
+    fun provideLoginService(retrofit: Retrofit): LoginService {
+        return (retrofit.create(LoginService::class.java))
+    }
+    @Provides
+    @Singleton
+    fun provideAuthService(retrofit: Retrofit):SignUpService {
+        return (retrofit.create(SignUpService::class.java))
+    }
 
     // 서버로 부터 받아온 데이터 log 찍기
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =

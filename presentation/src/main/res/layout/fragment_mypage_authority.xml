@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="권한 부여"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/notosanskrbold"
+                android:includeFontPadding="false"/>
+        </com.google.android.material.appbar.MaterialToolbar>
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:textSize="22dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="@color/black"
+            android:text="학생회 권한 부여"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:textSize="22dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="@color/black"
+            android:text="기숙사자치위원 권한 부여"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:text="전공동아리 권한 부여"
+            android:textColor="@color/black"
+            android:textSize="22dp" />
+
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:textSize="22dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="@color/black"
+            android:text="자율동아리 권한 부여"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:textSize="22dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/notosanskr_regular"
+            android:textColor="@color/black"
+            android:text="창체동아리 권한 부여"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:background="@color/main_color"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_color">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:text="Copyright 2021. Tempus All rights reserved."
+                android:textColor="#6F6F6F"
+                android:textSize="10dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</layout>
