@@ -1,20 +1,41 @@
 package com.example.tita.ui.board
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.tita.R
+import com.example.tita.base.UtilityBase
+import com.example.tita.databinding.FragmentBoardBinding
+import com.example.tita.databinding.FragmentBoardFreeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
-class BoardFreeFragment : Fragment() {
+@AndroidEntryPoint
+class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.layout.fragment_board_free) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_board_free, container, false)
+    override fun FragmentBoardFreeBinding.onCreateView(){
+
     }
+
+    override fun FragmentBoardFreeBinding.onViewCreated(){
+
+        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+
+
+            if(scrollY < oldScrollY)  ObjectAnimator.ofFloat(binding.floatingButton , "translationY", 500f).apply { start() }
+            else if(scrollY > oldScrollY)  ObjectAnimator.ofFloat(binding.floatingButton , "translationY", 0f).apply { start() }
+
+        }
+
+
+    }
+
+
+
+
 }
