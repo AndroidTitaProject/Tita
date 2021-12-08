@@ -136,7 +136,7 @@
             android:includeFontPadding="false"
             android:layout_alignLeft="@id/welcome_text"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/spoqahansansneo_regular"
+            android:fontFamily="@font/notosanskr_regular"
             android:text="success or fail"
             android:visibility="gone" />
 
