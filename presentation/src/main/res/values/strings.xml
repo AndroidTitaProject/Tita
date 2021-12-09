@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Tita</string>
+    <string name="inside_community">우리만의 커뮤니티 속으로 \n들어가볼까요?</string>
+    <string name="school">거의 다 왔어요! \n이제 학교를 인증해볼까요?</string>
+    <string name="make">인증에 성공했으니 \n본격적으로 계정을 만들어봐요!</string>
+    <string name="show_my_name">마지막으로, \n나를 보여줄 이름을 정해요!</string>
 
 
 </resources>

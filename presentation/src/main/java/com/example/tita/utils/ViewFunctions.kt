@@ -1,5 +1,6 @@
 package com.example.tita.utils
 
+import androidx.fragment.app.Fragment
 import android.content.Context
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -23,4 +24,7 @@ fun TextView.successAnimationShow(context: Context, content: String) {
     setTextColor(ContextCompat.getColor(context, R.color.black))
     visibility = View.VISIBLE
     startAnimation(animation)
+}
+fun Fragment.showMessage(context:Context,message: String?) {
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }

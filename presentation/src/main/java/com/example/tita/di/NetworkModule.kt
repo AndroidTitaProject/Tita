@@ -1,6 +1,7 @@
 package com.example.tita.di
 
 
+import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -11,6 +12,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -58,6 +60,12 @@ object NetworkModule {
     @Singleton
     fun provideConverterFactory(): GsonConverterFactory {
         return GsonConverterFactory.create()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): SignUpService {
+        return (retrofit.create(SignUpService::class.java))
     }
 
 
