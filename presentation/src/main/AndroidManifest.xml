@@ -21,6 +21,20 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:theme="@style/Theme.Tita.NoActionBar"
+            android:label="board"
+            android:name=".ui.board.BoardActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
         <activity android:name=".ui.login.LoginActivity"/>
         <activity
             android:name=".ui.findidpassword.activity.FindPasswordActivity"
