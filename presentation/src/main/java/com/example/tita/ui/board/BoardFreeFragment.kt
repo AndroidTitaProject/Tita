@@ -24,15 +24,14 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
 
     override fun FragmentBoardFreeBinding.onViewCreated(){
 
-        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+        binding.backButton.setOnClickListener {   this@BoardFreeFragment.findNavController().popBackStack()}
 
+        binding.scrollView.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
 
             if(scrollY < oldScrollY)  ObjectAnimator.ofFloat(binding.floatingButton , "translationY", 500f).apply { start() }
             else if(scrollY > oldScrollY)  ObjectAnimator.ofFloat(binding.floatingButton , "translationY", 0f).apply { start() }
 
         }
-
-
     }
 
 

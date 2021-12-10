@@ -32,7 +32,7 @@ class MainActivity : UtilityBase.BaseActivity<ActivityMainBinding>(R.layout.acti
                 R.id.profileFragment,
                 R.id.homeFragment,
                 R.id.notificationFragment,
-                R.id.boardFragment,
+                R.id.homeboardFragment,
 
             )
         )
@@ -53,7 +53,7 @@ class MainActivity : UtilityBase.BaseActivity<ActivityMainBinding>(R.layout.acti
         binding.bottomNavigationView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            if (destination.id == R.id.profileFragment || destination.id == R.id.homeFragment || destination.id == R.id.notificationFragment || destination.id == R.id.boardFragment) {
+            if (destination.id == R.id.profileFragment || destination.id == R.id.homeFragment || destination.id == R.id.notificationFragment || destination.id == R.id.homeboardFragment) {
                 binding.bottomNavigationView.visibility = View.VISIBLE
             } else {
                 binding.bottomNavigationView.visibility = View.GONE

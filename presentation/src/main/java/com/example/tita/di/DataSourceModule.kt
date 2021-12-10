@@ -1,11 +1,13 @@
 package com.example.tita.di
 
+import com.example.data.network.service.BoardService
 import com.example.data.repository.signup.remote.SignUpDataSourceImpl
 import com.example.data.network.service.SignUpService
 import com.example.data.network.service.FindIdPasswordService
 import com.example.data.repository.findidpassword.datasource.FindPasswordDataSourceImpl
 
 import com.example.data.network.service.LoginService
+import com.example.data.repository.board.datasource.BoardDataSourceImpl
 import com.example.data.repository.login.datasource.LoginDataSourceImpl
 import dagger.Module
 import dagger.Provides
@@ -27,6 +29,12 @@ object DataSourceModule {
     @Singleton
     fun provideLoginDataSource(service: LoginService): LoginDataSourceImpl {
         return LoginDataSourceImpl(service)
+    }
+
+    @Provides
+    @Singleton
+    fun provideBoardDataSource(service: BoardService): BoardDataSourceImpl {
+        return BoardDataSourceImpl(service)
     }
 
     @Provides

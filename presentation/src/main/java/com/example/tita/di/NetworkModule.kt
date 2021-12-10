@@ -1,6 +1,7 @@
 package com.example.tita.di
 
 
+import com.example.data.network.service.BoardService
 import com.example.data.network.service.LoginService
 import com.example.data.network.service.FindIdPasswordService
 import com.example.data.network.service.SignUpService
@@ -79,6 +80,12 @@ object NetworkModule {
     @Singleton
     fun provideAuthService(retrofit: Retrofit):SignUpService {
         return (retrofit.create(SignUpService::class.java))
+    }
+
+    @Provides
+    @Singleton
+    fun provideBoardService(retrofit: Retrofit):BoardService {
+        return (retrofit.create(BoardService::class.java))
     }
 
     // 서버로 부터 받아온 데이터 log 찍기
