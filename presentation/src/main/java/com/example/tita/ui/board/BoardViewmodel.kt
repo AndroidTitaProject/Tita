@@ -8,9 +8,11 @@ import com.example.domain.usecase.GetBoardPostUseCase
 import com.example.domain.usecase.PostMailUseCase
 import com.example.tita.base.BaseViewModel
 import com.example.tita.utils.Event
+import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import javax.inject.Inject
 
+@HiltViewModel
 class BoardViewmodel @Inject constructor(
     private val getPostUserCase: GetBoardPostUseCase
 ) : BaseViewModel(){
@@ -20,10 +22,6 @@ class BoardViewmodel @Inject constructor(
     private val _boardData = MutableLiveData<List<Any>>()
     val password: LiveData<List<Any>> get() = _boardData
 
-    private val _postLocation = MutableLiveData<String>()
-    val postLocation: LiveData<String> get() = _postLocation
-
-
     private val _isSuccess = MutableLiveData<Event<String>>()
     val isSuccess: LiveData<Event<String>> = _isSuccess
 
@@ -32,15 +30,14 @@ class BoardViewmodel @Inject constructor(
 
     suspend fun getPost(postLocation : String) {
 
-        _postLocation.value = postLocation
-
         try {
-            getPostUserCase.buildUseCaseObservable(GetBoardPostUseCase.Params(_postLocation.value.toString()))
+            getPostUserCase.buildUseCaseObservable(GetBoardPostUseCase.Params(postLocation))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ data ->
                      _boardData.value =  data.data
 
-                    Log.d(TAG, "TAG: ${_postLocation.value}")
+                    Log.d("cocopam",_boardData.value.toString())
+
                     _isSuccess.value = Event(data.msg)
                 }, {
                     _isFailure.value = Event(it.message ?: "")

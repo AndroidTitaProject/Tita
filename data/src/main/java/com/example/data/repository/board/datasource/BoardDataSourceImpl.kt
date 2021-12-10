@@ -1,5 +1,6 @@
 package com.example.data.repository.board.datasource
 
+import android.util.Log
 import com.example.data.base.BaseDataSource
 import com.example.data.entity.board.response.BoardData
 import com.example.data.entity.board.response.BoardResponse
