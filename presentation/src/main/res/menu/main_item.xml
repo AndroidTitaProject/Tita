@@ -6,7 +6,7 @@
         android:icon="@drawable/home"
         />
 
-    <item android:id="@+id/boardFragment"
+    <item android:id="@+id/homeboardFragment"
         android:title="게시판"
         android:icon="@drawable/notice"
         />
