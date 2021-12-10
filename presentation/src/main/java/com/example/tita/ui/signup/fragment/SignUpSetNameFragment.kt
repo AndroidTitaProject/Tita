@@ -13,8 +13,8 @@ import com.example.tita.utils.errorAnimationShow
 import com.example.tita.utils.successAnimationShow
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
 @AndroidEntryPoint
+
 class SignUpSetNameFragment :
     UtilityBase.BaseFragment<FragmentSignUpSetNameBinding>(R.layout.fragment_sign_up_set_name) {
 

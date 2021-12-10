@@ -1,8 +1,11 @@
-package com.example.tita.utils
+package com.example.tita
 
 import android.app.Application
 import android.content.Context
 import androidx.test.runner.AndroidJUnitRunner
+import com.example.tita.utils.MainApplicationImpl
+import dagger.hilt.android.testing.HiltTestApplication
+
 
 class HiltTestRunner : AndroidJUnitRunner() {
 
@@ -11,6 +14,6 @@ class HiltTestRunner : AndroidJUnitRunner() {
         className: String?,
         context: Context?
     ): Application {
-        return super.newApplication(cl, App::class.java.name, context)
+        return super.newApplication(cl, HiltTestApplication::class.java.name, context)
     }
 }

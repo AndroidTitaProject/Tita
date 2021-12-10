@@ -6,6 +6,7 @@ import com.example.data.entity.signup.response.IdCheckResponse
 import com.example.data.entity.signup.response.NickNameOverlapResponse
 import com.example.data.entity.signup.request.GetMailRequest
 import com.example.data.entity.signup.request.SignUpRequest
+import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -29,10 +30,14 @@ interface SignUpService {
         @Path("username") userName: String
     ): Single<IdCheckResponse>
 
-    @GET("tita/username/{name}/exists")
+    @GET("tita/name/{name}/exists")
      fun getNameOverlap(
         @Path("name") name: String
     ) : Single<NickNameOverlapResponse>
 
+    @GET("tita/username/{name}/exists")
+    fun getNameOverlaps(
+        @Path("name") name: String
+    ) : Observable<NickNameOverlapResponse>
 
 }
