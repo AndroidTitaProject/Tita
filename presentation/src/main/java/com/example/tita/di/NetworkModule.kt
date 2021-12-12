@@ -1,6 +1,7 @@
 package com.example.tita.di
 
 
+import com.example.data.network.service.SchoolService
 import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
@@ -14,6 +15,7 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -22,6 +24,7 @@ import javax.inject.Singleton
 object NetworkModule {
 
 
+    const val SCHOOL_BASE_URL="https://open.neis.go.kr/"
     @Provides
     @Singleton
     fun provideHttpClient(): OkHttpClient {
@@ -39,6 +42,7 @@ object NetworkModule {
     }
 
 
+    @Named("main")
     @Singleton
     @Provides
     fun provideRetrofitInstance(
@@ -55,6 +59,24 @@ object NetworkModule {
             .build()
 
     }
+    @Named("school")
+    @Singleton
+    @Provides
+    fun provideSchoolRetrofitInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(SCHOOL_BASE_URL)
+            .client(okHttpClient)
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            //json 변화기 Factory
+            .client(provideHttpClient())
+            .addConverterFactory(gsonConverterFactory)
+            .build()
+
+    }
+
 
     @Provides
     @Singleton
@@ -64,9 +86,16 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): SignUpService {
+    fun provideApiService(@Named("main") retrofit: Retrofit): SignUpService {
         return (retrofit.create(SignUpService::class.java))
     }
+
+    @Provides
+    @Singleton
+    fun provideSchoolApiService(@Named("school") retrofit: Retrofit): SchoolService {
+        return (retrofit.create(SchoolService::class.java))
+    }
+
 
 
     // 서버로 부터 받아온 데이터 log 찍기

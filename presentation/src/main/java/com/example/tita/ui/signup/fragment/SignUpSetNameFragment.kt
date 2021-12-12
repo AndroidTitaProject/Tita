@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentSignUpSetNameBinding
@@ -53,6 +54,11 @@ class SignUpSetNameFragment :
                 if (viewModel.isSuccess.value.toString().isNotEmpty()) {
                     viewModel.signUp(binding.nicknameEdit.text.toString())
                 }
+            }
+        }
+        with(binding) {
+            backBtn.setOnClickListener {
+                findNavController().navigateUp()
             }
         }
     }

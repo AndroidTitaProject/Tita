@@ -3,10 +3,10 @@ package com.example.tita.ui.signup.fragment.viewmodel
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.domain.usecase.IdCheckUseCase
-import com.example.domain.usecase.NickNameUseCase
-import com.example.domain.usecase.PostMailUseCase
-import com.example.domain.usecase.SignUpUseCase
+import com.example.domain.usecase.signup.IdCheckUseCase
+import com.example.domain.usecase.signup.NickNameUseCase
+import com.example.domain.usecase.signup.PostMailUseCase
+import com.example.domain.usecase.signup.SignUpUseCase
 import com.example.tita.base.BaseViewModel
 import com.example.tita.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -45,6 +45,8 @@ class SignUpViewModel @Inject constructor(
     private val _isFailure = MutableLiveData<Event<String>>()
     val isFailure: LiveData<Event<String>> = _isFailure
 
+    private val _userName = MutableLiveData<String>()
+    val userName : LiveData<String> get()=_userName
     private val _mail = MutableLiveData<String>()
     val mail: LiveData<String> get() = _mail
 
@@ -87,14 +89,23 @@ class SignUpViewModel @Inject constructor(
                         Log.d(TAG, "idCheck: ${_id.value}")
                         _isSuccess.value = Event(it.msg)
                     }, {
+                        Log.d(TAG, "idCheck: throw :${it.message}")
                         _isFailure.value = Event(it.message ?: "")
                     })
             )
         } catch (e: Exception) {
+            Log.d(TAG, "idCheck: error ${e}")
             _isFailure.value = Event(e.toString())
         }
 
 
+    }
+
+    fun getUserName(userName:String){
+        _userName.value=userName
+    }
+    fun getSchoolName(school:String){
+        _school.value=school
     }
 
 
@@ -102,6 +113,7 @@ class SignUpViewModel @Inject constructor(
      fun getPassword(password:String){
         _password.value=password
     }
+
 
     fun getEmail(email: String){
         _email.value=email

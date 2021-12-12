@@ -1,28 +1,21 @@
 package com.example.tita.ui.signup.fragment.viewmodel
 
-import android.os.Build
 import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.test.espresso.matcher.ViewMatchers.assertThat
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.data.network.service.SignUpService
 import com.example.domain.repository.AuthRepository
-import com.example.domain.usecase.IdCheckUseCase
-import com.example.domain.usecase.NickNameUseCase
-import com.example.domain.usecase.PostMailUseCase
-import com.example.domain.usecase.SignUpUseCase
-import com.google.common.truth.Truth
+import com.example.domain.usecase.signup.IdCheckUseCase
+import com.example.domain.usecase.signup.NickNameUseCase
+import com.example.domain.usecase.signup.PostMailUseCase
+import com.example.domain.usecase.signup.SignUpUseCase
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import dagger.hilt.android.testing.HiltTestApplication
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 // hilt 로 테스트 하겠다

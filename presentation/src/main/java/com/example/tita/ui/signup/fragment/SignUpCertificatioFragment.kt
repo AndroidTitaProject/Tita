@@ -30,6 +30,11 @@ class SignUpCertificatioFragment :
         observeFail()
         observeGetMail()
         nextBtnOnClick()
+        with(binding) {
+            backBtn.setOnClickListener {
+                findNavController().navigateUp()
+            }
+        }
     }
 
     private fun observeGetMail() {

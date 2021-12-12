@@ -1,7 +1,9 @@
 package com.example.tita.di
 
+import com.example.data.network.service.SchoolService
 import com.example.data.repository.signup.remote.SignUpDataSourceImpl
 import com.example.data.network.service.SignUpService
+import com.example.data.repository.school.remote.SchoolDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +19,11 @@ object DataSourceModule {
     fun provideSignUpDataSource(authRemote: SignUpService): SignUpDataSourceImpl {
         return SignUpDataSourceImpl(authRemote)
     }
-
+    @Provides
+    @Singleton
+    fun provideSchoolDataSource(authRemote: SchoolService): SchoolDataSourceImpl {
+        return SchoolDataSourceImpl(authRemote)
+    }
 }
 
 
