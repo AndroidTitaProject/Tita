@@ -1,10 +1,7 @@
 package com.example.tita.di
 
 
-import com.example.data.network.service.FindIdPasswordService
-import com.example.data.network.service.LoginService
-import com.example.data.network.service.SchoolService
-import com.example.data.network.service.SignUpService
+import com.example.data.network.service.*
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -112,7 +109,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideBoardService(@Named("main")retrofit: Retrofit):BoardService {
+    fun provideBoardService(@Named("main")retrofit: Retrofit): BoardService {
         return (retrofit.create(BoardService::class.java))
     }
 

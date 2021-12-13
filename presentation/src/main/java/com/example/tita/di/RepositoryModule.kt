@@ -6,7 +6,6 @@ import com.example.data.repository.board.repository.BoardRepositoryImpl
 import com.example.data.repository.findidpassword.repository.FindPasswordRepositoryImpl
 import com.example.data.repository.findidpassword.datasource.FindPasswordDataSource
 import com.example.data.repository.findidpassword.datasource.FindPasswordDataSourceImpl
-import com.example.data.repository.findidpassword.repository.FindPasswordRepositoryImpl
 import com.example.data.repository.login.datasource.LoginDataSourceImpl
 import com.example.data.repository.login.repository.LoginRepositoryImpl
 import com.example.data.repository.school.SchoolSearchRepositoryImpl
@@ -14,7 +13,6 @@ import com.example.data.repository.school.remote.SchoolDataSourceImpl
 import com.example.data.repository.signup.remote.SignUpDataSourceImpl
 import com.example.data.repository.signup.SignUpRepositoryImpl
 import com.example.domain.repository.AuthRepository
-import com.example.data.repository.signup.remote.SignUpDataSourceImpl
 import com.example.domain.repository.BoardRepository
 import com.example.domain.repository.FindIdAndPasswordRepository
 import com.example.domain.repository.LoginRepository
@@ -46,7 +44,8 @@ object RepositoryModule {
     fun provideSchoolRepository(authDataSourceImpl: SchoolDataSourceImpl): SchoolRepository {
         return SchoolSearchRepositoryImpl(authDataSourceImpl)
     }
-
+    @Provides
+    @Singleton
     fun provideLoginRepository(loginDataSourceImpl: LoginDataSourceImpl): LoginRepository {
         return LoginRepositoryImpl(loginDataSourceImpl)
     }

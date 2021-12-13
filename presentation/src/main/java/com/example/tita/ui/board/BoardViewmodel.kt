@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.domain.entity.BoardEntity
 import com.example.domain.usecase.GetBoardPostUseCase
-import com.example.domain.usecase.PostMailUseCase
 import com.example.tita.base.BaseViewModel
 import com.example.tita.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
