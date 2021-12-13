@@ -110,6 +110,12 @@ object NetworkModule {
     }
 
 
+    @Provides
+    @Singleton
+    fun provideBoardService(@Named("main")retrofit: Retrofit):BoardService {
+        return (retrofit.create(BoardService::class.java))
+    }
+
     // 서버로 부터 받아온 데이터 log 찍기
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }

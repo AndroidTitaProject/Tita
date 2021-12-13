@@ -3,24 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="presentation/src/main/res/drawable/board_background.xml" value="0.3707692307692308" />
-        <entry key="presentation/src/main/res/drawable/board_background_free.xml" value="0.3707692307692308" />
-        <entry key="presentation/src/main/res/drawable/board_chat.xml" value="0.1375" />
-        <entry key="presentation/src/main/res/drawable/board_ra.xml" value="0.3707692307692308" />
-        <entry key="presentation/src/main/res/layout/activity_board.xml" value="0.22466216216216217" />
-        <entry key="presentation/src/main/res/layout/activity_find_id.xml" value="0.12730263157894736" />
-        <entry key="presentation/src/main/res/layout/activity_find_password.xml" value="0.2254071661237785" />
-        <entry key="presentation/src/main/res/layout/activity_login.xml" value="0.3548717948717949" />
-        <entry key="presentation/src/main/res/layout/board_free_row.xml" value="0.45" />
-        <entry key="presentation/src/main/res/layout/fragment_board.xml" value="0.231438127090301" />
-        <entry key="presentation/src/main/res/layout/fragment_board2.xml" value="0.36041666666666666" />
-        <entry key="presentation/src/main/res/layout/fragment_board_free.xml" value="0.25" />
-        <entry key="presentation/src/main/res/layout/fragment_certificatio.xml" value="0.3548717948717949" />
-        <entry key="presentation/src/main/res/layout/fragment_find_password_change_finish.xml" value="0.3548717948717949" />
-        <entry key="presentation/src/main/res/layout/fragment_login.xml" value="0.231438127090301" />
-        <entry key="presentation/src/main/res/layout/fragment_sign_up_certificatio_school.xml" value="0.335" />
-        <entry key="presentation/src/main/res/layout/fragment_sign_up_id_password.xml" value="0.12730263157894736" />
-        <entry key="presentation/src/main/res/layout/fragment_sign_up_set_name.xml" value="0.335" />
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/drawable/board_chat.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/drawable/edit_text_background.xml" value="0.28020833333333334" />
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/drawable/login_background.xml" value="0.28020833333333334" />
@@ -51,6 +33,35 @@
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/layout/profile_board_item.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/layout/search_school_item.xml" value="0.3416666666666667" />
         <entry key="..\:/Users/KyungMin/StudioProjects/Tita-Android/presentation/src/main/res/menu/main_item.xml" value="0.24322916666666666" />
+        <entry key="presentation/src/main/res/drawable/background_free_btn.xml" value="0.2260586319218241" />
+        <entry key="presentation/src/main/res/drawable/background_free_edit.xml" value="0.2260586319218241" />
+        <entry key="presentation/src/main/res/drawable/board_background.xml" value="0.3707692307692308" />
+        <entry key="presentation/src/main/res/drawable/board_background_free.xml" value="0.3707692307692308" />
+        <entry key="presentation/src/main/res/drawable/board_chat.xml" value="0.1375" />
+        <entry key="presentation/src/main/res/drawable/board_ra.xml" value="0.3707692307692308" />
+        <entry key="presentation/src/main/res/layout/activity_board.xml" value="0.22466216216216217" />
+        <entry key="presentation/src/main/res/layout/activity_find_id.xml" value="0.12730263157894736" />
+        <entry key="presentation/src/main/res/layout/activity_find_password.xml" value="0.2254071661237785" />
+        <entry key="presentation/src/main/res/layout/activity_login.xml" value="0.3548717948717949" />
+        <entry key="presentation/src/main/res/layout/activity_main.xml" value="0.1194078947368421" />
+        <entry key="presentation/src/main/res/layout/boar.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/board_free_comment_row.xml" value="0.335" />
+        <entry key="presentation/src/main/res/layout/board_free_row.xml" value="0.375" />
+        <entry key="presentation/src/main/res/layout/board_notice_row.xml" value="0.1890625" />
+        <entry key="presentation/src/main/res/layout/fragment_board.xml" value="0.231438127090301" />
+        <entry key="presentation/src/main/res/layout/fragment_board2.xml" value="0.36041666666666666" />
+        <entry key="presentation/src/main/res/layout/fragment_board_free.xml" value="0.25" />
+        <entry key="presentation/src/main/res/layout/fragment_board_notice.xml" value="0.3014950166112957" />
+        <entry key="presentation/src/main/res/layout/fragment_board_notice_menu.xml" value="0.335" />
+        <entry key="presentation/src/main/res/layout/fragment_board_post_write.xml" value="0.32833020637898686" />
+        <entry key="presentation/src/main/res/layout/fragment_certificatio.xml" value="0.3548717948717949" />
+        <entry key="presentation/src/main/res/layout/fragment_find_password_change_finish.xml" value="0.3548717948717949" />
+        <entry key="presentation/src/main/res/layout/fragment_login.xml" value="0.231438127090301" />
+        <entry key="presentation/src/main/res/layout/fragment_sign_up_certificatio_school.xml" value="0.335" />
+        <entry key="presentation/src/main/res/layout/fragment_sign_up_id_password.xml" value="0.12730263157894736" />
+        <entry key="presentation/src/main/res/layout/fragment_sign_up_set_name.xml" value="0.335" />
+        <entry key="presentation/src/main/res/layout/profile_board_item.xml" value="0.375" />
+        <entry key="presentation/src/main/res/menu/main_item.xml" value="0.2180921052631579" />
       </map>
     </option>
   </component>

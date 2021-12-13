@@ -11,10 +11,14 @@
         android:name="com.example.tita.ui.home.HomeFragment"
         android:label="HomeFragment" />
     <fragment
-        android:id="@+id/boardFragment"
+        android:id="@+id/homeboardFragment"
         tools:layout="@layout/fragment_board"
         android:name="com.example.tita.ui.board.BoardFragment"
-        android:label="BoardFragment" />
+        android:label="BoardFragment" >
+        <action
+            android:id="@+id/action_homeboardFragment_to_boardFreeFragment"
+            app:destination="@id/boardFreeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"
@@ -24,6 +28,14 @@
         android:id="@+id/notificationFragment"
         android:name="com.example.tita.ui.NotificationFragment"
         android:label="NotificationFragment" />
+    <fragment
+        android:id="@+id/boardFreeFragment"
+        android:name="com.example.tita.ui.board.BoardFreeFragment"
+        android:label="BoardFreeFragment" >
+        <action
+            android:id="@+id/action_boardFreeFragment_to_homeboardFragment"
+            app:destination="@id/homeboardFragment" />
+    </fragment>
 
 
 </navigation>
