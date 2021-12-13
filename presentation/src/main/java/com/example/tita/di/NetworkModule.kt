@@ -1,10 +1,7 @@
 package com.example.tita.di
 
 
-import com.example.data.network.service.BoardService
-import com.example.data.network.service.LoginService
-import com.example.data.network.service.FindIdPasswordService
-import com.example.data.network.service.SignUpService
+import com.example.data.network.service.*
 import com.example.data.util.ApiClient.BASE_USER_URL
 import dagger.Module
 import dagger.Provides
@@ -17,6 +14,7 @@ import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 import java.util.concurrent.TimeUnit
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -24,6 +22,7 @@ import javax.inject.Singleton
 // Singleton, Provides 쓸때 private 말고 public 으로 해야한다.
 object NetworkModule {
 
+    const val SCHOOL_BASE_URL = "https://open.neis.go.kr/"
 
     @Provides
     @Singleton
@@ -41,7 +40,7 @@ object NetworkModule {
 
     }
 
-
+    @Named("main")
     @Singleton
     @Provides
     fun provideRetrofitInstance(
@@ -59,6 +58,24 @@ object NetworkModule {
 
     }
 
+    @Named("school")
+    @Singleton
+    @Provides
+    fun provideSchoolRetrofitInstance(
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory
+    ): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(SCHOOL_BASE_URL)
+            .client(okHttpClient)
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            //json 변화기 Factory
+            .client(provideHttpClient())
+            .addConverterFactory(gsonConverterFactory)
+            .build()
+
+    }
+
     @Provides
     @Singleton
     fun provideConverterFactory(): GsonConverterFactory {
@@ -67,24 +84,32 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): FindIdPasswordService {
+    fun provideApiService(@Named("main") retrofit: Retrofit): SignUpService {
+        return (retrofit.create(SignUpService::class.java))
+    }
+    @Provides
+    @Singleton
+    fun provideFindIdService(@Named("main") retrofit: Retrofit): FindIdPasswordService {
         return (retrofit.create(FindIdPasswordService::class.java))
     }
 
     @Provides
     @Singleton
-    fun provideLoginService(retrofit: Retrofit): LoginService {
+    fun provideLoginService(@Named("main") retrofit: Retrofit): LoginService {
         return (retrofit.create(LoginService::class.java))
     }
-    @Provides
-    @Singleton
-    fun provideAuthService(retrofit: Retrofit):SignUpService {
-        return (retrofit.create(SignUpService::class.java))
-    }
+
 
     @Provides
     @Singleton
-    fun provideBoardService(retrofit: Retrofit):BoardService {
+    fun provideSchoolApiService(@Named("school") retrofit: Retrofit): SchoolService {
+        return (retrofit.create(SchoolService::class.java))
+    }
+
+
+    @Provides
+    @Singleton
+    fun provideBoardService(@Named("main")retrofit: Retrofit): BoardService {
         return (retrofit.create(BoardService::class.java))
     }
 
@@ -94,3 +119,4 @@ object NetworkModule {
 
 
 }
+

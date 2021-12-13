@@ -57,9 +57,17 @@
         android:label=""
         tools:layout="@layout/fragment_sign_up_certificatio_school"
         android:name="com.example.tita.ui.signup.fragment.SignUpCertificatioSchoolFragment">
+
         <action
             android:id="@+id/action_signUpCertificatioSchoolFragment_to_signUpSetNameFragment"
             app:destination="@id/signUpSetNameFragment" />
+        <action
+            android:id="@+id/action_signUpCertificatioSchoolFragment_to_searchSchoolFragment"
+            app:destination="@id/searchSchoolFragment" />
+        <argument
+            android:name="schoolName"
+            app:argType="string"
+            android:defaultValue="" />
     </fragment>
 
     <fragment
@@ -70,6 +78,14 @@
 
 
 
+    </fragment>
+    <fragment
+        android:id="@+id/searchSchoolFragment"
+        android:name="com.example.tita.ui.signup.fragment.dialog.SearchSchoolFragment"
+        android:label="SearchSchoolFragment" >
+        <action
+            android:id="@+id/action_searchSchoolFragment_to_signUpCertificatioSchoolFragment"
+            app:destination="@id/signUpCertificatioSchoolFragment" />
     </fragment>
 
 </navigation>

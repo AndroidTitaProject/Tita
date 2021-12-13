@@ -27,8 +27,7 @@ class SignUpRepositoryImpl @Inject constructor(
         school: String,
         email: String
     ): Single<SignUpEntity> {
-        return dataSourceImpl.postSignUp(SignUpRequest(username, password, name, school, email))
-            .map { it.toDomain() }
+        return dataSourceImpl.postSignUp(SignUpRequest(username, password, name, school, email)).map { it.toDomain() }
     }
 
     override suspend fun getMail(mail: String): Single<GetMailEntity> {

@@ -48,9 +48,15 @@ class SignUpIdPasswordFragment :
                 }
                 lifecycleScope.launch {
                     viewModel.isSuccess.observe(viewLifecycleOwner, EventObserver {
+                        viewModel.getUserName(binding.idEdit.text.toString())
                         binding.errorSuccessIdText.successAnimationShow(requireContext(), it)
 
                     })
+                }
+            }
+            with(binding){
+                backBtn.setOnClickListener {
+                    findNavController().navigateUp()
                 }
             }
             successImport()
@@ -59,10 +65,10 @@ class SignUpIdPasswordFragment :
     }
 
     fun passwordEquals(): Boolean {
-        return if (binding.passwordEdit.text.toString().isEmpty()) {
+        return if (binding.passwordEditEdit.text.toString().isEmpty()) {
             return false
         } else {
-            return binding.passwordEdit.text.toString() == binding.passwordOkEdit.text.toString()
+            return binding.passwordEditEdit.text.toString() == binding.passwordOkEdit.text.toString()
 
         }
     }

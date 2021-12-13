@@ -11,7 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/singin_background">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="start"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/back" />
+
+        </androidx.appcompat.widget.Toolbar>
         <TextView
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
@@ -19,6 +37,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="118sp"
             android:fontFamily="@font/notosanskrbold"
+            android:includeFontPadding="false"
             android:text="@string/school"
             android:textColor="@color/black"
             android:textSize="26sp" />
@@ -38,13 +57,13 @@
         <EditText
             android:id="@+id/school_edit"
             android:layout_width="220sp"
-            android:background="@color/white"
             android:layout_height="45sp"
             android:layout_below="@id/school_text"
             android:layout_alignStart="@id/welcome_text"
             android:layout_marginTop="10sp"
+            android:background="@color/white"
             android:elevation="10dp"
-            android:hint=""
+            android:hint="학교를 입력해 주세요"
             android:padding="13sp"
             android:textColor="@color/black"
             android:textColorHint="#808080"
@@ -60,50 +79,13 @@
             android:layout_toRightOf="@id/school_edit"
             android:backgroundTint="#FFFBEB"
             android:fontFamily="@font/notosanskrbold"
+            android:includeFontPadding="false"
             android:text="검색"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/school_certificatio_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/school_edit"
-            android:layout_alignLeft="@id/welcome_text"
-            android:layout_marginTop="25sp"
-            android:text="*학교인증"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/school_certificatio_edit"
-            android:layout_width="220sp"
-            android:layout_height="45sp"
-            android:layout_below="@id/school_certificatio_text"
-            android:layout_alignLeft="@id/welcome_text"
-            android:layout_marginTop="10sp"
-            android:elevation="10dp"
-            android:background="@color/white"
-            android:hint="학생증 사진을 첨부해주세요"
-            android:padding="13sp"
-            android:textColor="@color/black"
-            android:textColorHint="#808080"
-            android:textSize="14sp" />
 
-        <Button
-            android:id="@+id/school_certificatio_button"
-            android:layout_width="70sp"
-            android:layout_height="45sp"
-            android:layout_below="@id/school_certificatio_text"
-            android:layout_marginLeft="10sp"
-            android:layout_marginTop="10sp"
-            android:layout_toRightOf="@id/school_certificatio_edit"
-            android:backgroundTint="#FFFBEB"
-            android:fontFamily="@font/notosanskrbold"
-            android:text="첨부"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -115,6 +97,7 @@
             android:layout_marginBottom="40dp"
             android:backgroundTint="#FFFBEB"
             android:fontFamily="@font/notosanskrbold"
+            android:includeFontPadding="false"
             android:text="게속하기"
             android:textColor="@color/black"
             android:textSize="20sp"

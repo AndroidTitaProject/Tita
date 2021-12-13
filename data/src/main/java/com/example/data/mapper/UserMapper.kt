@@ -1,5 +1,6 @@
 package com.example.data.mapper
 
+import com.example.data.base.BaseResponse
 import com.example.data.base.FindIdPasswordBaseResponse
 import com.example.data.base.SignUpBaseResponse
 import com.example.data.entity.findpassword.response.PasswordChangeResponse
@@ -9,7 +10,8 @@ import com.example.data.entity.signup.response.IdCheckResponse
 import com.example.data.entity.signup.response.NickNameOverlapResponse
 import com.example.domain.entity.*
 
-fun SignUpBaseResponse.toDomain() : SignUpEntity{
+
+fun BaseResponse.toDomain(): SignUpEntity {
     return SignUpEntity(
         this.success,
         this.code,

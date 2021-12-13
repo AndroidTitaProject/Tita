@@ -1,6 +1,7 @@
 package com.example.data.repository.signup.remote
 
 import com.example.data.base.BaseDataSource
+import com.example.data.base.BaseResponse
 import com.example.data.base.SignUpBaseResponse
 import com.example.data.entity.signup.response.GetMailResponse
 import com.example.data.entity.signup.response.IdCheckResponse
@@ -17,7 +18,7 @@ class SignUpDataSourceImpl @Inject constructor(
 ) : BaseDataSource<SignUpService>(), SignUpDataSource {
 
 
-    override suspend fun postSignUp(request: SignUpRequest): Single<SignUpBaseResponse> =
+    override suspend fun postSignUp(request: SignUpRequest): Single<BaseResponse> =
         service.postSignUp(request)
 
     override suspend fun postMail(mail: GetMailRequest): Single<GetMailResponse> =
