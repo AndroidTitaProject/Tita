@@ -37,11 +37,10 @@ class BoardFragment : UtilityBase.BaseFragment<FragmentBoardBinding>(R.layout.fr
 
         }
 
-        lifecycleScope.launch{
-            viewModel.getPost("더미1")
+        binding.noticeBoardArea.setOnClickListener {
+            this@BoardFragment.findNavController()
+                .navigate(R.id.action_homeboardFragment_to_boardNoticeMenuFragment)
         }
-
-        binding.noticeBoardArea.setOnClickListener {  }
     }
 
 }
