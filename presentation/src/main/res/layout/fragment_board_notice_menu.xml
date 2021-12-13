@@ -32,7 +32,7 @@
                 android:layout_margin="20dp"
                 android:fontFamily="@font/notosanskrbold"
                 android:includeFontPadding="false"
-                android:text="자유게시판"
+                android:text="공지게시판"
                 android:textColor="@color/black"
                 android:textSize="25dp" />
         </com.google.android.material.appbar.MaterialToolbar>

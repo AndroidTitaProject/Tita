@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeboardFragment_to_boardFreeFragment"
             app:destination="@id/boardFreeFragment" />
+        <action
+            android:id="@+id/action_homeboardFragment_to_boardNoticeMenuFragment"
+            app:destination="@id/boardNoticeMenuFragment" />
     </fragment>
 
     <fragment
@@ -34,6 +37,29 @@
         android:label="BoardFreeFragment" >
         <action
             android:id="@+id/action_boardFreeFragment_to_homeboardFragment"
+            app:destination="@id/homeboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardNoticeFragment"
+        android:name="com.example.tita.ui.board.BoardNoticeFragment"
+        android:label="fragment_board_notice"
+        tools:layout="@layout/fragment_board_notice" >
+        <action
+            android:id="@+id/action_boardNoticeFragment_to_boardNoticeMenuFragment"
+            app:destination="@id/boardNoticeMenuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/boardNoticeMenuFragment"
+        android:name="com.example.tita.ui.board.BoardNoticeMenuFragment"
+        android:label="BoardNoticeMenuFragment" >
+        <action
+            android:id="@+id/action_boardNoticeMenuFragment_to_homeboardFragment"
+            app:destination="@id/homeboardFragment" />
+        <action
+            android:id="@+id/action_boardNoticeMenuFragment_to_boardNoticeFragment"
+            app:destination="@id/boardNoticeFragment" />
+        <action
+            android:id="@+id/action_boardNoticeMenuFragment_to_homeboardFragment2"
             app:destination="@id/homeboardFragment" />
     </fragment>
 
