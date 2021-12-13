@@ -7,7 +7,7 @@ data class BoardEntity(
     @SerializedName("code")
     val code: Int,
     @SerializedName("data")
-    val data: List<Any>,
+    val data: List<BoardData>,
     @SerializedName("msg")
     val msg: String,
     @SerializedName("success")
