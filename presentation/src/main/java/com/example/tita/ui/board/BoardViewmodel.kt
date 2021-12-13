@@ -3,6 +3,7 @@ package com.example.tita.ui.board
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.domain.entity.BoardData
 import com.example.domain.entity.BoardEntity
 import com.example.domain.usecase.GetBoardPostUseCase
 import com.example.domain.usecase.PostMailUseCase
@@ -19,8 +20,8 @@ class BoardViewmodel @Inject constructor(
 
     val TAG : String = "baord"
 
-    private val _boardData = MutableLiveData<List<Any>>()
-    val password: LiveData<List<Any>> get() = _boardData
+    private val _boardData = MutableLiveData<List<BoardData>>()
+    val boardData: LiveData<List<BoardData>> get() = _boardData
 
     private val _isSuccess = MutableLiveData<Event<String>>()
     val isSuccess: LiveData<Event<String>> = _isSuccess
@@ -36,7 +37,7 @@ class BoardViewmodel @Inject constructor(
                 .subscribe({ data ->
                      _boardData.value =  data.data
 
-                    Log.d("cocopam",_boardData.value.toString())
+                    Log.d("_board",data.data.toString())
 
                     _isSuccess.value = Event(data.msg)
                 }, {
