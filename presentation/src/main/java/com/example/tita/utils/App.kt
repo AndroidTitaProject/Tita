@@ -9,7 +9,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 */
 @HiltAndroidApp
-class App : Application() {
+open class App : MainApplicationImpl() {
     companion object {
         lateinit var instance: App
             private set

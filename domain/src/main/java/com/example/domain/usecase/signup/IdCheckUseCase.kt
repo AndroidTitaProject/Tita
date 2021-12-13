@@ -1,4 +1,4 @@
-package com.example.domain.usecase
+package com.example.domain.usecase.signup
 
 import android.util.Log
 import com.example.domain.base.ParamsUseCase

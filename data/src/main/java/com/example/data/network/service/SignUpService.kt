@@ -1,30 +1,28 @@
 package com.example.data.network.service
 
+import com.example.data.base.BaseResponse
 import com.example.data.base.SignUpBaseResponse
-import com.example.data.entity.signup.request.GetMailRequest
-import com.example.data.entity.signup.request.SignUpRequest
 import com.example.data.entity.signup.response.GetMailResponse
 import com.example.data.entity.signup.response.IdCheckResponse
 import com.example.data.entity.signup.response.NickNameOverlapResponse
+import com.example.data.entity.signup.request.GetMailRequest
+import com.example.data.entity.signup.request.SignUpRequest
+import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
-import retrofit2.http.*
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface SignUpService {
-
-
-    @GET("verify/key")
-    suspend fun getMail(
-        @Query("mail") mail: String
-    ): Single<GetMailResponse>
-
     @POST("tita/signup")
-    fun postSignUp(
+     fun postSignUp(
         @Body request: SignUpRequest
-    ): Single<SignUpBaseResponse>
+    ): Single<BaseResponse>
 
 
     @POST("tita/verify")
-    fun getMail(
+     fun getMail(
         @Body request: GetMailRequest
     ): Single<GetMailResponse>
 
@@ -33,9 +31,14 @@ interface SignUpService {
         @Path("username") userName: String
     ): Single<IdCheckResponse>
 
-    @GET("tita/username/{name}/exists")
-    fun getNameOverlap(
+    @GET("tita/name/{name}/exists")
+     fun getNameOverlap(
         @Path("name") name: String
     ) : Single<NickNameOverlapResponse>
+
+    @GET("tita/username/{name}/exists")
+    fun getNameOverlaps(
+        @Path("name") name: String
+    ) : Observable<NickNameOverlapResponse>
 
 }
