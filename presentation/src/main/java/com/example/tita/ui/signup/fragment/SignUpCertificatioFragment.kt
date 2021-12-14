@@ -41,8 +41,7 @@ class SignUpCertificatioFragment :
 
         binding.emailBtn.setOnClickListener {
             lifecycleScope.launch {
-                if (binding.emailEdit.text.toString().replace(" ", "").isNotEmpty()) {
-                    viewModel.getMail(binding.emailEdit.text.toString())
+                if (binding.emailEdit.text.toString().isNotBlank()) {
                     viewModel.getEmail(binding.emailEdit.text.toString())
                 }else{
                     binding.errorSuccessEmailText.errorAnimationShow(requireContext(), "빈칸없이 적어주세요.")

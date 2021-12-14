@@ -35,7 +35,7 @@ class SearchSchoolFragment :
             with(binding) {
                 searchBtn.setOnClickListener {
                     lifecycleScope.launch {
-                        searchSchool(searchEdit.text.toString())
+                        searchSchool(searchEdit.text.toString().trim())
                     }
                 }
                 schoolSearch.observe(viewLifecycleOwner) {

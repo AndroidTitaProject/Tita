@@ -1,5 +1,6 @@
 package com.example.tita.ui.signup.fragment
 
+import android.util.Log
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
@@ -10,7 +11,6 @@ class SignUpTermsFragment :
     UtilityBase.BaseFragment<FragmentSignUpTermsBinding>(R.layout.fragment_sign_up_terms) {
 
     override fun FragmentSignUpTermsBinding.onCreateView() {
-
     }
 
     override fun FragmentSignUpTermsBinding.onViewCreated() {
@@ -30,12 +30,17 @@ class SignUpTermsFragment :
                 findNavController().navigateUp()
             }
             nextButton.setOnClickListener {
-                if (communityTermsOfUseCheckbox.isChecked && informationProcessingCheckbox.isChecked && serviceCheckbox.isChecked) {
+                if (checkBoxChecked()) {
                     findNavController().navigate(R.id.action_signUpTermsFragment_to_signUpCertificatioFragment)
                 } else {
-                    Toast.makeText(requireContext(), "약간 동의에 체크해 주세요", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "빈칸을 빠짐없이 입력해주세요", Toast.LENGTH_SHORT).show()
                 }
             }
+
+
         }
     }
+
+    private fun checkBoxChecked() =
+        binding.communityTermsOfUseCheckbox.isChecked && binding.informationProcessingCheckbox.isChecked && binding.serviceCheckbox.isChecked
 }

@@ -46,7 +46,7 @@ class SignUpViewModel @Inject constructor(
     val isFailure: LiveData<Event<String>> = _isFailure
 
     private val _userName = MutableLiveData<String>()
-    val userName : LiveData<String> get()=_userName
+    val userName: LiveData<String> get() = _userName
     private val _mail = MutableLiveData<String>()
     val mail: LiveData<String> get() = _mail
 
@@ -101,24 +101,28 @@ class SignUpViewModel @Inject constructor(
 
     }
 
-    fun getUserName(userName:String){
-        _userName.value=userName
+    fun getUserName(userName: String) {
+        _userName.value = userName
     }
-    fun getSchoolName(school:String){
-        _school.value=school
+
+    fun getSchoolName(school: String) {
+        _school.value = school
     }
 
 
     // 비밀번호 받아오기
-     fun getPassword(password:String){
-        _password.value=password
+    fun getPassword(password: String) {
+        _password.value = password
     }
 
 
-    fun getEmail(email: String){
-        _email.value=email
+    fun getEmail(email: String) {
+        Log.d(TAG, "getEmail: ${email}")
+        _email.value = email
     }
 
+
+    // 닉네임 중복확인
     suspend fun nickNameOverlap(name: String) {
         _nickName.value = name
         try {

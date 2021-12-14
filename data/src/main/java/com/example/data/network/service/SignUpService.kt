@@ -14,7 +14,7 @@ import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface SignUpService {
-    @POST("tita/signup")
+    @POST("tita/user/signup")
      fun postSignUp(
         @Body request: SignUpRequest
     ): Single<BaseResponse>
@@ -25,12 +25,14 @@ interface SignUpService {
         @Body request: GetMailRequest
     ): Single<GetMailResponse>
 
-    @GET("tita/username/{username}/exists")
+     // 아이디 중복확인
+    @GET("tita/user/username/{username}/exists")
     fun getIdCheck(
         @Path("username") userName: String
     ): Single<IdCheckResponse>
 
-    @GET("tita/name/{name}/exists")
+    // 닉네임 중복확인
+    @GET("tita/user/name/{name}/exists")
      fun getNameOverlap(
         @Path("name") name: String
     ) : Single<NickNameOverlapResponse>

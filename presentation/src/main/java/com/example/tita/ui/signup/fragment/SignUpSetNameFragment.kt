@@ -14,11 +14,12 @@ import com.example.tita.utils.errorAnimationShow
 import com.example.tita.utils.successAnimationShow
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+
 @AndroidEntryPoint
 
 class SignUpSetNameFragment :
     UtilityBase.BaseFragment<FragmentSignUpSetNameBinding>(R.layout.fragment_sign_up_set_name) {
-
+    var success = ""
 
     private val viewModel by activityViewModels<SignUpViewModel>()
     override fun FragmentSignUpSetNameBinding.onCreateView() {
@@ -42,6 +43,7 @@ class SignUpSetNameFragment :
             }
             lifecycleScope.launch {
                 viewModel.isSuccess.observe(viewLifecycleOwner, EventObserver {
+                    success = it
                     Log.d("TAG", "onViewCreated: success $it")
                     binding.returnText.successAnimationShow(requireContext(), it)
 
@@ -51,8 +53,9 @@ class SignUpSetNameFragment :
 
         binding.nextButton.setOnClickListener {
             lifecycleScope.launch {
-                if (viewModel.isSuccess.value.toString().isNotEmpty()) {
+                if (success.isNotEmpty()) {
                     viewModel.signUp(binding.nicknameEdit.text.toString())
+                } else {
                 }
             }
         }

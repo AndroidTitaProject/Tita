@@ -19,7 +19,6 @@ class SignUpCertificatioSchoolFragment :
     private val args by navArgs<SignUpCertificatioSchoolFragmentArgs>()
     private val viewModel: SignUpViewModel by activityViewModels()
     override fun FragmentSignUpCertificatioSchoolBinding.onCreateView() {
-
     }
 
     override fun FragmentSignUpCertificatioSchoolBinding.onViewCreated() {
@@ -45,6 +44,7 @@ class SignUpCertificatioSchoolFragment :
         if (args.schoolName.isNotEmpty()) {
             binding.schoolEdit.setText(args.schoolName)
             viewModel.getSchoolName(args.schoolName)
+        } else {
         }
     }
 

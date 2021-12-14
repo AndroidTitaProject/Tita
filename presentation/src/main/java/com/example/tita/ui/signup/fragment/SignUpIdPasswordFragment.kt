@@ -20,6 +20,7 @@ import kotlinx.coroutines.launch
 class SignUpIdPasswordFragment :
     UtilityBase.BaseFragment<FragmentSignUpIdPasswordBinding>(R.layout.fragment_sign_up_id_password) {
 
+    var success = ""
 
     private val viewModel: SignUpViewModel by activityViewModels()
     override fun FragmentSignUpIdPasswordBinding.onCreateView() {
@@ -30,13 +31,13 @@ class SignUpIdPasswordFragment :
         with(viewModel) {
             binding.idBtn.setOnClickListener {
                 lifecycleScope.launch {
-                    if (binding.idEdit.text.toString().replace(" ", "").isNotEmpty()) {
+                    if (isFormat(binding.idEdit.text.toString().trim())) {
                         // 아이디
                         viewModel.idCheck(binding.idEdit.text.toString())
                     } else {
                         binding.errorSuccessIdText.errorAnimationShow(
                             requireContext(),
-                            "빈칸없이 적어주세요."
+                            "규칙에 맞게 적어주세요."
                         )
                     }
                 }
@@ -49,12 +50,14 @@ class SignUpIdPasswordFragment :
                 lifecycleScope.launch {
                     viewModel.isSuccess.observe(viewLifecycleOwner, EventObserver {
                         viewModel.getUserName(binding.idEdit.text.toString())
+                        success = it
                         binding.errorSuccessIdText.successAnimationShow(requireContext(), it)
 
                     })
                 }
             }
-            with(binding){
+
+            with(binding) {
                 backBtn.setOnClickListener {
                     findNavController().navigateUp()
                 }
@@ -64,7 +67,7 @@ class SignUpIdPasswordFragment :
 
     }
 
-    fun passwordEquals(): Boolean {
+    private fun passwordEquals(): Boolean {
         return if (binding.passwordEditEdit.text.toString().isEmpty()) {
             return false
         } else {
@@ -73,18 +76,30 @@ class SignUpIdPasswordFragment :
         }
     }
 
+    private fun isPasswordFormat(password: String): Boolean {
+        return password.matches("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&]).{8,15}.\$".toRegex())
+    }
 
-    fun successImport() {
+    private fun isFormat(id: String): Boolean {
+        return id.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{6,16}.\$".toRegex())
+    }
+
+
+    private fun successImport() {
         binding.nextBtn.setOnClickListener {
-            if (viewModel.isSuccess.value.toString().isNotEmpty()) {
-                if (passwordEquals()) {
-                    Log.d("TAG", "successImport: ")
-                    viewModel.getPassword(binding.passwordOkEdit.text.toString())
-                    findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_signUpCertificatioSchoolFragment)
-                } else {
-                    Toast.makeText(context, "비밀번호가 옳지 않습니다.", Toast.LENGTH_SHORT).show()
-                    Log.d("TAG", "successImport: else ")
-                }
+            Log.d("TAG", "successTest: ${success == "성공하였습니디."}")
+            Log.d("TAG", "successTest success: ${success.isNotEmpty()}")
+            Log.d("TAG", "정규식 테스트: ${isPasswordFormat(binding.passwordEditEdit.text.toString())}")
+            Log.d("TAG", "비밀번호 같은지 테스트: ${passwordEquals()}")
+            if (success.isNotEmpty() && isPasswordFormat(binding.passwordEditEdit.text.toString()) && passwordEquals()
+            ) {
+                Log.d("TAG", "successImport: ")
+                viewModel.getPassword(binding.passwordOkEdit.text.toString())
+
+                findNavController().navigate(R.id.action_signUpIdPasswordFragment_to_signUpCertificatioSchoolFragment)
+
+            } else {
+                Toast.makeText(requireContext(), "다시 확인해 주세요", Toast.LENGTH_SHORT).show()
             }
         }
     }
