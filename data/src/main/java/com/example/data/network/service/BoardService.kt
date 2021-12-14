@@ -1,5 +1,7 @@
 package com.example.data.network.service
 
+import com.example.data.entity.board.request.BoardFreePostRequest
+import com.example.data.entity.board.response.BoardFreeResponse
 import com.example.data.entity.board.response.BoardResponse
 import com.example.data.entity.login.request.LoginRequest
 import com.example.data.entity.login.response.LoginResponse
@@ -16,5 +18,11 @@ interface BoardService {
     fun getPost(
        @Path("board") boardLocation : String
     ): Single<BoardResponse>
+
+    @POST("/tita/forum/{board}/create")
+    fun postFreeBoard(
+        @Path("board") boardLocation : String,
+        @Body body : BoardFreePostRequest
+    ): Single<BoardFreeResponse>
 
 }
