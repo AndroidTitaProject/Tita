@@ -37,9 +37,11 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
 
     override fun FragmentBoardFreeBinding.onViewCreated(){
 
+        binding.floatingButton.setOnClickListener { onClickFloatingButton() }
+
         binding.backButton.setOnClickListener {   this@BoardFreeFragment.findNavController().popBackStack()}
 
-        setFloationButton()
+        setFloatingButton()
 
         setObserve()
 
@@ -58,7 +60,7 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
         })
     }
 
-    private fun setFloationButton() {
+    private fun setFloatingButton() {
         val onScrollListener = object:RecyclerView.OnScrollListener() {
             var temp: Int = 0
             override fun onScrolled(@NonNull recyclerView:RecyclerView, dx:Int, dy:Int) {
@@ -75,6 +77,11 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
         }
 
         binding.recyclerview?.setOnScrollListener(onScrollListener)
+    }
+
+    private fun onClickFloatingButton(){
+        this@BoardFreeFragment.findNavController()
+            .navigate(R.id.action_boardFreeFragment_to_boardWriteFragment)
     }
 
 

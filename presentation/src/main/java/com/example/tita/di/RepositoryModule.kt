@@ -56,5 +56,10 @@ object RepositoryModule {
         return BoardRepositoryImpl(boardDataSourceImpl)
     }
 
+    @Provides
+    @Singleton
+    fun provideBoardFreePostRepository(boardDataSourceImpl: BoardDataSourceImpl): BoardRepository {
+        return BoardRepositoryImpl(boardDataSourceImpl)
+    }
 
 }
