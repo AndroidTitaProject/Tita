@@ -3,7 +3,7 @@ package com.example.tita.ui.signup.fragment.viewmodel
 import android.util.Log
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.domain.repository.AuthRepository
+import com.example.domain.repository.SignUpRepository
 import com.example.domain.usecase.signup.IdCheckUseCase
 import com.example.domain.usecase.signup.NickNameUseCase
 import com.example.domain.usecase.signup.PostMailUseCase
@@ -35,7 +35,7 @@ class SignUpViewModelTest {
     lateinit var viewModel: SignUpViewModel
 
     @Inject
-    lateinit var repository: AuthRepository
+    lateinit var repository: SignUpRepository
 
 
     private lateinit var signUpUseCase: SignUpUseCase

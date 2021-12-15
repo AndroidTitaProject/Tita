@@ -1,12 +1,12 @@
 package com.example.domain.usecase.signup
 
 import com.example.domain.base.ParamsUseCase
-import com.example.domain.entity.SignUpEntity
-import com.example.domain.repository.AuthRepository
+import com.example.domain.entity.signup.SignUpEntity
+import com.example.domain.repository.SignUpRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
-class SignUpUseCase @Inject constructor(private val repository: AuthRepository) :
+class SignUpUseCase @Inject constructor(private val repository: SignUpRepository) :
     ParamsUseCase<SignUpUseCase.Params, Single<SignUpEntity>>() {
 
     override suspend fun buildUseCaseObservable(params: Params): Single<SignUpEntity> {

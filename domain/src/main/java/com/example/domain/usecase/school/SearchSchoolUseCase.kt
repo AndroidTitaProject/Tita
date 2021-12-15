@@ -2,10 +2,7 @@ package com.example.domain.usecase.school
 
 import android.util.Log
 import com.example.domain.base.ParamsUseCase
-import com.example.domain.entity.IdCheckEntity
-import com.example.domain.entity.school.SchoolInfoEntity
 import com.example.domain.entity.school.SchoolResponseEntity
-import com.example.domain.repository.AuthRepository
 import com.example.domain.repository.SchoolRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject

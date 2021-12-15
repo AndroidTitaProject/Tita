@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/singin_background"
+        android:orientation="vertical"
+        tools:context=".IdPasswordFind.FindIdActivity">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="267dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginTop="78dp"
+                android:layout_marginEnd="47dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:layout_width="266dp"
+                    android:layout_height="match_parent"
+
+                    android:text="아이디를 까먹었나요?\n걱정하지 말고 같이 찾아봐요!"
+                    android:textColor="@color/black"
+                    android:textSize="21.666dp"
+
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="46dp"
+                android:layout_marginEnd="47dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+
+                <TextView
+                    android:id="@+id/Certification_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="22dp"
+                    android:text="*이메일"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <EditText
+                    android:id="@+id/check_email"
+                    android:layout_width="@dimen/find_edit"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/edit_text_background"
+                    android:elevation="5dp"
+                    android:hint="인증번호"
+                    android:paddingStart="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:translationY="3dp"
+                    app:hintEnabled="false" />
+
+                <Button
+                    android:id="@+id/ok_btn"
+                    android:layout_width="266dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/edit_text_background"
+                    android:backgroundTint="#FFFBEB"
+                    android:gravity="center"
+                    android:text="인증번호 보내기"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/error_find_id_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가입된 계정이 없습니다." />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/Certification_init"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+                <TextView
+                    android:layout_width="102dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="20.83dp"
+                    android:text="*인증번호 확인"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/check_edit"
+                        android:layout_width="193dp"
+                        android:layout_height="38sp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:elevation="5dp"
+
+                        android:hint="인증번호"
+                        android:paddingStart="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:translationY="3dp"
+                        app:hintEnabled="false" />
+
+                    <TextView
+                        android:id="@+id/check_error_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="잘못된 인증번호입니다."
+                        android:textColor="@color/error_text"
+                        android:layout_below="@id/check_edit"/>
+
+
+                    <Button
+                        android:id="@+id/check_btn"
+                        android:layout_width="67dp"
+                        android:layout_height="38dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/edit_text_background"
+                        android:backgroundTint="#FFFBEB"
+                        android:text="확인"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/password_init"
+                android:layout_width="266dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Certification_init">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/password_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*닉네임"
+
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                    <EditText
+                        android:id="@+id/check_nickname"
+                        android:layout_width="@dimen/find_edit"
+                        android:layout_height="38sp"
+
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:elevation="5dp"
+                        android:hint="인증번호"
+                        android:paddingStart="15dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:translationY="3dp"
+                        app:hintEnabled="false" />
+
+                    <TextView
+                        android:id="@+id/error_nickname_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="존재하지 않은 닉네임입니다."
+                        android:textColor="@color/error_text"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/next_btn"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="61dp"
+                android:background="@drawable/edit_text_background"
+                android:backgroundTint="#FFFBEB"
+                android:minWidth="0sp"
+                android:minHeight="0sp"
+                android:text="ID찾기"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

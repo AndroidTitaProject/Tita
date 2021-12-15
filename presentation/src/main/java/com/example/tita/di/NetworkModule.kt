@@ -1,6 +1,7 @@
 package com.example.tita.di
 
 
+import com.example.data.network.service.FindService
 import com.example.data.network.service.SchoolService
 import com.example.data.network.service.SignUpService
 import com.example.data.util.ApiClient.BASE_USER_URL
@@ -92,9 +93,16 @@ object NetworkModule {
 
     @Provides
     @Singleton
+    fun provideFindService(@Named("main") retrofit: Retrofit): FindService {
+        return (retrofit.create(FindService::class.java))
+    }
+
+    @Provides
+    @Singleton
     fun provideSchoolApiService(@Named("school") retrofit: Retrofit): SchoolService {
         return (retrofit.create(SchoolService::class.java))
     }
+
 
 
 

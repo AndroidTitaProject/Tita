@@ -1,15 +1,14 @@
 package com.example.data.repository.signup
 
-import android.util.Log
 import com.example.data.entity.signup.request.GetMailRequest
 import com.example.data.entity.signup.request.SignUpRequest
 import com.example.data.mapper.toDomain
 import com.example.data.repository.signup.remote.SignUpDataSourceImpl
-import com.example.domain.entity.GetMailEntity
-import com.example.domain.entity.IdCheckEntity
-import com.example.domain.entity.NickNameEntity
-import com.example.domain.entity.SignUpEntity
-import com.example.domain.repository.AuthRepository
+import com.example.domain.entity.signup.GetMailEntity
+import com.example.domain.entity.signup.IdCheckEntity
+import com.example.domain.entity.signup.NickNameEntity
+import com.example.domain.entity.signup.SignUpEntity
+import com.example.domain.repository.SignUpRepository
 import io.reactivex.rxjava3.core.Single
 import javax.inject.Inject
 
@@ -18,7 +17,7 @@ import javax.inject.Inject
 class SignUpRepositoryImpl @Inject constructor(
     private val dataSourceImpl: SignUpDataSourceImpl
 
-) : AuthRepository {
+) : SignUpRepository {
 
     override suspend fun postSignUp(
         username: String,
