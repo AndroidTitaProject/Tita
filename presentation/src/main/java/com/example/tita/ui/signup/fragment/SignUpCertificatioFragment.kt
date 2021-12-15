@@ -1,13 +1,14 @@
 package com.example.tita.ui.signup.fragment
 
 
+import android.util.Patterns
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
 import com.example.tita.base.UtilityBase
-import com.example.tita.databinding.FragmentCertificatioBinding
+import com.example.tita.databinding.FragmentSignUpcertificatioBinding
 import com.example.tita.ui.signup.fragment.viewmodel.SignUpViewModel
 import com.example.tita.utils.EventObserver
 import com.example.tita.utils.errorAnimationShow
@@ -17,15 +18,15 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignUpCertificatioFragment :
-    UtilityBase.BaseFragment<FragmentCertificatioBinding>(R.layout.fragment_certificatio) {
+    UtilityBase.BaseFragment<FragmentSignUpcertificatioBinding>(R.layout.fragment_sign_upcertificatio) {
 
     private val viewModel by activityViewModels<SignUpViewModel>()
-    override fun FragmentCertificatioBinding.onCreateView() {
+    override fun FragmentSignUpcertificatioBinding.onCreateView() {
 
 
     }
 
-    override fun FragmentCertificatioBinding.onViewCreated() {
+    override fun FragmentSignUpcertificatioBinding.onViewCreated() {
         observeSuccess()
         observeFail()
         observeGetMail()
@@ -41,10 +42,12 @@ class SignUpCertificatioFragment :
 
         binding.emailBtn.setOnClickListener {
             lifecycleScope.launch {
-                if (binding.emailEdit.text.toString().isNotBlank()) {
+                if (Patterns.EMAIL_ADDRESS.matcher(binding.emailEdit.text.toString().trim()).matches()) {
+                    binding.errorSuccessEmailText.successAnimationShow(requireContext(), "성공했습니다.")
+
                     viewModel.getEmail(binding.emailEdit.text.toString())
                 }else{
-                    binding.errorSuccessEmailText.errorAnimationShow(requireContext(), "빈칸없이 적어주세요.")
+                    binding.errorSuccessEmailText.errorAnimationShow(requireContext(), "이메일 형식에 맞게 적어주세요.")
                 }
             }
         }

@@ -25,11 +25,11 @@ class LoginViewModel @Inject constructor(
     val password: LiveData<String> get() = _password
 
 
-    private val _isSuccess = MutableLiveData<Event<String?>>()
-    val isSuccess: LiveData<Event<String?>> = _isSuccess
+    private val _isSuccess = MutableLiveData<Event<Boolean?>>()
+    val isSuccess: LiveData<Event<Boolean?>> = _isSuccess
 
-    private val _isFailure = MutableLiveData<Event<String?>>()
-    val isFailure: LiveData<Event<String?>> = _isFailure
+    private val _isFailure = MutableLiveData<Event<Boolean?>>()
+    val isFailure: LiveData<Event<Boolean?>> = _isFailure
 
 
 
@@ -43,16 +43,16 @@ class LoginViewModel @Inject constructor(
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
-                        _isSuccess.value = Event(it.msg)
+                        _isSuccess.value = Event(true)
 
                     }, {
 
-                        _isFailure.value = Event(it.message)
+                        _isFailure.value = Event(false)
                     })
 
             )
         } catch (e: Exception) {
-
+            _isFailure.value = Event(false)
         }
     }
 

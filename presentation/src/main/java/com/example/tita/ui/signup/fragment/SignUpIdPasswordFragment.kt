@@ -77,11 +77,11 @@ class SignUpIdPasswordFragment :
     }
 
     private fun isPasswordFormat(password: String): Boolean {
-        return password.matches("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[\$@\$!%*#?&]).{8,15}.\$".toRegex())
+        return password.matches("^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&]).{7,15}.$".toRegex())
     }
 
     private fun isFormat(id: String): Boolean {
-        return id.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{6,16}.\$".toRegex())
+        return id.matches("^(?=.*[A-Za-z])(?=.*[0-9]).{5,16}.\$".toRegex())
     }
 
 

@@ -8,6 +8,7 @@ import com.example.domain.usecase.signup.NickNameUseCase
 import com.example.domain.usecase.signup.PostMailUseCase
 import com.example.domain.usecase.signup.SignUpUseCase
 import com.example.tita.base.BaseViewModel
+import com.example.tita.ui.signup.fragment.SignUpSetNameFragment.Companion.successSignUp
 import com.example.tita.utils.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -45,6 +46,10 @@ class SignUpViewModel @Inject constructor(
     private val _isFailure = MutableLiveData<Event<String>>()
     val isFailure: LiveData<Event<String>> = _isFailure
 
+
+    private val _isSignSuccess = MutableLiveData<Event<String>>()
+    val isSignSuccess: LiveData<Event<String>> = _isSignSuccess
+
     private val _userName = MutableLiveData<String>()
     val userName: LiveData<String> get() = _userName
     private val _mail = MutableLiveData<String>()
@@ -63,7 +68,11 @@ class SignUpViewModel @Inject constructor(
                 .subscribe({ data ->
 
                     Log.d(TAG, "getMail: ${_mail.value}")
-                    _isSuccess.value = Event(data.msg)
+                    if (data.success) {
+                        _isSuccess.value = Event(data.msg)
+                    } else {
+                        _isFailure.value = Event(data.msg)
+                    }
                 }, {
                     _isFailure.value = Event(it.message ?: "")
                 }).apply {
@@ -87,7 +96,11 @@ class SignUpViewModel @Inject constructor(
                     .subscribe({
                         Log.d("TAG", "idCheck: ${it.msg}")
                         Log.d(TAG, "idCheck: ${_id.value}")
-                        _isSuccess.value = Event(it.msg)
+                        if (it.success) {
+                            _isSuccess.value = Event(it.msg)
+                        } else {
+                            _isFailure.value = Event(it.msg)
+                        }
                     }, {
                         Log.d(TAG, "idCheck: throw :${it.message}")
                         _isFailure.value = Event(it.message ?: "")
@@ -125,21 +138,30 @@ class SignUpViewModel @Inject constructor(
     // 닉네임 중복확인
     suspend fun nickNameOverlap(name: String) {
         _nickName.value = name
-        try {
+        if (name.isEmpty()) {
+            _isFailure.value = Event("빈칸을 입력해 주세요")
+        } else {
+            try {
 
-            addDisposable(
-                nickNameUseCase.buildUseCaseObservable(NickNameUseCase.Params(_nickName.value!!))
-                    .subscribeOn(Schedulers.io())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribe({
-                        Log.d(TAG, "nickNameOverlap: ${_nickName.value}")
-                        _isSuccess.value = Event(it.msg)
-                    }, {
-                        _isFailure.value = Event(it.message ?: "")
-                    })
-            )
-        } catch (e: Exception) {
-            _isFailure.value = Event(e.toString())
+                addDisposable(
+                    nickNameUseCase.buildUseCaseObservable(NickNameUseCase.Params(_nickName.value!!))
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe({
+                            Log.d(TAG, "nickNameOverlap: ${_nickName.value}")
+                            if (it.success) {
+                                _isSuccess.value = Event(it.msg)
+
+                            } else {
+                                _isFailure.value = Event(it.msg)
+                            }
+                        }, {
+                            _isFailure.value = Event(it.message ?: "")
+                        })
+                )
+            } catch (e: Exception) {
+                _isFailure.value = Event(e.toString())
+            }
         }
     }
 
@@ -160,14 +182,17 @@ class SignUpViewModel @Inject constructor(
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
                         Log.d("TAG", "signUp: ${it.msg}")
-
-                        _isSuccess.value = Event(it.msg)
+                        if (it.success) {
+                            _isSignSuccess.value = Event(successSignUp)
+                        } else {
+                            _isSignSuccess.value = Event("회원가입에 실패했습니다.")
+                        }
                     }, {
-                        _isFailure.value = Event(it.message ?: "")
+                        _isSignSuccess.value = Event("회원가입에 실패했습니다.")
                     })
             )
         } catch (e: Exception) {
-            _isFailure.value = Event(e.toString())
+            _isSignSuccess.value = Event("회원가입에 실패했습니다.")
         }
 
 

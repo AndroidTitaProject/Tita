@@ -9,13 +9,16 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.tita.ui.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_find_password"
             app:destination="@id/find_password" />
         <action
             android:id="@+id/action_loginFragment_to_fragment_find_id"
             app:destination="@id/fragment_find_id" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpTermsFragment"
+            app:destination="@id/signUpTermsFragment" />
     </fragment>
     <!--    회원가입-->
     <fragment
@@ -34,7 +37,7 @@
         android:id="@+id/signUpCertificatioFragment"
         android:name="com.example.tita.ui.signup.fragment.SignUpCertificatioFragment"
         android:label="선택"
-        tools:layout="@layout/fragment_certificatio">
+        tools:layout="@layout/fragment_sign_upcertificatio">
 
         <action
             android:id="@+id/action_signUpCertificatioFragment_to_signUpMainFragment"
@@ -97,7 +100,7 @@
     <!--    findPassword-->
     <fragment
         android:id="@+id/find_password"
-        android:name="com.example.tita.ui.find.fragment.FindPasswordFragment"
+        android:name="com.example.tita.ui.find.password.FindPasswordFragment"
         tools:layout="@layout/fragment_find_password">
         <action
             android:id="@+id/action_find_password_to_change_password"
@@ -106,8 +109,8 @@
 
     <fragment
         android:id="@+id/finish_password"
-        android:name="com.example.tita.ui.find.fragment.FindPasswordFinishFragment"
-        tools:layout="@layout/ragment_find_password_change_finish" >
+        android:name="com.example.tita.ui.find.password.FindPasswordFinishFragment"
+        tools:layout="@layout/fragment_find_password_change_finish">
         <action
             android:id="@+id/action_finish_password_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -115,7 +118,7 @@
 
     <fragment
         android:id="@+id/change_password"
-        android:name="com.example.tita.ui.find.fragment.FindPasswordChangeFragment"
+        android:name="com.example.tita.ui.find.password.FindPasswordChangeFragment"
         tools:layout="@layout/fragment_find_password_change">
         <action
             android:id="@+id/action_change_password_to_finish_password"
@@ -125,7 +128,7 @@
     <!--    findId-->
     <fragment
         android:id="@+id/fragment_find_id"
-        android:name="com.example.tita.ui.find.fragment.FindIdFragment"
+        android:name="com.example.tita.ui.find.id.FindIdFragment"
         android:label="fragment_find_id2"
         tools:layout="@layout/fragment_find_id">
         <action
@@ -134,9 +137,9 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_find_id_know"
-        android:name="com.example.tita.ui.find.fragment.FindIdNowFragment"
+        android:name="com.example.tita.ui.find.id.FindIdNowFragment"
         android:label="fragment_find_id_know"
-        tools:layout="@layout/fragment_find_id_know" >
+        tools:layout="@layout/fragment_find_id_know">
         <action
             android:id="@+id/action_fragment_find_id_know_to_loginFragment"
             app:destination="@id/loginFragment" />

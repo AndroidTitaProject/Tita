@@ -1,4 +1,4 @@
-package com.example.tita.ui.find.fragment
+package com.example.tita.ui.find.password
 
 import android.os.Bundle
 import android.text.TextUtils
@@ -13,26 +13,28 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.tita.R
+import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentFindPasswordBinding
-import com.example.tita.ui.find.fragment.viewmodel.FindIdPasswordViewModel
+import com.example.tita.ui.find.viewmodel.FindIdPasswordViewModel
 import com.example.tita.utils.EventObserver
 import com.example.tita.utils.errorAnimationShow
 import com.example.tita.utils.successAnimationShow
 import kotlinx.coroutines.launch
 
-class FindPasswordFragment : Fragment() {
-    private lateinit var binding : FragmentFindPasswordBinding
+class FindPasswordFragment : UtilityBase.BaseFragment<FragmentFindPasswordBinding>(R.layout.fragment_find_password) {
     private val viewModel by activityViewModels<FindIdPasswordViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
 
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_find_password,container,false)
+    override fun FragmentFindPasswordBinding.onCreateView() {
+        binding.fragemnt = this@FindPasswordFragment
+    }
 
-        binding.fragemnt = this
-
+    override fun FragmentFindPasswordBinding.onViewCreated() {
+        with(binding){
+            backBtn.setOnClickListener {
+                findNavController().navigateUp()
+            }
+        }
         with(viewModel){
 
             binding.okBtn.setOnClickListener {
@@ -49,8 +51,6 @@ class FindPasswordFragment : Fragment() {
             }
 
         }
-
-        return binding.root
     }
 
     suspend fun passwordChangeAuthoritySend(){

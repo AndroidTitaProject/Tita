@@ -12,17 +12,17 @@ interface FindService {
 
     //비밀번호 찾기 이메일 인증
 
-    @POST("tita/password")
+    @POST("tita/user/password")
     fun postMailAndUserName(
         @Body request: PasswordMailRequest
     ): Single<BaseResponse>
 
-    @GET("tita/password/key")
+    @GET("tita/user/password/key")
     fun getMailCode(
         @Path("code") code: String
     ): Single<PasswordMailCodeResponse>
 
-    @PUT("/tita/password")
+    @PUT("/tita/user/password")
     fun putPasswordChange(
         @Body request: PasswordChangeRequest
     ): Single<PasswordChangeResponse>

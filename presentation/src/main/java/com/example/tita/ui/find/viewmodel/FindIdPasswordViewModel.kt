@@ -1,4 +1,4 @@
-package com.example.tita.ui.find.fragment.viewmodel
+package com.example.tita.ui.find.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData

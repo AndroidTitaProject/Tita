@@ -70,7 +70,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
                 <TextView
-                    android:id="@+id/forget_id_btn"
+                    android:id="@+id/forget_id_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/id_edit"
@@ -87,7 +87,7 @@
                     android:id="@+id/password_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/forget_id_btn"
+                    android:layout_below="@+id/forget_id_text"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="19dp"
                     android:background="@drawable/edit_text_background"
@@ -99,11 +99,11 @@
                     android:textColor="@color/black"
                     android:textColorHint="#808080"
                     android:textSize="15sp"
-                    app:layout_constraintTop_toBottomOf="@+id/forget_id_btn" />
+                    app:layout_constraintTop_toBottomOf="@+id/forget_id_text" />
 
 
                 <TextView
-                    android:id="@+id/find_password_text"
+                    android:id="@+id/forgot_password_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/password_edit"
@@ -121,7 +121,7 @@
                     android:id="@+id/next_button"
                     android:layout_width="120sp"
                     android:layout_height="50sp"
-                    android:layout_below="@id/find_password_text"
+                    android:layout_below="@id/forgot_password_text"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="19dp"
                     android:background="@drawable/edit_text_background"
@@ -136,7 +136,7 @@
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@+id/password_edit"
                     app:layout_constraintStart_toStartOf="@+id/password_edit"
-                    app:layout_constraintTop_toBottomOf="@+id/find_password_text" />
+                    app:layout_constraintTop_toBottomOf="@+id/forgot_password_text" />
 
                 <TextView
                     android:id="@+id/signUpText"
@@ -144,14 +144,14 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/next_button"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginTop="110dp"
                     android:gravity="bottom"
                     android:text="@string/Member_Questions"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:layout_marginBottom="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/password_edit"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/next_button" />
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

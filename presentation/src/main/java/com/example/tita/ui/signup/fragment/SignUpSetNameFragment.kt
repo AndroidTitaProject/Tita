@@ -1,6 +1,7 @@
 package com.example.tita.ui.signup.fragment
 
 import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -49,6 +50,14 @@ class SignUpSetNameFragment :
 
                 })
             }
+            isSignSuccess.observe(viewLifecycleOwner, EventObserver {
+                if (it == successSignUp) {
+                    Log.d(TAG, "onViewCreated: ${it}")
+                    findNavController().navigate(R.id.action_signUpSetNameFragment_to_loginFragment)
+                } else {
+                    Toast.makeText(requireContext(), "회원가입에 실패했습니다.", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
         binding.nextButton.setOnClickListener {
@@ -64,6 +73,9 @@ class SignUpSetNameFragment :
                 findNavController().navigateUp()
             }
         }
+    }
+    companion object{
+        const val successSignUp="회원가입 성공"
     }
 }
 

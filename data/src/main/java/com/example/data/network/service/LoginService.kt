@@ -8,7 +8,7 @@ import retrofit2.http.POST
 
 interface LoginService {
 
-    @POST("tita/login")
+    @POST("tita/user/login")
     fun login(
         @Body body : LoginRequest
     ): Single<LoginResponse>
