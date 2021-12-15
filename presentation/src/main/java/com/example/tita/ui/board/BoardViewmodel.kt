@@ -28,6 +28,9 @@ class BoardViewmodel @Inject constructor(
     private val _isSuccess = MutableLiveData<Event<String>>()
     val isSuccess: LiveData<Event<String>> = _isSuccess
 
+    private val _isSuccessBoard = MutableLiveData<Boolean>()
+    val isSuccessBoard: LiveData<Boolean> = _isSuccessBoard
+
     private val _isFailure = MutableLiveData<Event<String>>()
     val isFailure: LiveData<Event<String>> = _isFailure
 
@@ -66,13 +69,14 @@ class BoardViewmodel @Inject constructor(
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ data ->
 
-                    Log.d("cocopam",data.msg)
+                    _isSuccessBoard.value = true
 
                     _isSuccess.value = Event(data.msg)
                 }, {
                     _isFailure.value = Event(it.message ?: "")
                 })
         } catch (e: Exception) {
+         _isSuccessBoard.value = false
         _isFailure.value = Event(e.toString())
     }
     }

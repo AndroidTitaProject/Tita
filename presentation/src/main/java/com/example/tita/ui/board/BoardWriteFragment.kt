@@ -36,7 +36,7 @@ class BoardWriteFragment : UtilityBase.BaseFragment<FragmentBoardWriteBinding>(R
 
             binding.inputButton.setOnClickListener { boardPost() }
 
-            viewModel.isSuccess.observe(viewLifecycleOwner,{
+            viewModel.isSuccessBoard.observe(viewLifecycleOwner,{
             Log.d("dsaf",it.toString())
              this@BoardWriteFragment.findNavController()
                     .navigate(R.id.action_boardWriteFragment_to_boardFreeFragment)
