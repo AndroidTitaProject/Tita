@@ -3,8 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navi_main"
-    app:startDestination="@id/signUpTermsFragment">
+    app:startDestination="@id/loginFragment">
 
+    <!--    로그인-->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.tita.ui.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_find_password"
+            app:destination="@id/find_password" />
+        <action
+            android:id="@+id/action_loginFragment_to_fragment_find_id"
+            app:destination="@id/fragment_find_id" />
+    </fragment>
     <!--    회원가입-->
     <fragment
         android:id="@+id/signUpTermsFragment"
@@ -69,10 +81,13 @@
         tools:layout="@layout/fragment_sign_up_set_name">
 
 
+        <action
+            android:id="@+id/action_signUpSetNameFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchSchoolFragment"
-        android:name="com.example.tita.ui.signup.fragment.dialog.SearchSchoolFragment"
+        android:name="com.example.tita.ui.signup.fragment.SearchSchoolFragment"
         android:label="SearchSchoolFragment">
         <action
             android:id="@+id/action_searchSchoolFragment_to_signUpCertificatioSchoolFragment"
@@ -92,7 +107,11 @@
     <fragment
         android:id="@+id/finish_password"
         android:name="com.example.tita.ui.find.fragment.FindPasswordFinishFragment"
-        tools:layout="@layout/fragment_find_password_change_finish" />
+        tools:layout="@layout/ragment_find_password_change_finish" >
+        <action
+            android:id="@+id/action_finish_password_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/change_password"
@@ -117,5 +136,10 @@
         android:id="@+id/fragment_find_id_know"
         android:name="com.example.tita.ui.find.fragment.FindIdNowFragment"
         android:label="fragment_find_id_know"
-        tools:layout="@layout/fragment_find_id_know" />
+        tools:layout="@layout/fragment_find_id_know" >
+        <action
+            android:id="@+id/action_fragment_find_id_know_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
 </navigation>

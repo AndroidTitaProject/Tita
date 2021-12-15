@@ -1,12 +1,10 @@
-package com.example.tita.ui.signup.fragment.viewmodel
+package com.example.tita.ui.signup.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.domain.entity.school.RowEntity
-import com.example.domain.entity.school.SchoolInfoEntity
-import com.example.domain.entity.school.SchoolResponseEntity
 import com.example.domain.usecase.school.SearchSchoolUseCase
 import com.example.tita.base.BaseViewModel
 import com.example.tita.utils.Event

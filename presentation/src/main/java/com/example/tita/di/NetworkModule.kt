@@ -14,6 +14,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import com.example.data.network.service.LoginService
 
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
@@ -104,7 +105,11 @@ object NetworkModule {
     }
 
 
-
+    @Provides
+    @Singleton
+    fun provideLoginService(@Named("main")retrofit: Retrofit): LoginService {
+        return (retrofit.create(LoginService::class.java))
+    }
 
     // 서버로 부터 받아온 데이터 log 찍기
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =

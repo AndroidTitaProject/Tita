@@ -11,6 +11,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+import com.example.data.network.service.LoginService
+import com.example.data.repository.login.datasource.LoginDataSourceImpl
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -28,12 +30,33 @@ object DataSourceModule {
         return SchoolDataSourceImpl(authRemote)
 
     }
+
     @Provides
     @Singleton
     fun provideUserDataSource(findRemote: FindService): FindDataSourceImpl {
         return FindDataSourceImpl(findRemote)
     }
+
+    @Provides
+    @Singleton
+    fun provideLoginDataSource(service: LoginService): LoginDataSourceImpl {
+        return LoginDataSourceImpl(service)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

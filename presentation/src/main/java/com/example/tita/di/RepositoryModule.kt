@@ -2,11 +2,14 @@ package com.example.tita.di
 
 import com.example.data.repository.find.datasource.FindDataSourceImpl
 import com.example.data.repository.find.repository.FindRepositoryImpl
+import com.example.data.repository.login.datasource.LoginDataSourceImpl
+import com.example.data.repository.login.repository.LoginRepositoryImpl
 import com.example.data.repository.school.SchoolSearchRepositoryImpl
 import com.example.data.repository.school.remote.SchoolDataSourceImpl
 import com.example.data.repository.signup.remote.SignUpDataSourceImpl
 import com.example.data.repository.signup.SignUpRepositoryImpl
 import com.example.domain.repository.FindRepository
+import com.example.domain.repository.LoginRepository
 import com.example.domain.repository.SignUpRepository
 import com.example.domain.repository.SchoolRepository
 import dagger.Module
@@ -34,4 +37,10 @@ object RepositoryModule {
     fun provideFindRepository(authDataSourceImpl: FindDataSourceImpl): FindRepository {
         return FindRepositoryImpl(authDataSourceImpl)
     }
+    @Provides
+    @Singleton
+    fun provideLoginRepository(loginDataSourceImpl: LoginDataSourceImpl) : LoginRepository {
+        return LoginRepositoryImpl(loginDataSourceImpl)
+    }
+
 }
