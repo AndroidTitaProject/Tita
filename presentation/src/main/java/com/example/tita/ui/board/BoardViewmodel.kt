@@ -31,6 +31,9 @@ class BoardViewmodel @Inject constructor(
     private val _isFailure = MutableLiveData<Event<String>>()
     val isFailure: LiveData<Event<String>> = _isFailure
 
+    private val _boardPosition = MutableLiveData<String>()
+    val boardPosition: LiveData<String> = _boardPosition
+
     suspend fun getPost(postLocation : String) {
 
         try {
@@ -50,6 +53,10 @@ class BoardViewmodel @Inject constructor(
         }
     }
 
+    fun setBoardPosition(postLocation : String){
+        _boardPosition.value = postLocation
+    }
+
     suspend fun postBoardFree(postLocation: String, title : String , content : String){
 
         try {
@@ -58,6 +65,8 @@ class BoardViewmodel @Inject constructor(
             ))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ data ->
+
+                    Log.d("cocopam",data.msg)
 
                     _isSuccess.value = Event(data.msg)
                 }, {
