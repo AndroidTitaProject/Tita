@@ -1,60 +1,44 @@
 package com.example.tita.ui.board
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.tita.R
+import com.example.tita.base.UtilityBase
+import com.example.tita.databinding.FragmentBoardNoticeBinding
+import com.example.tita.databinding.FragmentBoardNoticeMenuBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class BoardNoticeMenuFragment : UtilityBase.BaseFragment<FragmentBoardNoticeMenuBinding>(R.layout.fragment_board_notice_menu) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BoardNoticeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class BoardNoticeMenuFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private val viewModel by activityViewModels<BoardViewmodel>()
+
+
+    override fun FragmentBoardNoticeMenuBinding.onCreateView(){
+
+    }
+
+    override fun FragmentBoardNoticeMenuBinding.onViewCreated(){
+        binding.onClickBoard = this@BoardNoticeMenuFragment
+    }
+
+    fun getNoticeBoardPosition(v : View){
+
+        when(v.id){
+            binding.linearLayout4.id -> viewModel.setNoticeBoard("학생회 게시판")
+            binding.linearLayout5.id -> viewModel.setNoticeBoard("기숙사자치위원회 게시판")
+            binding.linearLayout6.id -> viewModel.setNoticeBoard("전공동아리 게시판")
+            binding.linearLayout7.id -> viewModel.setNoticeBoard("창체동아리 게시판")
+            binding.linearLayout8.id -> viewModel.setNoticeBoard("자율동아리 게시판")
         }
+
+        this@BoardNoticeMenuFragment.findNavController()
+            .navigate(R.id.action_boardNoticeMenuFragment_to_boardNoticeFragment)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_board_notice_menu, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BoardNoticeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BoardNoticeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

@@ -22,8 +22,14 @@ class BoardViewmodel @Inject constructor(
 
     val TAG : String = "baord"
 
+    private val _title = MutableLiveData<String>()
+    val title: LiveData<String> get() = _title
+
+    private val _content = MutableLiveData<String>()
+    val content: LiveData<String> get() = _content
+
     private val _boardData = MutableLiveData<List<BoardData>>()
-    val boardData: LiveData<List<BoardData>> get() = _boardData
+    val boardData: LiveData<List<BoardData>> get() = _boardData 
 
     private val _isSuccess = MutableLiveData<Event<String>>()
     val isSuccess: LiveData<Event<String>> = _isSuccess
@@ -31,11 +37,18 @@ class BoardViewmodel @Inject constructor(
     private val _isSuccessBoard = MutableLiveData<Boolean>()
     val isSuccessBoard: LiveData<Boolean> = _isSuccessBoard
 
+    private val _noticeBoard = MutableLiveData<String>()
+    val noticeBoard: LiveData<String> = _noticeBoard
+
     private val _isFailure = MutableLiveData<Event<String>>()
     val isFailure: LiveData<Event<String>> = _isFailure
 
     private val _boardPosition = MutableLiveData<String>()
     val boardPosition: LiveData<String> = _boardPosition
+
+    init {
+        _isSuccessBoard.value = false
+    }
 
     suspend fun getPost(postLocation : String) {
 
@@ -56,8 +69,21 @@ class BoardViewmodel @Inject constructor(
         }
     }
 
+    fun setisSuccessBoard(){
+        _isSuccessBoard.value = false
+    }
+
+    fun setNoticeBoard(position : String){
+        _noticeBoard.value = position
+    }
+
     fun setBoardPosition(postLocation : String){
         _boardPosition.value = postLocation
+    }
+
+    fun postOnclick(title : String, content: String){
+        _title.value = title
+        _content.value = content
     }
 
     suspend fun postBoardFree(postLocation: String, title : String , content : String){

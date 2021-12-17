@@ -19,7 +19,6 @@ import com.example.tita.R
 import com.example.tita.base.UtilityBase
 import com.example.tita.databinding.FragmentBoardFreeBinding
 import com.example.tita.databinding.FragmentBoardWriteBinding
-import com.example.tita.ui.board.adapter.BoardAdapter
 import kotlinx.coroutines.launch
 
 class BoardWriteFragment : UtilityBase.BaseFragment<FragmentBoardWriteBinding>(R.layout.fragment_board_write){
@@ -37,10 +36,14 @@ class BoardWriteFragment : UtilityBase.BaseFragment<FragmentBoardWriteBinding>(R
             binding.inputButton.setOnClickListener { boardPost() }
 
             viewModel.isSuccessBoard.observe(viewLifecycleOwner,{
-            Log.d("dsaf",it.toString())
-             this@BoardWriteFragment.findNavController()
-                    .navigate(R.id.action_boardWriteFragment_to_boardFreeFragment)
-        })
+
+                if(viewModel.isSuccessBoard.value == true)
+                {
+                    Log.d("dsaf",it.toString())
+                    this@BoardWriteFragment.findNavController().popBackStack()
+                }
+            }
+            )
 
         }
 
@@ -80,7 +83,7 @@ class BoardWriteFragment : UtilityBase.BaseFragment<FragmentBoardWriteBinding>(R
         }
         else{
             lifecycleScope.launch{
-                viewModel.postBoardFree(viewModel.boardPosition.toString(),binding.titleTextview.text.toString(),binding.contentTextview.text.toString())
+                viewModel.postBoardFree(viewModel.boardPosition.value.toString(),binding.titleTextview.text.toString(),binding.contentTextview.text.toString())
             }
         }
     }
@@ -99,11 +102,11 @@ class BoardWriteFragment : UtilityBase.BaseFragment<FragmentBoardWriteBinding>(R
             ) {
 
                 when(position){
-                    0 -> viewModel.setBoardPosition("학생회")
-                    1 -> viewModel.setBoardPosition("기숙사자치위원회")
-                    2 -> viewModel.setBoardPosition("전공동아리")
-                    3 -> viewModel.setBoardPosition("자율동아리")
-                    4 -> viewModel.setBoardPosition("창체동아리")
+                    0 -> viewModel.setBoardPosition("학생회 게시판")
+                    1 -> viewModel.setBoardPosition("기숙사자치위원회 게시판")
+                    2 -> viewModel.setBoardPosition("전공동아리 게시판")
+                    3 -> viewModel.setBoardPosition("창체동아리 게시판")
+                    4 -> viewModel.setBoardPosition("자율동아리 게시판")
                 }
 
             }

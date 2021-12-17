@@ -45,6 +45,8 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
 
         setObserve()
 
+        viewModel.setisSuccessBoard()
+
         lifecycleScope.launch{
             viewModel.getPost("자유게시판")
         }
@@ -54,7 +56,7 @@ class BoardFreeFragment :  UtilityBase.BaseFragment<FragmentBoardFreeBinding>(R.
     private fun setObserve() {
         viewModel.boardData.observe(viewLifecycleOwner,{
             Log.d("dsaf",it.toString())
-            binding.recyclerview.adapter = BoardAdapter(it)
+            binding.recyclerview.adapter = BoardAdapter(it,viewModel)
             binding.recyclerview.layoutManager = LinearLayoutManager(requireContext(),
                 RecyclerView.VERTICAL,false)
         })

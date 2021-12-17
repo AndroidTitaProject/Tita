@@ -8,16 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entity.BoardData
 import com.example.tita.R
 import com.example.tita.databinding.BoardFreeRowBinding
+import com.example.tita.ui.board.BoardViewmodel
 import dagger.hilt.android.lifecycle.HiltViewModel
 
-class BoardAdapter(board : List<BoardData>) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
+class BoardAdapter(board : List<BoardData>, viewmodel : BoardViewmodel) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
 
     var boardList = board
+
+    var viewmodel = viewmodel
 
     inner class BoardViewHolder(val binding: BoardFreeRowBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(boardData: BoardData){
             binding.contentTextview.text = boardData.content
             binding.titleTextview.text = boardData.postName
+
+            binding.contextView.setOnClickListener { viewmodel.postOnclick(boardData.postName,boardData.content)}
         }
     }
 
