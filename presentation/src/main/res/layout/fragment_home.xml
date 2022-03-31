@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanskrbold"
                 android:includeFontPadding="false"
-                android:text="광주소프트웨어마이스턱터고"
+                android:text="광주소프트웨어마이스터고"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 
