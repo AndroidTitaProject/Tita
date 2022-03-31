@@ -16,7 +16,6 @@ class LoginActivity : UtilityBase.BaseActivity<FragmentLoginBinding>(R.layout.fr
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
         binding.nextButton.setOnClickListener {
             lifecycleScope.launch {
 
